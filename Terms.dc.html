@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Terms of Service — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>body{margin:0} *{box-sizing:border-box} a{color:var(--text-link)}</style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ handleCta }}" hint-size="100%,74px"></x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,1100px">
+  <div style="max-width:var(--container-narrow);margin:0 auto">
+    <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:20px">Legal</div>
+    <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(30px,3.6vw,40px);color:var(--text-heading);margin:0 0 12px">Terms of Service</h1>
+    <p style="font:400 14px var(--font-sans);color:var(--text-muted);margin:0 0 48px">Last updated July 5, 2026</p>
+
+    <h2 style="font:600 20px var(--font-sans);color:var(--text-heading);margin:40px 0 16px">Estimates &amp; agreements</h2>
+    <p style="font:400 16px/1.8 var(--font-sans);color:var(--text-body);margin:0 0 16px">Estimates provided through this website are preliminary and based on the information available at the time of inspection. Final pricing and scope are confirmed in a written contract signed by both parties before work begins.</p>
+
+    <h2 style="font:600 20px var(--font-sans);color:var(--text-heading);margin:40px 0 16px">Warranties</h2>
+    <p style="font:400 16px/1.8 var(--font-sans);color:var(--text-body);margin:0 0 16px">Workmanship and manufacturer warranty terms are provided in writing as part of your project contract and vary by service and material selected. Warranty coverage is void if work is performed by another contractor after installation without our review.</p>
+
+    <h2 style="font:600 20px var(--font-sans);color:var(--text-heading);margin:40px 0 16px">Website use</h2>
+    <p style="font:400 16px/1.8 var(--font-sans);color:var(--text-body);margin:0 0 16px">Content on this website, including text, photography, and project case studies, is the property of Oxford Roofing and may not be reproduced without permission. This website is provided for informational purposes and does not itself constitute a service agreement.</p>
+
+    <h2 style="font:600 20px var(--font-sans);color:var(--text-heading);margin:40px 0 16px">Limitation of liability</h2>
+    <p style="font:400 16px/1.8 var(--font-sans);color:var(--text-body);margin:0 0 16px">Oxford Roofing is not liable for damages arising from use of this website or reliance on preliminary estimates prior to a signed contract. Our liability for completed work is governed exclusively by the terms of your project contract.</p>
+
+    <h2 style="font:600 20px var(--font-sans);color:var(--text-heading);margin:40px 0 16px">Contact us</h2>
+    <p style="font:400 16px/1.8 var(--font-sans);color:var(--text-body);margin:0">Questions about these terms can be directed to Oxford Roofing, 4820 Manchester Ave, St. Louis, MO 63110, or hello@oxfordroofing.com.</p>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+      handleCta: () => { window.location.href = 'Contact.dc.html'; },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Project — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>
+    body{margin:0} *{box-sizing:border-box} a{color:inherit}
+    .oxr-photo{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,var(--slate-200) 0px,var(--slate-200) 2px,var(--slate-100) 2px,var(--slate-100) 46px)}
+    .oxr-photo-cap{position:absolute;left:20px;bottom:16px;font:600 11px/1 var(--font-sans);letter-spacing:0.14em;text-transform:uppercase;color:var(--slate-500)}
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ handleCta }}" hint-size="100%,74px"></x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,80px">
+  <a href="Portfolio.dc.html" style="text-decoration:none;font:600 13px/1 var(--font-sans);color:var(--text-gold);letter-spacing:0.06em">← All Projects</a>
+</x-import>
+
+<div class="oxr-photo" style="height:56vh;position:relative"><span class="oxr-photo-cap">{{ project.caption }}</span></div>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,420px">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:64px">
+    <div>
+      <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:16px">{{ project.category }}</div>
+      <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(28px,3.6vw,42px);color:var(--text-heading);margin:0 0 24px">{{ project.title }}</h1>
+      <p style="font:400 17px/1.75 var(--font-sans);color:var(--text-body);margin:0">{{ project.story }}</p>
+    </div>
+    <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,260px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div><div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">Location</div><div style="font:500 15px var(--font-sans);color:var(--text-heading)">{{ project.location }}</div></div>
+        <div><div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">System</div><div style="font:500 15px var(--font-sans);color:var(--text-heading)">{{ project.system }}</div></div>
+        <div><div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px">Timeline</div><div style="font:500 15px var(--font-sans);color:var(--text-heading)">{{ project.timeline }}</div></div>
+      </div>
+    </x-import>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="alt" hint-size="100%,340px">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+    <div class="oxr-photo" style="height:300px;border-radius:var(--radius-lg);position:relative"><span class="oxr-photo-cap">Photography — before</span></div>
+    <div class="oxr-photo" style="height:300px;border-radius:var(--radius-lg);position:relative"><span class="oxr-photo-cap">Photography — after</span></div>
+  </div>
+</x-import>
+
+<div style="background:var(--navy-900);color:var(--white);padding:100px 40px;text-align:center">
+  <h2 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(28px,3.6vw,40px);margin:0 0 24px">See what we could build for you.</h2>
+  <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" variant="accent" size="lg" on-click="{{ handleCta }}" hint-size="240px,52px">Request an Inspection</x-import>
+</div>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PROJECTS = {
+  'ladue-slate-restoration': { title: 'Ladue Slate Restoration', category: 'Residential', location: 'Ladue, MO', system: 'Synthetic slate', timeline: '4 days', caption: 'Photography — synthetic slate, Ladue', story: 'A century-old Tudor needed a slate look without the structural load of real slate. We installed a synthetic slate system engineered to match the home\u2019s original roofline, with copper-style flashing at every valley.' },
+  'clayton-office-park': { title: 'Clayton Office Park', category: 'Commercial', location: 'Clayton, MO', system: 'TPO membrane', timeline: '9 days, phased', caption: 'Photography — TPO re-roof, Clayton', story: 'A three-building office park needed a re-roof without displacing tenants. We phased the install building by building, working early mornings to stay clear of business hours.' },
+  'webster-groves-metal': { title: 'Webster Groves Residence', category: 'Residential', location: 'Webster Groves, MO', system: 'Standing-seam metal', timeline: '5 days', caption: 'Photography — standing-seam metal, Webster Groves', story: 'The homeowners wanted a modern standing-seam look on a traditional bungalow. We matched panel spacing and a custom charcoal finish to the home\u2019s trim.' },
+  'chesterfield-hail-restoration': { title: 'Chesterfield Hail Restoration', category: 'Before & After', location: 'Chesterfield, MO', system: 'Architectural asphalt', timeline: '3 days', caption: 'Photography — hail damage restoration, Chesterfield', story: 'After an April hail storm, we documented damage for the insurance claim and restored the roof to better-than-original condition with impact-resistant shingles.' },
+  'maplewood-retail-center': { title: 'Maplewood Retail Center', category: 'Commercial', location: 'Maplewood, MO', system: 'EPDM membrane', timeline: '6 days', caption: 'Photography — EPDM install, Maplewood', story: 'An aging built-up roof was replaced with a fully-adhered EPDM system, extending the retail center\u2019s roof life by a projected 20+ years.' },
+  'kirkwood-tear-off': { title: 'Kirkwood Full Tear-Off', category: 'Before & After', location: 'Kirkwood, MO', system: 'Architectural asphalt', timeline: '2 days', caption: 'Photography — full tear-off before/after, Kirkwood', story: 'Three-tab shingles nearing the end of their life were fully torn off and replaced with a dimensional architectural shingle system and upgraded ridge ventilation.' },
+};
+
+class Component extends DCLogic {
+  state = { slug: 'ladue-slate-restoration' };
+
+  componentDidMount() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('project');
+    if (slug && PROJECTS[slug]) this.setState({ slug });
+  }
+
+  renderVals() {
+    const project = PROJECTS[this.state.slug] || PROJECTS['ladue-slate-restoration'];
+    return {
+      project,
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+      handleCta: () => { window.location.href = 'Contact.dc.html'; },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

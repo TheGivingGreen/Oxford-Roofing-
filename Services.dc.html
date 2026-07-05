@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>
+    body{margin:0} *{box-sizing:border-box} a{color:inherit}
+    .oxr-photo{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,var(--slate-200) 0px,var(--slate-200) 2px,var(--slate-100) 2px,var(--slate-100) 46px)}
+    .oxr-photo-dark{background:linear-gradient(165deg,var(--navy-800),var(--navy-900) 65%),repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 1px,transparent 1px,transparent 44px)}
+    .oxr-photo-cap{position:absolute;left:20px;bottom:16px;font:600 11px/1 var(--font-sans);letter-spacing:0.14em;text-transform:uppercase;color:var(--slate-500)}
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ handleCta }}" hint-size="100%,74px"></x-import>
+
+<section data-screen-label="Services / Hero" style="position:relative;min-height:44vh;display:flex;align-items:flex-end" class="oxr-photo oxr-photo-dark">
+  <div style="position:relative;z-index:2;max-width:var(--container-max);margin:0 auto;width:100%;padding:0 40px 64px;color:var(--white)">
+    <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-400);margin-bottom:20px">Services</div>
+    <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(32px,4.6vw,50px);margin:0;max-width:760px">Eight services. One standard of craft.</h1>
+  </div>
+</section>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,900px">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px">
+    <a href="Service-Detail.dc.html?service=residential-roofing" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"></path><path d="M5.5 9.8V20h13V9.8"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Residential Roofing</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Full roof systems for homes, matched to your architecture.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=commercial-roofing" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18"></rect><path d="M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Commercial Roofing</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Low-slope systems built around your operating hours.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=roof-replacement" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2-2 2.6-2.6z"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Roof Replacement</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Full tear-off and replacement with manufacturer-backed warranties.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=roof-repair" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3v6l-4 4 4 4v4"></path><path d="M15 3v6l4 4-4 4v4"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Roof Repair</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Targeted repairs for leaks, flashing, and isolated damage.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=storm-damage-restoration" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 15a5 5 0 1 1 1-9.9A6 6 0 0 1 19 8a4 4 0 0 1-1 7.9"></path><path d="M13 15l-2 4h3l-2 4"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Storm Damage Restoration</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Rapid response after hail or wind, insurance-ready documentation.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=insurance-claims" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10v17H7z"></path><path d="M9 8h6M9 12h6M9 16h3"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Insurance Claims Assistance</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">We work directly with your adjuster to keep the claim accurate.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=roof-inspections" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M20 20l-4.6-4.6"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Roof Inspections</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">A documented condition assessment, no pressure, no upsell.</div></x-import></a>
+    <a href="Service-Detail.dc.html?service=preventative-maintenance" style="text-decoration:none;color:inherit"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,200px"><div style="width:44px;height:44px;border-radius:var(--radius-md);background:var(--navy-900);display:flex;align-items:center;justify-content:center;margin-bottom:var(--space-sm);color:var(--gold-400)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="1"></rect><path d="M4 9h16M8 3v4M16 3v4"></path></svg></div><div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:6px">Preventative Maintenance</div><div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body)">Scheduled upkeep plans that extend your roof's service life.</div></x-import></a>
+  </div>
+</x-import>
+
+<div style="background:var(--navy-900);color:var(--white);padding:100px 40px;text-align:center">
+  <h2 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(28px,3.6vw,40px);margin:0 0 24px">Not sure which service you need?</h2>
+  <p style="font:400 16px/1.6 var(--font-sans);color:rgba(255,255,255,0.75);margin:0 0 32px">Start with a free inspection — we'll tell you exactly what your roof needs.</p>
+  <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" variant="accent" size="lg" on-click="{{ handleCta }}" hint-size="240px,52px">Request an Inspection</x-import>
+</div>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+      handleCta: () => { window.location.href = 'Contact.dc.html'; },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FAQ — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>
+    body{margin:0} *{box-sizing:border-box} a{color:inherit}
+    .oxr-cat{font:600 13px/1 var(--font-sans);letter-spacing:0.04em;padding:10px 20px;border-radius:var(--radius-pill);border:1px solid var(--border-default);background:transparent;color:var(--text-heading);cursor:pointer}
+    .oxr-cat-active{background:var(--navy-900);border-color:var(--navy-900);color:var(--white)}
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ handleCta }}" hint-size="100%,74px"></x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,900px">
+  <div style="text-align:center;margin-bottom:16px">
+    <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:20px">FAQ</div>
+    <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(32px,4.4vw,46px);color:var(--text-heading);margin:0 0 40px">Frequently asked questions.</h1>
+  </div>
+  <div style="display:flex;gap:12px;justify-content:center;margin-bottom:48px;flex-wrap:wrap">
+    <sc-for list="{{ cats }}" as="c" hint-placeholder-count="4">
+      <button class="{{ c.cls }}" onClick="{{ c.onClick }}">{{ c.label }}</button>
+    </sc-for>
+  </div>
+  <div style="max-width:760px;margin:0 auto">
+    <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Accordion" items="{{ visibleFaqs }}" hint-size="100%,600px"></x-import>
+  </div>
+</x-import>
+
+<div style="background:var(--navy-900);color:var(--white);padding:100px 40px;text-align:center">
+  <h2 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(28px,3.6vw,40px);margin:0 0 24px">Still have a question?</h2>
+  <a href="Contact.dc.html" style="text-decoration:none"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" variant="accent" size="lg" hint-size="200px,52px">Contact Us</x-import></a>
+</div>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const FAQS = {
+  General: [
+    { question: 'What areas do you serve?', answer: 'We serve the greater St. Louis metro area, including St. Louis City and County, and parts of southern Illinois.' },
+    { question: 'Are you licensed and insured?', answer: 'Yes, we are fully licensed and insured in Missouri and Illinois, and carry full liability and workers\u2019 compensation coverage.' },
+    { question: 'Is the initial inspection free?', answer: 'Yes, with no obligation. You receive a written, photograph-backed assessment regardless of whether you move forward.' },
+  ],
+  Process: [
+    { question: 'How long does a typical roof replacement take?', answer: 'Most residential roofs are completed in one to three days. Commercial projects vary by size and are scheduled in phases when needed.' },
+    { question: 'Will the same crew work on my roof the whole time?', answer: 'Yes. We do not subcontract labor — the crew that starts your job finishes it.' },
+    { question: 'Do you clean up the job site daily?', answer: 'Yes, daily magnetic nail sweeps and full debris removal are standard on every job.' },
+  ],
+  Insurance: [
+    { question: 'Do you help with insurance claims?', answer: 'Yes, we document damage, can meet your adjuster on-site, and help make sure the claim reflects the actual scope of repair needed.' },
+    { question: 'What if my claim is denied?', answer: 'We\u2019ll review the denial with you and, where warranted, help you request a re-inspection with supporting documentation.' },
+  ],
+  Warranty: [
+    { question: 'What warranty comes with a new roof?', answer: 'Workmanship is covered for a minimum of 10 years. Manufacturer warranties run up to 25 years depending on the system installed.' },
+    { question: 'Is the warranty transferable if I sell my home?', answer: 'Most manufacturer warranties are transferable one time to a new homeowner — we\u2019ll confirm terms for your specific system.' },
+  ],
+};
+
+class Component extends DCLogic {
+  state = { cat: 'General' };
+
+  renderVals() {
+    const cats = Object.keys(FAQS).map((c) => ({
+      label: c,
+      cls: this.state.cat === c ? 'oxr-cat oxr-cat-active' : 'oxr-cat',
+      onClick: () => this.setState({ cat: c }),
+    }));
+    return {
+      cats,
+      visibleFaqs: FAQS[this.state.cat],
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+      handleCta: () => { window.location.href = 'Contact.dc.html'; },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

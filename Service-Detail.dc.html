@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Service — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>
+    body{margin:0} *{box-sizing:border-box} a{color:inherit}
+    .oxr-photo{position:relative;overflow:hidden;background:repeating-linear-gradient(135deg,var(--slate-200) 0px,var(--slate-200) 2px,var(--slate-100) 2px,var(--slate-100) 46px)}
+    .oxr-photo-dark{background:linear-gradient(165deg,var(--navy-800),var(--navy-900) 65%),repeating-linear-gradient(135deg,rgba(255,255,255,0.05) 0px,rgba(255,255,255,0.05) 1px,transparent 1px,transparent 44px)}
+    .oxr-photo-cap{position:absolute;left:20px;bottom:16px;font:600 11px/1 var(--font-sans);letter-spacing:0.14em;text-transform:uppercase;color:var(--slate-500)}
+    .oxr-check{width:20px;height:20px;flex:none;border-radius:50%;background:var(--gold-50);border:1px solid var(--gold-300);display:flex;align-items:center;justify-content:center;color:var(--text-gold);font-size:12px;font-weight:700}
+  </style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ handleCta }}" hint-size="100%,74px"></x-import>
+
+<section data-screen-label="Service Detail / Hero" style="position:relative;min-height:44vh;display:flex;align-items:flex-end" class="oxr-photo oxr-photo-dark">
+  <div style="position:relative;z-index:2;max-width:var(--container-max);margin:0 auto;width:100%;padding:0 40px 64px;color:var(--white)">
+    <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-400);margin-bottom:20px">{{ service.eyebrow }}</div>
+    <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(32px,4.6vw,50px);margin:0;max-width:760px">{{ service.title }}</h1>
+  </div>
+</section>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,400px">
+  <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:64px">
+    <div>
+      <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:16px">Overview</div>
+      <p style="font:400 17px/1.75 var(--font-sans);color:var(--text-body);margin:0">{{ service.overview }}</p>
+    </div>
+    <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" hint-size="100%,240px">
+      <div style="font:600 18px/1.3 var(--font-sans);color:var(--text-heading);margin-bottom:12px">Get a free estimate</div>
+      <div style="font:400 14px/1.6 var(--font-sans);color:var(--text-body);margin-bottom:20px">Written, itemized, and delivered within 48 hours of your inspection.</div>
+      <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" variant="accent" on-click="{{ handleCta }}" hint-size="100%,46px">Request an Inspection</x-import>
+    </x-import>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="alt" hint-size="100%,380px">
+  <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:32px">Benefits</div>
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px 48px">
+    <sc-for list="{{ service.benefits }}" as="b" hint-placeholder-count="4">
+      <div style="display:flex;gap:14px;align-items:flex-start"><span class="oxr-check">✓</span><span style="font:500 15px/1.6 var(--font-sans);color:var(--text-heading)">{{ b }}</span></div>
+    </sc-for>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,320px">
+  <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:32px">Process</div>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px">
+    <sc-for list="{{ service.process }}" as="p" hint-placeholder-count="4">
+      <div style="border-top:2px solid var(--gold-500);padding-top:20px">
+        <div style="font-family:var(--font-serif-display);font-size:28px;color:var(--gold-500);margin-bottom:10px">{{ p.n }}</div>
+        <div style="font:600 15px/1.3 var(--font-sans);color:var(--text-heading)">{{ p.label }}</div>
+      </div>
+    </sc-for>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="alt" hint-size="100%,400px">
+  <div style="max-width:760px;margin:0 auto">
+    <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:32px;text-align:center">FAQ</div>
+    <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Accordion" items="{{ service.faq }}" hint-size="100%,300px"></x-import>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,260px">
+  <div style="font:600 13px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:24px">Related Services</div>
+  <div style="display:flex;gap:16px;flex-wrap:wrap">
+    <sc-for list="{{ service.related }}" as="r" hint-placeholder-count="3">
+      <a href="{{ r.href }}" style="text-decoration:none"><x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Badge" tone="outline" hint-size="auto,32px">{{ r.label }}</x-import></a>
+    </sc-for>
+  </div>
+</x-import>
+
+<div style="background:var(--navy-900);color:var(--white);padding:100px 40px;text-align:center">
+  <h2 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(28px,3.6vw,40px);margin:0 0 24px">{{ service.ctaHeading }}</h2>
+  <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" variant="accent" size="lg" on-click="{{ handleCta }}" hint-size="240px,52px">Request an Inspection</x-import>
+</div>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const SERVICES = {
+  'residential-roofing': {
+    eyebrow: 'Residential Roofing', title: 'Roofing built around your home, not a template.',
+    overview: 'Every home is different — roofline, pitch, ventilation, and the architecture it needs to match. We spec each residential job individually: architectural asphalt, synthetic slate, or standing-seam metal, installed by a crew that stays with the job from tear-off to final walkthrough.',
+    benefits: ['One dedicated crew, start to finish', 'Daily job-site cleanup, no nail sweeps left to chance', 'Manufacturer warranties up to 25 years', 'Ventilation and decking assessed, not assumed'],
+    process: [{n:'01',label:'Inspect & assess'},{n:'02',label:'Propose & plan'},{n:'03',label:'Install'},{n:'04',label:'Inspect & warranty'}],
+    faq: [{question:'How long does installation take?',answer:'Most residential roofs are completed in one to three days depending on size and pitch.'},{question:'Do you handle permits?',answer:'Yes, we pull all required municipal permits before work begins.'}],
+    related: [{label:'Roof Replacement',href:'Service-Detail.dc.html?service=roof-replacement'},{label:'Roof Repair',href:'Service-Detail.dc.html?service=roof-repair'},{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'}],
+    ctaHeading: 'Ready to see what your roof needs?',
+  },
+  'commercial-roofing': {
+    eyebrow: 'Commercial Roofing', title: 'Low-slope systems that respect your operating hours.',
+    overview: 'TPO, EPDM, and modified bitumen systems installed and maintained around your business — not the other way around. We coordinate directly with property managers and general contractors to keep tenants uninterrupted.',
+    benefits: ['Scheduling built around tenant operations', 'TPO, EPDM & modified bitumen systems', 'Portfolio-wide maintenance contracts available', 'Direct coordination with property managers'],
+    process: [{n:'01',label:'Site assessment'},{n:'02',label:'Scope & bid'},{n:'03',label:'Phased install'},{n:'04',label:'Warranty registration'}],
+    faq: [{question:'Can you work at night or on weekends?',answer:'Yes, for occupied buildings we schedule around your hours, including nights and weekends when needed.'},{question:'Do you offer maintenance contracts?',answer:'Yes, scheduled inspection and maintenance plans are available for single buildings or full portfolios.'}],
+    related: [{label:'Preventative Maintenance',href:'Service-Detail.dc.html?service=preventative-maintenance'},{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'},{label:'Roof Repair',href:'Service-Detail.dc.html?service=roof-repair'}],
+    ctaHeading: 'Talk to us about your property portfolio.',
+  },
+  'roof-replacement': {
+    eyebrow: 'Roof Replacement', title: 'Full tear-off, done right the first time.',
+    overview: 'A replacement is only as good as what happens under the shingles. We inspect decking and ventilation before anything new goes down, then install a system backed by a manufacturer warranty in writing.',
+    benefits: ['Decking replaced where needed, not patched over', 'Ice-and-water shield at all vulnerable points', 'Manufacturer warranties up to 25 years', 'Old materials hauled same-day'],
+    process: [{n:'01',label:'Tear-off'},{n:'02',label:'Deck repair'},{n:'03',label:'New install'},{n:'04',label:'Final inspection'}],
+    faq: [{question:'What happens to my old roofing materials?',answer:'We remove and haul away all old materials the same day as tear-off.'},{question:'What if you find rotted decking?',answer:'We photograph it, quote the repair before proceeding, and never cover it up.'}],
+    related: [{label:'Residential Roofing',href:'Service-Detail.dc.html?service=residential-roofing'},{label:'Insurance Claims Assistance',href:'Service-Detail.dc.html?service=insurance-claims'},{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'}],
+    ctaHeading: 'Get a written replacement estimate.',
+  },
+  'roof-repair': {
+    eyebrow: 'Roof Repair', title: 'Targeted repairs, not a sales pitch for a new roof.',
+    overview: 'Not every leak needs a full replacement. We diagnose the actual source — flashing, a failed seam, storm damage — and fix what needs fixing.',
+    benefits: ['Same-week repair scheduling', 'Root-cause diagnosis, not guesswork', 'Matched materials for a seamless repair', 'Written scope before work begins'],
+    process: [{n:'01',label:'Diagnose'},{n:'02',label:'Quote'},{n:'03',label:'Repair'},{n:'04',label:'Follow-up check'}],
+    faq: [{question:'How fast can you get to an active leak?',answer:'We prioritize active leaks and can typically be on-site within 48 hours.'},{question:'Will you tell me if I actually need a replacement?',answer:'Yes — if a repair isn\u2019t the right long-term fix, we\u2019ll say so and explain why.'}],
+    related: [{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'},{label:'Storm Damage Restoration',href:'Service-Detail.dc.html?service=storm-damage-restoration'},{label:'Preventative Maintenance',href:'Service-Detail.dc.html?service=preventative-maintenance'}],
+    ctaHeading: 'Get your repair scheduled.',
+  },
+  'storm-damage-restoration': {
+    eyebrow: 'Storm Damage Restoration', title: 'Rapid response, insurance-ready documentation.',
+    overview: 'After hail or wind damage, we assess and photograph the roof quickly, meet your adjuster on-site if needed, and restore the roof to pre-storm condition or better.',
+    benefits: ['On-site assessment within 48 hours of a storm', 'Photograph-backed damage documentation', 'Adjuster meetings included', 'Temporary tarping available same-day'],
+    process: [{n:'01',label:'Emergency tarp'},{n:'02',label:'Document damage'},{n:'03',label:'Meet adjuster'},{n:'04',label:'Restore roof'}],
+    faq: [{question:'Do you offer emergency tarping?',answer:'Yes, we can tarp active damage same-day to prevent further water intrusion.'},{question:'Will you meet with my insurance adjuster?',answer:'Yes, we routinely meet adjusters on-site to make sure documented damage is not missed.'}],
+    related: [{label:'Insurance Claims Assistance',href:'Service-Detail.dc.html?service=insurance-claims'},{label:'Roof Repair',href:'Service-Detail.dc.html?service=roof-repair'},{label:'Roof Replacement',href:'Service-Detail.dc.html?service=roof-replacement'}],
+    ctaHeading: 'Get storm damage assessed now.',
+  },
+  'insurance-claims': {
+    eyebrow: 'Insurance Claims Assistance', title: 'We work the claim, so you don\u2019t have to.',
+    overview: 'Insurance claims move faster and more accurately when someone who knows roofing is in the room. We document damage, meet adjusters, and speak the same language as your carrier.',
+    benefits: ['Photograph-backed damage reports', 'Adjuster meetings scheduled around you', 'Claim paperwork reviewed line by line', 'No cost unless your claim is approved'],
+    process: [{n:'01',label:'Damage review'},{n:'02',label:'File support'},{n:'03',label:'Adjuster meeting'},{n:'04',label:'Approved repair'}],
+    faq: [{question:'Do you charge for claims assistance?',answer:'No, this is included at no charge when you move forward with the repair or replacement.'},{question:'What if my claim is denied?',answer:'We\u2019ll walk through the denial with you and, where warranted, help you request a re-inspection.'}],
+    related: [{label:'Storm Damage Restoration',href:'Service-Detail.dc.html?service=storm-damage-restoration'},{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'},{label:'Roof Replacement',href:'Service-Detail.dc.html?service=roof-replacement'}],
+    ctaHeading: 'Let us help with your claim.',
+  },
+  'roof-inspections': {
+    eyebrow: 'Roof Inspections', title: 'A documented assessment, no pressure, no upsell.',
+    overview: 'A thorough, photograph-backed inspection of your roof\u2019s condition — shingles, flashing, decking, and ventilation — delivered in writing whether or not you move forward with us.',
+    benefits: ['Free, no-obligation inspection', 'Photograph-backed written report', 'Ventilation and decking checked, not assumed', 'Delivered within 48 hours'],
+    process: [{n:'01',label:'Schedule'},{n:'02',label:'On-site walkthrough'},{n:'03',label:'Photograph findings'},{n:'04',label:'Written report'}],
+    faq: [{question:'Is the inspection really free?',answer:'Yes, with no obligation to book further work.'},{question:'How long does an inspection take?',answer:'Most residential inspections take 30 to 45 minutes on-site.'}],
+    related: [{label:'Preventative Maintenance',href:'Service-Detail.dc.html?service=preventative-maintenance'},{label:'Roof Repair',href:'Service-Detail.dc.html?service=roof-repair'},{label:'Roof Replacement',href:'Service-Detail.dc.html?service=roof-replacement'}],
+    ctaHeading: 'Book your free inspection.',
+  },
+  'preventative-maintenance': {
+    eyebrow: 'Preventative Maintenance', title: 'Scheduled upkeep that extends your roof\u2019s life.',
+    overview: 'A maintenance plan catches small issues — a lifted shingle, a clogged drain, a failing sealant — before they become leaks. Available for single homes or full commercial portfolios.',
+    benefits: ['Scheduled twice-yearly inspections', 'Minor repairs included in plan pricing', 'Priority scheduling after storms', 'Portfolio-wide plans for property managers'],
+    process: [{n:'01',label:'Baseline inspection'},{n:'02',label:'Maintenance plan'},{n:'03',label:'Scheduled visits'},{n:'04',label:'Annual report'}],
+    faq: [{question:'How often do you visit?',answer:'Standard plans include two scheduled visits per year, spring and fall.'},{question:'Are minor repairs included?',answer:'Yes, minor repairs found during scheduled visits are included in most plans.'}],
+    related: [{label:'Roof Inspections',href:'Service-Detail.dc.html?service=roof-inspections'},{label:'Commercial Roofing',href:'Service-Detail.dc.html?service=commercial-roofing'},{label:'Roof Repair',href:'Service-Detail.dc.html?service=roof-repair'}],
+    ctaHeading: 'Set up a maintenance plan.',
+  },
+};
+
+class Component extends DCLogic {
+  state = { slug: 'residential-roofing' };
+
+  componentDidMount() {
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get('service');
+    if (slug && SERVICES[slug]) this.setState({ slug });
+  }
+
+  renderVals() {
+    const service = SERVICES[this.state.slug] || SERVICES['residential-roofing'];
+    return {
+      service,
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+      handleCta: () => { window.location.href = 'Contact.dc.html'; },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+:root {
+  /* 8px base unit spacing scale */
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs:  12px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  32px;
+  --space-xl:  48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-section: 120px; /* generous section rhythm, Apple-inspired restraint */
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --gutter: 24px;
+}

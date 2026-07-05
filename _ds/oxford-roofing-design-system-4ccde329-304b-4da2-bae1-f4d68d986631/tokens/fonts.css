@@ -1,0 +1,5 @@
+/* Webfonts via Google Fonts CDN (both are open-source / OFL, safe to link directly).
+   Cinzel = the closest open-match to the logo's Roman inscription-style serif.
+   Montserrat = clean geometric sans-serif pairing per brand brief. */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Oxford Roofing</title>
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/tokens/effects.css">
+  <link rel="stylesheet" href="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/styles.css">
+  <script src="_ds/oxford-roofing-design-system-4ccde329-304b-4da2-bae1-f4d68d986631/_ds_bundle.js"></script>
+  <style>body{margin:0} *{box-sizing:border-box} a{color:inherit}</style>
+</helmet>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.NavBar" logo-src="./assets/oxford-roofing-logo.png" links="{{ navLinks }}" cta-label="Request an Inspection" on-cta-click="{{ scrollToForm }}" hint-size="100%,74px"></x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="light" hint-size="100%,220px">
+  <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.18em;text-transform:uppercase;color:var(--text-gold);margin-bottom:20px">Contact</div>
+  <h1 style="font-family:var(--font-serif-display);font-weight:600;font-size:clamp(32px,4.4vw,48px);color:var(--text-heading);margin:0;max-width:640px">Let's talk about your roof.</h1>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Section" tone="alt" hint-size="100%,900px" id="estimate-form">
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:start">
+    <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Card" elevated="{{ true }}" padding="lg" hint-size="100%,760px">
+      <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+        <div style="padding:24px 0;text-align:center">
+          <div style="font-family:var(--font-serif-display);font-size:26px;color:var(--text-heading);margin-bottom:12px">Request received.</div>
+          <div style="font:400 15px/1.6 var(--font-sans);color:var(--text-body)">We'll follow up within one business day to schedule your free inspection.</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+      <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:20px">
+        <div style="font-family:var(--font-serif-display);font-size:24px;color:var(--text-heading);margin-bottom:4px">Request a free estimate</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Input" label="Full name" placeholder="Jane Carter" value="{{ fields.name }}" onChange="{{ setField.name }}" error="{{ errors.name }}" hint-size="100%,66px"></x-import>
+          <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Input" label="Phone" type="tel" placeholder="(314) 555-0100" value="{{ fields.phone }}" onChange="{{ setField.phone }}" error="{{ errors.phone }}" hint-size="100%,66px"></x-import>
+        </div>
+        <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Input" label="Email" type="email" placeholder="jane@email.com" value="{{ fields.email }}" onChange="{{ setField.email }}" error="{{ errors.email }}" hint-size="100%,66px"></x-import>
+        <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Input" label="Property address" placeholder="123 Maple Ave, St. Louis, MO" value="{{ fields.address }}" onChange="{{ setField.address }}" error="{{ errors.address }}" hint-size="100%,66px"></x-import>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+          <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Select" label="Property type" options="{{ propertyOptions }}" value="{{ fields.propertyType }}" onChange="{{ setField.propertyType }}" hint-size="100%,66px"></x-import>
+          <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Select" label="Service needed" options="{{ serviceOptions }}" value="{{ fields.service }}" onChange="{{ setField.service }}" hint-size="100%,66px"></x-import>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <label style="font:600 13px var(--font-sans);color:var(--text-heading)">Details <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+          <textarea rows="4" placeholder="Tell us about the issue, or anything else we should know before the inspection." value="{{ fields.details }}" onChange="{{ setField.details }}" style="font-family:var(--font-sans);font-size:15px;padding:11px 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:var(--surface);color:var(--text-body);resize:vertical"></textarea>
+        </div>
+        <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Checkbox" label="This is an emergency (active leak or storm damage)" checked="{{ fields.emergency }}" onChange="{{ setField.emergency }}" hint-size="auto,24px"></x-import>
+        <sc-if value="{{ showFormError }}" hint-placeholder-val="{{ false }}">
+          <div style="font:500 13px var(--font-sans);color:var(--semantic-danger)">Please fix the highlighted fields above before submitting.</div>
+        </sc-if>
+        <x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Button" type="submit" variant="accent" size="lg" hint-size="100%,52px">Submit Request</x-import>
+      </form>
+      </sc-if>
+    </x-import>
+
+    <div style="display:flex;flex-direction:column;gap:32px">
+      <div>
+        <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Phone</div>
+        <div style="font:600 20px var(--font-sans);color:var(--text-heading)">(314) 555-0142</div>
+      </div>
+      <div>
+        <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Email</div>
+        <div style="font:500 16px var(--font-sans);color:var(--text-heading)">hello@oxfordroofing.com</div>
+      </div>
+      <div>
+        <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Office</div>
+        <div style="font:500 16px/1.5 var(--font-sans);color:var(--text-heading)">4820 Manchester Ave<br>St. Louis, MO 63110</div>
+      </div>
+      <div>
+        <div style="font:600 12px/1 var(--font-sans);letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px">Business Hours</div>
+        <div style="font:400 15px/1.8 var(--font-sans);color:var(--text-body)">Mon – Fri: 7:00am – 6:00pm<br>Saturday: 8:00am – 2:00pm<br>Sunday: Closed</div>
+      </div>
+      <div style="padding:16px 20px;background:var(--surface-gold-tint);border:1px solid var(--gold-300);border-radius:var(--radius-md)">
+        <div style="font:600 13px var(--font-sans);color:var(--text-gold);margin-bottom:4px">Active leak or storm damage?</div>
+        <div style="font:400 14px/1.5 var(--font-sans);color:var(--text-body)">Call our emergency line any time: (314) 555-0199</div>
+      </div>
+      <div class="oxr-photo" style="height:220px;border-radius:var(--radius-lg);position:relative;background:repeating-linear-gradient(135deg,var(--slate-200) 0px,var(--slate-200) 2px,var(--slate-100) 2px,var(--slate-100) 46px)"><span style="position:absolute;left:16px;bottom:14px;font:600 11px/1 var(--font-sans);letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-500)">Map — 4820 Manchester Ave</span></div>
+    </div>
+  </div>
+</x-import>
+
+<x-import component-from-global-scope="OxfordRoofingDesignSystem_4ccde3.Footer" logo-src="./assets/oxford-roofing-logo.png" hint-size="100%,320px"></x-import>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    fields: { name: '', phone: '', email: '', address: '', propertyType: 'residential', service: 'roof-replacement', details: '', emergency: false },
+    errors: {},
+    submitted: false,
+    showFormError: false,
+  };
+
+  validate(fields) {
+    const errors = {};
+    if (!fields.name.trim()) errors.name = 'Enter your name.';
+    if (!/^[\d\s()+-]{7,}$/.test(fields.phone.trim())) errors.phone = 'Enter a valid phone number.';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fields.email.trim())) errors.email = 'Enter a valid email.';
+    if (!fields.address.trim()) errors.address = 'Enter the property address.';
+    return errors;
+  }
+
+  renderVals() {
+    const fields = this.state.fields;
+    const setFieldFactory = (key) => (e) => {
+      const value = e && e.target ? (e.target.type === 'checkbox' ? e.target.checked : e.target.value) : e;
+      this.setState((s) => ({ fields: { ...s.fields, [key]: value } }));
+    };
+    return {
+      fields,
+      errors: this.state.errors,
+      submitted: this.state.submitted,
+      notSubmitted: !this.state.submitted,
+      showFormError: this.state.showFormError,
+      propertyOptions: [
+        { value: 'residential', label: 'Residential' },
+        { value: 'commercial', label: 'Commercial' },
+      ],
+      serviceOptions: [
+        { value: 'roof-replacement', label: 'Roof Replacement' },
+        { value: 'roof-repair', label: 'Roof Repair' },
+        { value: 'storm-damage-restoration', label: 'Storm Damage Restoration' },
+        { value: 'roof-inspections', label: 'Roof Inspection' },
+        { value: 'preventative-maintenance', label: 'Preventative Maintenance' },
+        { value: 'not-sure', label: "I'm not sure yet" },
+      ],
+      setField: {
+        name: setFieldFactory('name'),
+        phone: setFieldFactory('phone'),
+        email: setFieldFactory('email'),
+        address: setFieldFactory('address'),
+        propertyType: setFieldFactory('propertyType'),
+        service: setFieldFactory('service'),
+        details: setFieldFactory('details'),
+        emergency: setFieldFactory('emergency'),
+      },
+      handleSubmit: (e) => {
+        e.preventDefault();
+        const errors = this.validate(fields);
+        if (Object.keys(errors).length) {
+          this.setState({ errors, showFormError: true });
+          return;
+        }
+        this.setState({ errors: {}, showFormError: false });
+        window.location.href = 'Thank-You.dc.html';
+      },
+      scrollToForm: () => {
+        const el = document.getElementById('estimate-form');
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.pageYOffset - 90;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      },
+      navLinks: [
+        { label: 'Home', href: 'Home.dc.html' },
+        { label: 'About', href: 'About.dc.html' },
+        { label: 'Services', href: 'Services.dc.html' },
+        { label: 'Portfolio', href: 'Portfolio.dc.html' },
+        { label: 'Financing', href: 'Financing.dc.html' },
+        { label: 'FAQ', href: 'FAQ.dc.html' },
+        { label: 'Contact', href: 'Contact.dc.html' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

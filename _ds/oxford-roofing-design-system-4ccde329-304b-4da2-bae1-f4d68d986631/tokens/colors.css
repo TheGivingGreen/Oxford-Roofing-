@@ -1,0 +1,130 @@
+/* Oxford Roofing — Color Tokens
+   Base brand colors extracted from logo:
+   Oxford Navy #03234D · Metallic Gold #C09657 · Olive Gold #857D10 (supporting only) · White #FFFFFF
+*/
+
+:root {
+  /* ---------- Navy scale (brand primary) ---------- */
+  --navy-50:  #f5f7fa;
+  --navy-100: #e6ecf4;
+  --navy-200: #c6d6eb;
+  --navy-300: #96b8e3;
+  --navy-400: #528fe0;
+  --navy-500: #166bda;
+  --navy-600: #0b51ad;
+  --navy-700: #073c83;
+  --navy-800: #042d62;
+  --navy-900: #03234d; /* = Oxford Navy, brand anchor */
+
+  /* ---------- Gold scale (brand accent) ---------- */
+  --gold-50:  #fbf8f4;
+  --gold-100: #f5efe5;
+  --gold-200: #eadcc8;
+  --gold-300: #dcc5a3;
+  --gold-400: #cdab7a;
+  --gold-500: #c09657; /* = Metallic Gold, brand anchor */
+  --gold-600: #a97e3d;
+  --gold-700: #89652f;
+  --gold-800: #684c22;
+  --gold-900: #4b3616;
+
+  /* ---------- Olive Gold scale (supporting accent ONLY — do not use for primary CTAs) ---------- */
+  --olive-50:  #fafaef;
+  --olive-100: #f6f4da;
+  --olive-200: #ede9ab;
+  --olive-300: #e7df74;
+  --olive-400: #e1d637;
+  --olive-500: #cbbf1a;
+  --olive-600: #a89e15;
+  --olive-700: #857d10; /* = Olive Gold, brand anchor */
+  --olive-800: #645e0c;
+  --olive-900: #454108;
+
+  /* ---------- Neutral slate scale (navy-tinted grays) ---------- */
+  --slate-50:  #f7f8fa;
+  --slate-100: #f0f2f5;
+  --slate-200: #dee2e7;
+  --slate-300: #bfc6cf;
+  --slate-400: #98a2ae;
+  --slate-500: #737e8c;
+  --slate-600: #5a626d;
+  --slate-700: #424952;
+  --slate-800: #2a3037;
+  --slate-900: #171b21;
+
+  /* ---------- Absolute ---------- */
+  --white: #ffffff;
+  --black: #000000;
+
+  /* =====================================================
+     Semantic aliases — use these in components, not raw scales
+     ===================================================== */
+
+  /* Backgrounds */
+  --bg-page:        var(--white);
+  --bg-page-alt:    var(--slate-50);   /* subtle alternating section */
+  --bg-page-dark:   var(--navy-900);
+  --bg-page-dark-2: var(--navy-800);   /* micro-step lighter, for stacked dark sections */
+
+  /* Surfaces (cards, panels) */
+  --surface:        var(--white);
+  --surface-raised: var(--white);
+  --surface-sunken: var(--slate-50);
+  --surface-dark:   var(--navy-800);
+  --surface-gold-tint: var(--gold-50);
+
+  /* Borders */
+  --border-subtle:  var(--slate-200);
+  --border-default: var(--slate-300);
+  --border-strong:  var(--navy-900);
+  --border-gold:    var(--gold-500);
+  --border-on-dark: rgba(255, 255, 255, 0.16);
+
+  /* Typography colors */
+  --text-heading:      var(--navy-900);
+  --text-body:         var(--slate-700);
+  --text-muted:        var(--slate-500);
+  --text-on-dark:      var(--white);
+  --text-on-dark-muted: var(--slate-300);
+  --text-gold:         var(--gold-600);
+  --text-gold-on-dark: var(--gold-400);
+  --text-link:         var(--navy-700);
+  --text-link-hover:   var(--navy-900);
+
+  /* Buttons — primary (navy) */
+  --btn-primary-bg:          var(--navy-900);
+  --btn-primary-bg-hover:    var(--navy-800);
+  --btn-primary-bg-active:   var(--navy-700);
+  --btn-primary-text:        var(--white);
+
+  /* Buttons — accent (gold) */
+  --btn-accent-bg:           var(--gold-500);
+  --btn-accent-bg-hover:     var(--gold-600);
+  --btn-accent-bg-active:    var(--gold-700);
+  --btn-accent-text:         var(--navy-900);
+
+  /* Buttons — secondary (outline) */
+  --btn-secondary-border:       var(--navy-900);
+  --btn-secondary-border-hover: var(--navy-700);
+  --btn-secondary-text:         var(--navy-900);
+  --btn-secondary-bg-hover:     var(--navy-50);
+
+  /* Buttons — ghost / on-dark */
+  --btn-ghost-text:          var(--white);
+  --btn-ghost-border:        rgba(255, 255, 255, 0.4);
+  --btn-ghost-bg-hover:      rgba(255, 255, 255, 0.08);
+
+  /* Focus */
+  --focus-ring:        var(--gold-500);
+  --focus-ring-offset: var(--white);
+
+  /* Semantic (status) — desaturated, kept subordinate to brand palette */
+  --semantic-success:      #2f6b46;
+  --semantic-success-bg:   #eaf3ee;
+  --semantic-warning:      #8a5a10;
+  --semantic-warning-bg:   #fbf1e0;
+  --semantic-danger:       #8a2a24;
+  --semantic-danger-bg:    #f8ebea;
+  --semantic-info:         var(--navy-700);
+  --semantic-info-bg:      var(--navy-50);
+}
