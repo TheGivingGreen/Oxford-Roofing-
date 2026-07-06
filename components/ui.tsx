@@ -94,7 +94,7 @@ export function Section({ children, tone = "light", className = "" }: { children
     dark: "bg-[var(--bg-page-dark)] text-white"
   };
   return (
-    <section className={`${tones[tone]} px-6 py-20 md:px-10 md:py-[var(--space-section)] ${className}`}>
+    <section className={`${tones[tone]} px-6 py-16 md:px-10 md:py-[var(--space-section)] ${className}`}>
       <div className="mx-auto max-w-container">{children}</div>
     </section>
   );
@@ -112,9 +112,9 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-white">
-      <div className="mx-auto flex h-[120px] max-w-container items-center justify-between px-6 md:px-10">
+      <div className="mx-auto flex h-[84px] max-w-container items-center justify-between px-5 md:h-[96px] md:px-10 lg:h-[120px]">
         <Link href="/" className="flex items-center">
-          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-[72px] w-auto" />
+          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-14 w-auto md:h-16 lg:h-[72px]" />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
@@ -131,7 +131,7 @@ export function NavBar() {
         </button>
       </div>
       {open ? (
-        <div className="border-t border-[var(--border-subtle)] bg-white px-6 py-5 lg:hidden">
+        <div className="border-t border-[var(--border-subtle)] bg-white px-5 py-5 shadow-card lg:hidden">
           <nav className="mx-auto flex max-w-container flex-col gap-4">
             {navLinks.map((link) => <Link key={link.href} href={link.href} className="font-sans text-sm font-semibold text-[var(--text-heading)]" onClick={() => setOpen(false)}>{link.label}</Link>)}
             <Button href="/contact" size="md" className="mt-2 w-full">Request an Inspection</Button>
@@ -144,10 +144,10 @@ export function NavBar() {
 
 export function Footer() {
   return (
-    <footer className="bg-navy-900 px-6 py-16 text-white md:px-10">
+    <footer className="bg-navy-900 px-6 py-14 text-white md:px-10 md:py-16">
       <div className="mx-auto grid max-w-container gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <img src={assetPath("/assets/oxford-roofing-logo-footer.png")} alt="Oxford Roofing" className="mb-6 h-20 w-auto" />
+          <img src={assetPath("/assets/oxford-roofing-logo-footer.png")} alt="Oxford Roofing" className="mb-6 h-16 w-auto md:h-20" />
           <p className="m-0 max-w-sm font-sans text-sm leading-[1.7] text-white/70">Commercial and residential roofing for St. Louis homes, businesses, and property portfolios.</p>
         </div>
         <div>

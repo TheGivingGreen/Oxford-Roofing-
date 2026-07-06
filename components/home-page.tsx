@@ -10,14 +10,14 @@ export function HomePage() {
 
   return (
     <main>
-      <section className="oxr-photo oxr-photo-dark relative flex min-h-[88vh] items-end">
-        <div className="relative z-10 mx-auto w-full max-w-container px-6 pb-[88px] text-white md:px-10">
-          <div className="mb-6 inline-flex items-center gap-2.5">
+      <section className="oxr-photo oxr-photo-dark relative flex min-h-[calc(100svh-84px)] items-end md:min-h-[calc(100svh-96px)] lg:min-h-[88vh]">
+        <div className="relative z-10 mx-auto w-full max-w-container px-6 pb-14 text-white md:px-10 md:pb-[88px]">
+          <div className="mb-5 inline-flex items-center gap-2.5 md:mb-6">
             <span className="h-px w-7 bg-gold-500" />
             <span className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-400">Commercial & Residential Roofing · St. Louis</span>
           </div>
-          <h1 className="m-0 mb-6 max-w-[900px] font-display text-[clamp(40px,6vw,68px)] font-semibold leading-[1.08] tracking-[0.01em]">Built to outlast the weather it stops.</h1>
-          <p className="m-0 mb-10 max-w-[560px] font-sans text-[19px] leading-[1.6] text-white/82">Forty years of roofing St. Louis homes and businesses. One crew sees every job from tear-off to final inspection — no subcontracted labor, no surprises on the invoice.</p>
+          <h1 className="m-0 mb-5 max-w-[900px] font-display text-[clamp(34px,11vw,68px)] font-semibold leading-[1.08] tracking-[0.01em] md:mb-6">Built to outlast the weather it stops.</h1>
+          <p className="m-0 mb-8 max-w-[560px] font-sans text-[17px] leading-[1.6] text-white/82 md:mb-10 md:text-[19px]">Forty years of roofing St. Louis homes and businesses. One crew sees every job from tear-off to final inspection — no subcontracted labor, no surprises on the invoice.</p>
           <div className="flex flex-wrap gap-4">
             <Button href="/contact" variant="accent" size="lg">Request an Inspection</Button>
             <Button href="/portfolio" variant="ghost" size="lg">View Our Work</Button>
@@ -87,15 +87,15 @@ export function HomePage() {
       </Section>
 
       <div className="grid md:grid-cols-2">
-        <div className="flex flex-col justify-center bg-navy-900 px-6 py-20 text-white md:px-14 md:py-24">
+        <div className="flex flex-col justify-center bg-navy-900 px-6 py-16 text-white md:px-14 md:py-24">
           <Eyebrow onDark>Commercial</Eyebrow>
           <h3 className="m-0 mb-4 font-display text-3xl font-semibold">Roofs that do not interrupt business.</h3>
           <p className="m-0 mb-7 max-w-[420px] font-sans text-[15px] leading-[1.7] text-white/75">TPO, EPDM, and modified bitumen systems, scheduled around your operating hours, with minimal-downtime install plans.</p>
           <Button href="/services/commercial-roofing" variant="ghost">Commercial Roofing</Button>
         </div>
-        <PhotoBlock caption="Photography — commercial flat roof, downtown St. Louis" className="min-h-[340px]" />
-        <PhotoBlock caption="Photography — residential tear-off, Kirkwood" className="min-h-[340px] md:order-[-1]" />
-        <div className="flex flex-col justify-center bg-slate-50 px-6 py-20 md:px-14 md:py-24">
+        <PhotoBlock caption="Photography — commercial flat roof, downtown St. Louis" className="min-h-[260px] md:min-h-[340px]" />
+        <PhotoBlock caption="Photography — residential tear-off, Kirkwood" className="min-h-[260px] md:min-h-[340px] md:order-[-1]" />
+        <div className="flex flex-col justify-center bg-slate-50 px-6 py-16 md:px-14 md:py-24">
           <Eyebrow>Residential</Eyebrow>
           <h3 className="m-0 mb-4 font-display text-3xl font-semibold text-[var(--text-heading)]">Roofs that raise a home's standard.</h3>
           <p className="m-0 mb-7 max-w-[420px] font-sans text-[15px] leading-[1.7] text-[var(--text-body)]">Architectural asphalt, standing-seam metal, and slate-look systems, matched to your home and installed to last decades.</p>
@@ -111,7 +111,7 @@ export function HomePage() {
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project) => (
             <Link key={project.slug} href={`/portfolio/${project.slug}`}>
-              <PhotoBlock caption={project.caption} className="h-[260px] rounded-lg" />
+              <PhotoBlock caption={project.caption} className="h-[220px] rounded-lg md:h-[260px]" />
               <div className="pt-4 font-sans text-[17px] font-semibold leading-[1.3] text-[var(--text-heading)]">{project.title}</div>
               <div className="mt-1 font-sans text-sm leading-[1.5] text-[var(--text-muted)]">{project.meta}</div>
             </Link>
@@ -122,7 +122,7 @@ export function HomePage() {
       <Section>
         <div className="mb-12 text-center"><Eyebrow>Before & After</Eyebrow><h2 className="m-0 mx-auto max-w-[600px] font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">See the difference a proper install makes.</h2></div>
         <div className="mx-auto max-w-[900px]">
-          <div className="relative h-[460px] overflow-hidden rounded-lg">
+          <div className="relative h-[340px] overflow-hidden rounded-lg md:h-[460px]">
             <div className="oxr-photo absolute inset-0 bg-[repeating-linear-gradient(135deg,var(--slate-300)_0px,var(--slate-300)_2px,var(--slate-200)_2px,var(--slate-200)_46px)]" />
             <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - baPos}% 0 0)` }}><div className="oxr-photo oxr-photo-dark absolute inset-0" /></div>
             <span className="absolute bottom-4 left-5 z-10 rounded-sm bg-white/85 px-2.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-900">Photography — before: worn three-tab shingles</span>
@@ -159,7 +159,7 @@ export function HomePage() {
         </div>
       </Section>
 
-      <section className="bg-navy-900 px-6 py-[120px] text-center text-white md:px-10">
+      <section className="bg-navy-900 px-6 py-20 text-center text-white md:px-10 md:py-[120px]">
         <h2 className="m-0 mb-5 font-display text-[clamp(30px,4vw,46px)] font-semibold">Protect what you have built.</h2>
         <p className="m-0 mb-9 font-sans text-[17px] leading-[1.6] text-white/75">Request a free, no-obligation inspection — most estimates delivered within 48 hours.</p>
         <Button href="/contact" variant="accent" size="lg">Request a Free Estimate</Button>
