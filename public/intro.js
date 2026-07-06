@@ -12,10 +12,20 @@
     storage = null;
   }
 
+  let persistentStorage = null;
+
+  try {
+    persistentStorage = window.localStorage;
+  } catch {
+    persistentStorage = null;
+  }
+
   const forceReplay = window.location.search.includes("intro=1") || window.location.hash.includes("intro");
-  const alreadySeen = !forceReplay && storage?.getItem(key) === "true";
+  const alreadySeen = !forceReplay && (storage?.getItem(key) === "true" || persistentStorage?.getItem(key) === "true");
 
   const dismiss = () => {
+    storage?.setItem(key, "true");
+    persistentStorage?.setItem(key, "true");
     overlay.style.opacity = "0";
     window.setTimeout(() => overlay.remove(), 420);
   };
@@ -29,8 +39,10 @@
 
   if (forceReplay) {
     storage?.removeItem(key);
+    persistentStorage?.removeItem(key);
   } else {
     storage?.setItem(key, "true");
+    persistentStorage?.setItem(key, "true");
   }
 
   const video = document.getElementById("oxr-intro-video");
