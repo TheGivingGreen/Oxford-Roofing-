@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { IntroOverlay } from "@/components/intro-overlay";
 import { Footer, NavBar } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -11,6 +12,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
+        <IntroOverlay />
         <NavBar />
         {children}
         <Footer />

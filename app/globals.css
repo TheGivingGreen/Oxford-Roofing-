@@ -255,3 +255,20 @@ input[type="range"].oxr-ba-slider::-moz-range-thumb {
     transform: translateY(0);
   }
 }
+
+#oxr-intro-overlay {
+  animation: oxrIntroFallback 12s var(--ease-standard) forwards;
+}
+
+@keyframes oxrIntroFallback {
+  0%, 96% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
