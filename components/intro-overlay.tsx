@@ -3,9 +3,9 @@ import { assetPath } from "@/lib/paths";
 export function IntroOverlay() {
   const videoSrc = assetPath("/videos/oxford-opening.mp4");
   const scriptSrc = assetPath("/intro.js");
-  const key = "oxford-roofing-intro-seen";
+  const key = "oxford-roofing-intro-seen-v2";
   const bootstrap =
-    "(function(){var k='oxford-roofing-intro-seen';var force=location.search.indexOf('intro=1')>-1||location.hash.indexOf('intro')>-1;var seen=false;try{seen=sessionStorage.getItem(k)==='true'}catch(e){}if(force){try{sessionStorage.removeItem(k)}catch(e){}}else if(seen){document.documentElement.classList.add('oxr-intro-seen')}else{try{sessionStorage.setItem(k,'true')}catch(e){}}})();";
+    "(function(){var k='oxford-roofing-intro-seen-v2';var force=location.search.indexOf('intro=1')>-1||location.hash.indexOf('intro')>-1;var seen=false;try{seen=sessionStorage.getItem(k)==='true'}catch(e){}if(force){try{sessionStorage.removeItem(k)}catch(e){}}else if(seen){document.documentElement.classList.add('oxr-intro-seen')}else{try{sessionStorage.setItem(k,'true')}catch(e){}}})();";
   const dismiss =
     `try{sessionStorage.setItem('${key}','true')}catch(e){}var o=document.getElementById('oxr-intro-overlay');if(o){o.style.opacity='0';window.setTimeout(function(){o.remove()},420)}`;
 
