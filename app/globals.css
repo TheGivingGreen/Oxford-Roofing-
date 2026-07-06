@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy-50: #f5f7fa;
+  --navy-100: #e6ecf4;
+  --navy-200: #c6d6eb;
+  --navy-300: #96b8e3;
+  --navy-400: #528fe0;
+  --navy-500: #166bda;
+  --navy-600: #0b51ad;
+  --navy-700: #073c83;
+  --navy-800: #042d62;
+  --navy-900: #03234d;
+  --gold-50: #fbf8f4;
+  --gold-100: #f5efe5;
+  --gold-200: #eadcc8;
+  --gold-300: #dcc5a3;
+  --gold-400: #cdab7a;
+  --gold-500: #c09657;
+  --gold-600: #a97e3d;
+  --gold-700: #89652f;
+  --gold-800: #684c22;
+  --gold-900: #4b3616;
+  --olive-50: #fafaef;
+  --olive-100: #f6f4da;
+  --olive-200: #ede9ab;
+  --olive-300: #e7df74;
+  --olive-400: #e1d637;
+  --olive-500: #cbbf1a;
+  --olive-600: #a89e15;
+  --olive-700: #857d10;
+  --olive-800: #645e0c;
+  --olive-900: #454108;
+  --slate-50: #f7f8fa;
+  --slate-100: #f0f2f5;
+  --slate-200: #dee2e7;
+  --slate-300: #bfc6cf;
+  --slate-400: #98a2ae;
+  --slate-500: #737e8c;
+  --slate-600: #5a626d;
+  --slate-700: #424952;
+  --slate-800: #2a3037;
+  --slate-900: #171b21;
+  --white: #ffffff;
+  --black: #000000;
+  --bg-page: var(--white);
+  --bg-page-alt: var(--slate-50);
+  --bg-page-dark: var(--navy-900);
+  --bg-page-dark-2: var(--navy-800);
+  --surface: var(--white);
+  --surface-raised: var(--white);
+  --surface-sunken: var(--slate-50);
+  --surface-dark: var(--navy-800);
+  --surface-gold-tint: var(--gold-50);
+  --border-subtle: var(--slate-200);
+  --border-default: var(--slate-300);
+  --border-strong: var(--navy-900);
+  --border-gold: var(--gold-500);
+  --border-on-dark: rgba(255, 255, 255, 0.16);
+  --text-heading: var(--navy-900);
+  --text-body: var(--slate-700);
+  --text-muted: var(--slate-500);
+  --text-on-dark: var(--white);
+  --text-on-dark-muted: var(--slate-300);
+  --text-gold: var(--gold-600);
+  --text-gold-on-dark: var(--gold-400);
+  --text-link: var(--navy-700);
+  --text-link-hover: var(--navy-900);
+  --btn-primary-bg: var(--navy-900);
+  --btn-primary-bg-hover: var(--navy-800);
+  --btn-primary-bg-active: var(--navy-700);
+  --btn-primary-text: var(--white);
+  --btn-accent-bg: var(--gold-500);
+  --btn-accent-bg-hover: var(--gold-600);
+  --btn-accent-bg-active: var(--gold-700);
+  --btn-accent-text: var(--navy-900);
+  --btn-secondary-border: var(--navy-900);
+  --btn-secondary-border-hover: var(--navy-700);
+  --btn-secondary-text: var(--navy-900);
+  --btn-secondary-bg-hover: var(--navy-50);
+  --btn-ghost-text: var(--white);
+  --btn-ghost-border: rgba(255, 255, 255, 0.4);
+  --btn-ghost-bg-hover: rgba(255, 255, 255, 0.08);
+  --focus-ring: var(--gold-500);
+  --focus-ring-offset: var(--white);
+  --semantic-success: #2f6b46;
+  --semantic-success-bg: #eaf3ee;
+  --semantic-warning: #8a5a10;
+  --semantic-warning-bg: #fbf1e0;
+  --semantic-danger: #8a2a24;
+  --semantic-danger-bg: #f8ebea;
+  --semantic-info: var(--navy-700);
+  --semantic-info-bg: var(--navy-50);
+  --font-serif-display: "Cinzel", "Trajan Pro", Georgia, serif;
+  --font-sans: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --font-size-display-xl: 64px;
+  --font-size-display-lg: 48px;
+  --font-size-display-md: 36px;
+  --font-size-display-sm: 28px;
+  --font-size-eyebrow: 13px;
+  --font-size-lead: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-caption: 12px;
+  --leading-tight: 1.12;
+  --leading-snug: 1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+  --tracking-display: 0.01em;
+  --tracking-eyebrow: 0.18em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --space-3xs: 4px;
+  --space-2xs: 8px;
+  --space-xs: 12px;
+  --space-sm: 16px;
+  --space-md: 24px;
+  --space-lg: 32px;
+  --space-xl: 48px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+  --space-section: 120px;
+  --container-max: 1200px;
+  --container-narrow: 760px;
+  --gutter: 24px;
+  --radius-none: 0px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-pill: 9999px;
+  --shadow-none: none;
+  --shadow-card: 0 1px 2px rgba(3, 35, 77, 0.06), 0 4px 16px rgba(3, 35, 77, 0.06);
+  --shadow-card-hover: 0 8px 28px rgba(3, 35, 77, 0.12);
+  --shadow-elevated: 0 16px 48px rgba(3, 35, 77, 0.16);
+  --shadow-gold-glow: 0 0 0 1px rgba(192, 150, 87, 0.35);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-base: 240ms;
+  --duration-slow: 400ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-body);
+  font-family: var(--font-sans);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.oxr-photo {
+  position: relative;
+  overflow: hidden;
+  background: repeating-linear-gradient(135deg, var(--slate-200) 0px, var(--slate-200) 2px, var(--slate-100) 2px, var(--slate-100) 46px);
+}
+
+.oxr-photo-dark {
+  background: linear-gradient(165deg, var(--navy-800), var(--navy-900) 65%), repeating-linear-gradient(135deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 44px);
+}
+
+.oxr-photo-cap {
+  position: absolute;
+  left: 20px;
+  bottom: 16px;
+  color: var(--slate-500);
+  font: 600 11px/1 var(--font-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.oxr-photo-cap-dark {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.oxr-check {
+  align-items: center;
+  background: var(--gold-50);
+  border: 1px solid var(--gold-300);
+  border-radius: 9999px;
+  color: var(--text-gold);
+  display: flex;
+  flex: none;
+  font-size: 12px;
+  font-weight: 700;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+}
+
+input[type="range"].oxr-ba-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  height: 2px;
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+input[type="range"].oxr-ba-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: var(--white);
+  border: 2px solid var(--navy-900);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  cursor: ew-resize;
+  height: 44px;
+  width: 44px;
+}
+
+input[type="range"].oxr-ba-slider::-moz-range-thumb {
+  background: var(--white);
+  border: 2px solid var(--navy-900);
+  border-radius: 50%;
+  box-shadow: var(--shadow-card);
+  cursor: ew-resize;
+  height: 44px;
+  width: 44px;
+}
+
+@keyframes portfolioCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
