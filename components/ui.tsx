@@ -112,9 +112,9 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-white/94 backdrop-blur">
-      <div className="mx-auto flex h-[84px] max-w-container items-center justify-between px-6 md:px-10">
+      <div className="mx-auto flex h-[108px] max-w-container items-center justify-between px-6 md:px-10">
         <Link href="/" className="flex items-center">
-          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-16 w-auto" />
+          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-20 w-auto" />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
