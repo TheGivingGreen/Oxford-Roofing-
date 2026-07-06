@@ -112,9 +112,9 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border-subtle)] bg-white/94 backdrop-blur">
-      <div className="mx-auto flex h-[74px] max-w-container items-center justify-between px-6 md:px-10">
+      <div className="mx-auto flex h-[84px] max-w-container items-center justify-between px-6 md:px-10">
         <Link href="/" className="flex items-center">
-          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-[46px] w-auto" />
+          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="h-16 w-auto" />
         </Link>
         <nav className="hidden items-center gap-7 lg:flex">
           {navLinks.map((link) => (
@@ -147,7 +147,7 @@ export function Footer() {
     <footer className="bg-navy-900 px-6 py-16 text-white md:px-10">
       <div className="mx-auto grid max-w-container gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
-          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="mb-6 h-[58px] w-auto bg-white p-2" />
+          <img src={assetPath("/assets/oxford-roofing-logo-cropped.png")} alt="Oxford Roofing" className="mb-6 h-20 w-auto bg-white p-2" />
           <p className="m-0 max-w-sm font-sans text-sm leading-[1.7] text-white/70">Commercial and residential roofing for St. Louis homes, businesses, and property portfolios.</p>
         </div>
         <div>
