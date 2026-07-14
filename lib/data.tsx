@@ -29,12 +29,12 @@ export const whyCards = [
 ];
 
 export const projects = [
-  { slug: "ladue-slate-restoration", title: "Ladue Slate Restoration", meta: "Residential · Synthetic slate", category: "Residential", caption: "Photography — synthetic slate, Ladue" },
-  { slug: "clayton-office-park", title: "Clayton Office Park", meta: "Commercial · TPO membrane", category: "Commercial", caption: "Photography — TPO re-roof, Clayton" },
-  { slug: "webster-groves-metal", title: "Webster Groves Residence", meta: "Residential · Standing-seam metal", category: "Residential", caption: "Photography — standing-seam metal, Webster Groves" },
-  { slug: "chesterfield-hail-restoration", title: "Chesterfield Hail Restoration", meta: "Residential · Before & after · Storm", category: "Before & After", caption: "Photography — hail damage restoration, Chesterfield" },
-  { slug: "maplewood-retail-center", title: "Maplewood Retail Center", meta: "Commercial · EPDM membrane", category: "Commercial", caption: "Photography — EPDM install, Maplewood" },
-  { slug: "kirkwood-tear-off", title: "Kirkwood Full Tear-Off", meta: "Residential · Before & after", category: "Before & After", caption: "Photography — full tear-off before/after, Kirkwood" }
+  { slug: "ladue-slate-restoration", title: "Ladue Slate Restoration", meta: "Residential · Synthetic slate", category: "Residential", image: "/uploads/ladue-synthetic-slate-restoration.png", alt: "Aerial view of a residential synthetic slate roof", objectPosition: "center" },
+  { slug: "clayton-office-park", title: "Clayton Office Park", meta: "Commercial · TPO membrane", category: "Commercial", image: "/uploads/clayton-office-park-tpo-reroof.png", alt: "Aerial view of a white commercial roof system", objectPosition: "center" },
+  { slug: "webster-groves-metal", title: "Webster Groves Residence", meta: "Residential · Standing-seam metal", category: "Residential", image: "/uploads/webster-groves-standing-seam-metal.png", alt: "Aerial view of a standing-seam metal residential roof", objectPosition: "center" },
+  { slug: "chesterfield-hail-restoration", title: "Chesterfield Hail Restoration", meta: "Residential · Before & after · Storm", category: "Before & After", image: "/uploads/chesterfield-hail-restoration-before-after.png", alt: "Side-by-side before and after views of a residential roof restoration", objectPosition: "center" },
+  { slug: "maplewood-retail-center", title: "Maplewood Retail Center", meta: "Commercial · EPDM membrane", category: "Commercial", image: "/uploads/maplewood-retail-center-epdm-install.png", alt: "Aerial view of a commercial retail center roof", objectPosition: "center" },
+  { slug: "kirkwood-tear-off", title: "Kirkwood Full Tear-Off", meta: "Residential · Before & after", category: "Before & After", image: "/uploads/photography-residential-tearoff-kirkwood.png", alt: "Roofing crew removing shingles from a residential roof", objectPosition: "center" }
 ];
 
 export const faqItems = [

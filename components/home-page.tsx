@@ -1,16 +1,26 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Accordion, Button, Card, Eyebrow, IconTile, PhotoBlock, Section, ServiceCard, StatCard, TestimonialCard } from "@/components/ui";
+import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, IconTile, PhotoBlock, Section, ServiceCard, StatCard, TestimonialCard } from "@/components/ui";
 import { faqItems, projects, services, whyCards } from "@/lib/data";
+import { assetPath } from "@/lib/paths";
 
 export function HomePage() {
-  const [baPos, setBaPos] = useState(50);
-
   return (
     <main>
-      <section className="oxr-photo oxr-photo-dark relative flex min-h-[calc(100svh-84px)] items-end md:min-h-[calc(100svh-96px)] lg:min-h-[88vh]">
+      <section className="relative flex min-h-[calc(100svh-84px)] items-end overflow-hidden bg-navy-900 md:min-h-[calc(100svh-96px)] lg:min-h-[88vh]">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={assetPath("/videos/hero-modern-luxury-residential-roof-drone.mp4")}
+          poster={assetPath("/uploads/hero-residential-luxury-roof.png")}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-navy-900/45" />
         <div className="relative z-10 mx-auto w-full max-w-container px-6 pb-14 text-white md:px-10 md:pb-[88px]">
           <div className="mb-5 inline-flex items-center gap-2.5 md:mb-6">
             <span className="h-px w-7 bg-gold-500" />
@@ -93,8 +103,8 @@ export function HomePage() {
           <p className="m-0 mb-7 max-w-[420px] font-sans text-[15px] leading-[1.7] text-white/75">TPO, EPDM, and modified bitumen systems, scheduled around your operating hours, with minimal-downtime install plans.</p>
           <Button href="/services/commercial-roofing" variant="ghost">Commercial Roofing</Button>
         </div>
-        <PhotoBlock caption="Photography — commercial flat roof, downtown St. Louis" className="min-h-[260px] md:min-h-[340px]" />
-        <PhotoBlock caption="Photography — residential tear-off, Kirkwood" className="min-h-[260px] md:min-h-[340px] md:order-[-1]" />
+        <PhotoBlock src="/uploads/photography-residential-tearoff-kirkwood.png" alt="Roofing crew performing a residential tear-off" className="min-h-[260px] md:min-h-[340px]" objectPosition="center" />
+        <PhotoBlock src="/uploads/photography-commercial-flat-roof-downtown-stl.png" alt="Roofing crew installing a commercial flat roof in downtown St. Louis" className="min-h-[260px] md:min-h-[340px] md:order-[-1]" objectPosition="center" />
         <div className="flex flex-col justify-center bg-slate-50 px-6 py-16 md:px-14 md:py-24">
           <Eyebrow>Residential</Eyebrow>
           <h3 className="m-0 mb-4 font-display text-3xl font-semibold text-[var(--text-heading)]">Roofs that raise a home's standard.</h3>
@@ -111,7 +121,7 @@ export function HomePage() {
         <div className="grid gap-6 md:grid-cols-3">
           {projects.map((project) => (
             <Link key={project.slug} href={`/portfolio/${project.slug}`}>
-              <PhotoBlock caption={project.caption} className="h-[220px] rounded-lg md:h-[260px]" />
+              <PhotoBlock src={project.image} alt={project.alt} objectPosition={project.objectPosition} className="h-[220px] rounded-lg md:h-[260px]" />
               <div className="pt-4 font-sans text-[17px] font-semibold leading-[1.3] text-[var(--text-heading)]">{project.title}</div>
               <div className="mt-1 font-sans text-sm leading-[1.5] text-[var(--text-muted)]">{project.meta}</div>
             </Link>
@@ -122,15 +132,12 @@ export function HomePage() {
       <Section>
         <div className="mb-12 text-center"><Eyebrow>Before & After</Eyebrow><h2 className="m-0 mx-auto max-w-[600px] font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">See the difference a proper install makes.</h2></div>
         <div className="mx-auto max-w-[900px]">
-          <div className="relative h-[340px] overflow-hidden rounded-lg md:h-[460px]">
-            <div className="oxr-photo absolute inset-0 bg-[repeating-linear-gradient(135deg,var(--slate-300)_0px,var(--slate-300)_2px,var(--slate-200)_2px,var(--slate-200)_46px)]" />
-            <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - baPos}% 0 0)` }}><div className="oxr-photo oxr-photo-dark absolute inset-0" /></div>
-            <span className="absolute bottom-4 left-5 z-10 rounded-sm bg-white/85 px-2.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-900">Photography — before: worn three-tab shingles</span>
-            <span className="absolute bottom-4 right-5 z-10 hidden rounded-sm bg-navy-900/75 px-2.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-white md:block">Photography — after: architectural shingles, new flashing</span>
-            <div className="absolute bottom-0 top-0 z-[2] w-0.5 bg-white shadow-[0_0_0_1px_rgba(3,35,77,0.2)]" style={{ left: `${baPos}%` }} />
-            <input aria-label="Before and after position" type="range" className="oxr-ba-slider absolute left-0 right-0 top-1/2 m-0 -translate-y-1/2" min="0" max="100" value={baPos} onChange={(event) => setBaPos(Number(event.target.value))} />
-          </div>
-          <div className="mt-3 flex justify-between font-sans text-xs font-semibold uppercase leading-none tracking-[0.1em] text-[var(--text-muted)]"><span>Before</span><span>After</span></div>
+          <BeforeAfterComparison
+            beforeSrc="/uploads/chesterfield-hail-restoration-before.png"
+            afterSrc="/uploads/chesterfield-hail-restoration-after.png"
+            beforeAlt="Residential roof before restoration"
+            afterAlt="Residential roof after restoration"
+          />
         </div>
       </Section>
 

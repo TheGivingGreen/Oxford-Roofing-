@@ -24,7 +24,7 @@ export function PortfolioPage() {
 
   return (
     <main>
-      <PageHero eyebrow="Our Work" title="Transformative roofs, exceptional results." variant="portfolio" />
+      <PageHero eyebrow="Our Work" title="Transformative roofs, exceptional results." variant="portfolio" imageSrc="/uploads/hero-residential-luxury-roof.png" imageAlt="Aerial view of a residential roof" objectPosition="center 58%" />
       <Section tone="light">
         <div className="mb-12 flex flex-wrap gap-3">
           {categories.map((item) => {
@@ -54,7 +54,9 @@ export function PortfolioPage() {
               className="group block animate-[portfolioCardIn_var(--duration-slow)_var(--ease-standard)_both] text-inherit"
             >
               <PhotoBlock
-                caption={project.caption}
+                src={project.image}
+                alt={project.alt}
+                objectPosition={project.objectPosition}
                 className="h-[260px] rounded-lg transition-shadow duration-[var(--duration-base)] ease-[var(--ease-standard)] group-hover:shadow-card-hover"
               />
               <div className="flex items-start justify-between gap-3 pt-4">

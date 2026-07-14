@@ -104,8 +104,43 @@ export function Eyebrow({ children, onDark = false }: { children: React.ReactNod
   return <div className={`mb-4 font-sans text-[13px] font-semibold uppercase leading-none tracking-[0.18em] ${onDark ? "text-gold-400" : "text-[var(--text-gold)]"}`}>{children}</div>;
 }
 
-export function PhotoBlock({ caption, dark = false, className = "" }: { caption: string; dark?: boolean; className?: string }) {
-  return <div className={`oxr-photo ${dark ? "oxr-photo-dark" : ""} ${className}`}><span className={`oxr-photo-cap ${dark ? "oxr-photo-cap-dark" : ""}`}>{caption}</span></div>;
+export function PhotoBlock({ src, alt, caption, dark = false, className = "", objectPosition = "center" }: { src?: string; alt?: string; caption?: string; dark?: boolean; className?: string; objectPosition?: string }) {
+  return (
+    <div className={`oxr-photo ${dark ? "oxr-photo-dark" : ""} ${className}`}>
+      {src ? <img src={assetPath(src)} alt={alt ?? ""} className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition }} /> : null}
+      {dark && src ? <div className="pointer-events-none absolute inset-0 bg-navy-900/45" /> : null}
+      {caption ? <span className={`oxr-photo-cap ${dark ? "oxr-photo-cap-dark" : ""}`}>{caption}</span> : null}
+    </div>
+  );
+}
+
+export function BeforeAfterComparison({ beforeSrc, afterSrc, beforeAlt, afterAlt, className = "" }: { beforeSrc: string; afterSrc: string; beforeAlt: string; afterAlt: string; className?: string }) {
+  const [position, setPosition] = useState(50);
+
+  return (
+    <div className={className}>
+      <div className="relative h-[340px] overflow-hidden rounded-lg md:h-[460px]">
+        <img src={assetPath(afterSrc)} alt={afterAlt} className="absolute inset-0 h-full w-full object-cover object-center" draggable={false} />
+        <div className="absolute inset-0 overflow-hidden" style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}>
+          <img src={assetPath(beforeSrc)} alt={beforeAlt} className="absolute inset-0 h-full w-full object-cover object-center" draggable={false} />
+        </div>
+        <span className="absolute bottom-4 left-5 z-10 rounded-sm bg-white/85 px-2.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-900">Before</span>
+        <span className="absolute bottom-4 right-5 z-10 hidden rounded-sm bg-navy-900/75 px-2.5 py-1.5 font-sans text-[11px] font-semibold uppercase tracking-[0.14em] text-white md:block">After</span>
+        <div className="absolute bottom-0 top-0 z-[2] w-0.5 bg-white shadow-[0_0_0_1px_rgba(3,35,77,0.2)]" style={{ left: `${position}%` }} />
+        <input
+          aria-label="Before and after position"
+          type="range"
+          className="oxr-ba-slider absolute left-0 right-0 top-1/2 m-0 -translate-y-1/2"
+          min="0"
+          max="100"
+          value={position}
+          onInput={(event) => setPosition(Number(event.currentTarget.value))}
+          onChange={(event) => setPosition(Number(event.currentTarget.value))}
+        />
+      </div>
+      <div className="mt-3 flex justify-between font-sans text-xs font-semibold uppercase leading-none tracking-[0.1em] text-[var(--text-muted)]"><span>Before</span><span>After</span></div>
+    </div>
+  );
 }
 
 export function NavBar() {
