@@ -7,42 +7,47 @@ const INTRO_KEY = "oxford-roofing-intro-seen-v2";
 const FADE_DURATION_MS = 420;
 const FALLBACK_DURATION_MS = 12000;
 
-type IntroWindow = Window & { __oxrIntroSeen?: boolean };
+type IntroWindow = Window & {
+  __oxrIntroSeen?: boolean;
+  __oxrIntroState?: "play" | "seen";
+};
 
 export function IntroOverlay() {
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(true);
   const [closing, setClosing] = useState(false);
   const removeTimer = useRef<number | null>(null);
 
   const dismiss = useCallback(() => {
+    const introWindow = window as IntroWindow;
+    introWindow.__oxrIntroSeen = true;
+    introWindow.__oxrIntroState = "seen";
+    document.documentElement.classList.remove("oxr-intro-active");
     setClosing(true);
     if (removeTimer.current) window.clearTimeout(removeTimer.current);
-    removeTimer.current = window.setTimeout(() => setVisible(false), FADE_DURATION_MS);
+    removeTimer.current = window.setTimeout(() => {
+      document.documentElement.classList.add("oxr-intro-seen");
+      setVisible(false);
+    }, FADE_DURATION_MS);
   }, []);
 
   useEffect(() => {
     const introWindow = window as IntroWindow;
-    const forceReplay = window.location.search.includes("intro=1") || window.location.hash.includes("intro");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let alreadySeen = introWindow.__oxrIntroSeen === true;
-
-    try {
-      alreadySeen = alreadySeen || window.sessionStorage.getItem(INTRO_KEY) === "true";
-    } catch {
-      // The in-memory flag still protects client-side navigation if storage is unavailable.
+    if (introWindow.__oxrIntroState === "seen" || document.documentElement.classList.contains("oxr-intro-seen")) {
+      setVisible(false);
+      return;
     }
 
-    if (prefersReducedMotion || (!forceReplay && alreadySeen)) return;
-
-    // Record the session before rendering so rapid navigation cannot restart the intro.
-    introWindow.__oxrIntroSeen = true;
-    try {
-      window.sessionStorage.setItem(INTRO_KEY, "true");
-    } catch {
-      // The in-memory flag above remains available for this document session.
+    // This fallback covers environments that suppress the pre-paint bootstrap.
+    if (introWindow.__oxrIntroState !== "play") {
+      introWindow.__oxrIntroSeen = true;
+      introWindow.__oxrIntroState = "play";
+      document.documentElement.classList.add("oxr-intro-active");
+      try {
+        window.sessionStorage.setItem(INTRO_KEY, "true");
+      } catch {
+        // The in-memory state still protects client-side navigation.
+      }
     }
-
-    setVisible(true);
   }, []);
 
   useEffect(() => {
