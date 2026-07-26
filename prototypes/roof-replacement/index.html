@@ -1,0 +1,765 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Standalone Oxford Roofing roof replacement page prototype for design review.">
+  <title>Roof Replacement Prototype | Oxford Roofing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Montserrat:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js');</script>
+  <style>
+    :root {
+      --navy: #03234d;
+      --navy-800: #042d62;
+      --navy-700: #073c83;
+      --gold: #c09657;
+      --gold-dark: #a97e3d;
+      --gold-light: #cdab7a;
+      --white: #ffffff;
+      --slate-50: #f7f8fa;
+      --slate-100: #f0f2f5;
+      --slate-200: #dee2e7;
+      --slate-300: #bfc6cf;
+      --slate-500: #737e8c;
+      --slate-700: #424952;
+      --heading: var(--navy);
+      --body: var(--slate-700);
+      --container: 1200px;
+      --narrow: 760px;
+      --gutter: clamp(24px, 4vw, 48px);
+      --section: clamp(80px, 9vw, 120px);
+      --display: "Cinzel", Georgia, serif;
+      --sans: "Montserrat", Arial, sans-serif;
+      --ease: cubic-bezier(.4, 0, .2, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--body);
+      background: var(--white);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    p { margin: 0; }
+
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1000;
+      transform: translateY(-150%);
+      padding: 12px 16px;
+      background: var(--white);
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .skip-link:focus { transform: none; }
+
+    .container {
+      width: min(100%, calc(var(--container) + (var(--gutter) * 2)));
+      margin-inline: auto;
+      padding-inline: var(--gutter);
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .eyebrow--dark { color: var(--gold-light); }
+
+    h1, h2, h3 {
+      margin: 0;
+      color: var(--heading);
+      font-family: var(--display);
+      font-weight: 600;
+      line-height: 1.12;
+    }
+    h1 { font-size: clamp(42px, 5.4vw, 76px); }
+    h2 { font-size: clamp(32px, 4vw, 50px); }
+    h3 { font-size: clamp(21px, 2vw, 28px); }
+
+    .lead {
+      max-width: 680px;
+      font-size: clamp(17px, 1.5vw, 20px);
+      line-height: 1.65;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border: 1px solid transparent;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+      transition: background-color 240ms var(--ease), border-color 240ms var(--ease), color 240ms var(--ease);
+    }
+    .button--gold { background: var(--gold); color: var(--navy); }
+    .button--gold:hover { background: var(--gold-dark); }
+    .button--ghost { border-color: rgba(255,255,255,.45); color: var(--white); }
+    .button--ghost:hover { background: rgba(255,255,255,.08); }
+    .button--navy { background: var(--navy); color: var(--white); }
+    .button--navy:hover { background: var(--navy-800); }
+    .button--outline { border-color: var(--navy); color: var(--navy); }
+    .button--outline:hover { background: var(--slate-50); }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--slate-200);
+      background: rgba(255,255,255,.97);
+    }
+    .header-inner {
+      display: flex;
+      min-height: 112px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .brand { flex: 0 0 auto; }
+    .brand img { width: 148px; height: auto; }
+    .desktop-nav { display: flex; align-items: center; gap: 28px; }
+    .desktop-nav a {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 600;
+      transition: color 240ms var(--ease);
+    }
+    .desktop-nav a:hover { color: var(--gold-dark); }
+    .header-actions { display: flex; align-items: center; gap: 24px; }
+    .menu-button {
+      display: none;
+      width: 46px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--slate-200);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--navy);
+      cursor: pointer;
+    }
+    .menu-button svg { width: 23px; height: 23px; }
+    .mobile-nav { display: none; border-top: 1px solid var(--slate-200); }
+    .mobile-nav[hidden] { display: none; }
+    .mobile-nav-inner { display: grid; padding-block: 20px 26px; }
+    .mobile-nav a { padding: 10px 0; color: var(--navy); font-size: 15px; font-weight: 600; }
+    .mobile-nav .button { margin-top: 10px; color: var(--white); }
+
+    .hero {
+      display: grid;
+      min-height: min(760px, calc(100svh - 112px));
+      grid-template-columns: minmax(0, 1fr) minmax(460px, .94fr);
+      background: var(--navy);
+    }
+    .hero-copy {
+      display: flex;
+      align-items: center;
+      padding: clamp(76px, 8vw, 128px) max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
+      padding-right: clamp(48px, 6vw, 96px);
+      color: var(--white);
+    }
+    .hero-copy-inner { max-width: 680px; }
+    .hero-service {
+      display: inline-block;
+      margin: 0 0 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(192,150,87,.65);
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .hero h1 { max-width: 650px; color: var(--white); }
+    .hero .lead { margin-top: 28px; color: rgba(255,255,255,.77); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 38px; }
+    .hero-image { position: relative; min-height: 580px; margin: 0; overflow: hidden; background: var(--slate-100); }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(3,35,77,.22), transparent 34%);
+      pointer-events: none;
+    }
+    .image-caption {
+      position: absolute;
+      right: 24px;
+      bottom: 22px;
+      z-index: 2;
+      padding: 9px 12px;
+      background: rgba(3,35,77,.82);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .proof-band { border-bottom: 1px solid var(--slate-200); background: var(--white); }
+    .proof-inner { display: grid; grid-template-columns: 1fr 1fr; }
+    .proof-item { display: flex; min-height: 150px; align-items: center; gap: 24px; padding: 28px clamp(24px, 5vw, 72px); }
+    .proof-item + .proof-item { border-left: 1px solid var(--slate-200); }
+    .proof-value { color: var(--navy); font-family: var(--display); font-size: clamp(38px, 5vw, 58px); font-weight: 600; line-height: 1; }
+    .proof-label { max-width: 170px; color: var(--slate-500); font-size: 12px; font-weight: 700; letter-spacing: .13em; line-height: 1.45; text-transform: uppercase; }
+
+    .section { padding-block: var(--section); }
+    .section--alt { background: var(--slate-50); }
+    .section--navy { background: var(--navy); color: var(--white); }
+    .section-header { display: grid; grid-template-columns: minmax(0,.82fr) minmax(320px,.68fr); gap: clamp(40px, 8vw, 120px); align-items: end; margin-bottom: clamp(56px, 7vw, 88px); }
+    .section-header p { max-width: 600px; }
+
+    .diagnostic-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: clamp(40px, 8vw, 100px); }
+    .diagnostic-item { display: grid; grid-template-columns: 52px 1fr; gap: 18px; padding: 30px 0 34px; border-top: 1px solid var(--gold); }
+    .diagnostic-number { color: var(--gold-dark); font-family: var(--display); font-size: 18px; font-weight: 600; }
+    .diagnostic-item h3 { margin-bottom: 12px; font-family: var(--sans); font-size: 19px; font-weight: 700; line-height: 1.35; }
+    .diagnostic-item p { font-size: 15px; }
+    .diagnostic-note { max-width: 820px; margin-top: 38px; padding-left: 20px; border-left: 2px solid var(--gold); color: var(--slate-500); font-size: 14px; }
+
+    .principles-heading { max-width: 720px; margin-bottom: clamp(60px, 8vw, 96px); }
+    .principles-heading h2 { color: var(--white); }
+    .principles { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .principle { min-height: 330px; padding: 34px clamp(24px, 3.2vw, 48px) 18px; border-top: 1px solid rgba(205,171,122,.7); }
+    .principle + .principle { border-left: 1px solid rgba(255,255,255,.16); }
+    .principle-number { margin-bottom: 72px; color: var(--gold-light); font-family: var(--display); font-size: clamp(54px, 6vw, 82px); line-height: 1; }
+    .principle h3 { margin-bottom: 16px; color: var(--white); }
+    .principle p { color: rgba(255,255,255,.68); font-size: 15px; }
+
+    .scope-layout { display: grid; grid-template-columns: minmax(380px,.92fr) minmax(0,1.08fr); gap: clamp(56px, 8vw, 112px); align-items: center; }
+    .scope-image { min-height: 680px; margin: 0; overflow: hidden; background: var(--slate-100); }
+    .scope-image img { width: 100%; height: 100%; min-height: 680px; object-fit: cover; object-position: 39% center; }
+    .scope-copy .lead { margin: 26px 0 36px; }
+    .scope-list { list-style: none; margin: 0; padding: 0; }
+    .scope-list li { display: grid; grid-template-columns: 34px 1fr; gap: 14px; padding: 18px 0; border-top: 1px solid var(--slate-200); color: var(--navy); font-size: 15px; font-weight: 600; }
+    .scope-list li:last-child { border-bottom: 1px solid var(--slate-200); }
+    .scope-list span { color: var(--gold-dark); font-family: var(--display); font-size: 13px; }
+    .scope-note { margin-top: 26px; color: var(--slate-500); font-size: 13px; }
+
+    .process-header { max-width: 820px; margin-bottom: clamp(64px, 8vw, 100px); }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--gold); border-bottom: 1px solid var(--slate-300); }
+    .process-step { min-height: 390px; padding: 34px clamp(20px, 2.5vw, 36px) 42px; }
+    .process-step + .process-step { border-left: 1px solid var(--slate-300); }
+    .process-number { margin-bottom: 92px; color: var(--gold-dark); font-family: var(--display); font-size: clamp(60px, 6vw, 88px); font-weight: 500; line-height: .9; }
+    .process-step h3 { margin-bottom: 18px; }
+    .process-step p { font-size: 14px; }
+
+    .project-proof { display: grid; min-height: 620px; grid-template-columns: minmax(0,1.45fr) minmax(380px,.75fr); background: var(--navy); }
+    .project-image { min-height: 620px; margin: 0; overflow: hidden; }
+    .project-image img { width: 100%; height: 100%; min-height: 620px; object-fit: cover; object-position: center; }
+    .project-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(56px, 7vw, 100px); color: var(--white); }
+    .project-copy h2 { margin-bottom: 22px; color: var(--white); }
+    .project-meta { margin-bottom: 34px; color: rgba(255,255,255,.66); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .project-copy p { margin-bottom: 34px; color: rgba(255,255,255,.72); }
+    .project-copy .button { align-self: flex-start; }
+
+    .territory { overflow: hidden; }
+    .territory-layout { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(48px, 9vw, 130px); align-items: center; }
+    .territory-mark { color: var(--gold); font-family: var(--display); font-size: clamp(92px, 14vw, 190px); line-height: .8; opacity: .56; }
+    .territory h2 { max-width: 820px; }
+    .territory .lead { margin-top: 26px; }
+    .territory-rule { width: 100%; height: 1px; margin-top: 50px; background: var(--gold); }
+    .territory-note { margin-top: 18px; color: var(--slate-500); font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+    .faq-layout { display: grid; grid-template-columns: minmax(280px,.65fr) minmax(0,1.15fr); gap: clamp(56px, 10vw, 150px); align-items: start; }
+    .faq-intro { position: sticky; top: 160px; }
+    .faq-intro .lead { margin-top: 24px; }
+    .accordion { border-top: 1px solid var(--gold); }
+    .faq-item { border-bottom: 1px solid var(--slate-300); }
+    .faq-button {
+      display: grid;
+      width: 100%;
+      min-height: 82px;
+      grid-template-columns: 1fr 34px;
+      gap: 24px;
+      align-items: center;
+      padding: 22px 0;
+      border: 0;
+      background: transparent;
+      color: var(--navy);
+      text-align: left;
+      cursor: pointer;
+    }
+    .faq-question { font-size: 16px; font-weight: 700; line-height: 1.5; }
+    .faq-icon { position: relative; width: 24px; height: 24px; justify-self: end; }
+    .faq-icon::before, .faq-icon::after { content: ""; position: absolute; top: 11px; left: 4px; width: 16px; height: 1px; background: var(--gold-dark); transition: transform 240ms var(--ease); }
+    .faq-icon::after { transform: rotate(90deg); }
+    .faq-button[aria-expanded="true"] .faq-icon::after { transform: rotate(0); }
+    .faq-answer { padding: 0 58px 28px 0; }
+    .faq-answer p { color: var(--slate-700); font-size: 14px; }
+
+    .final-cta { padding-block: clamp(96px, 11vw, 150px); background: var(--navy); color: var(--white); text-align: center; }
+    .final-cta-inner { max-width: 850px; }
+    .final-cta h2 { color: var(--white); }
+    .final-cta .lead { margin: 28px auto 38px; color: rgba(255,255,255,.73); }
+
+    .site-footer { padding: 76px 0 32px; border-top: 1px solid rgba(255,255,255,.15); background: var(--navy); color: var(--white); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr; gap: 70px; padding-bottom: 58px; }
+    .footer-logo { width: 150px; margin-bottom: 24px; }
+    .footer-brand p { max-width: 380px; color: rgba(255,255,255,.7); font-size: 14px; }
+    .footer-heading { margin-bottom: 18px; color: var(--gold-light); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .footer-links { display: grid; gap: 9px; }
+    .footer-links a { color: rgba(255,255,255,.72); font-size: 14px; }
+    .footer-links a:hover { color: var(--gold-light); }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 24px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.55); font-size: 12px; }
+
+    .js .reveal { opacity: 0; transform: translateY(12px); }
+    .js .reveal.is-visible { opacity: 1; transform: none; transition: opacity 400ms var(--ease), transform 400ms var(--ease); }
+
+    @media (max-width: 1060px) {
+      .desktop-nav, .header-actions > .button { display: none; }
+      .menu-button, .mobile-nav.is-open { display: flex; }
+      .mobile-nav.is-open { display: block; }
+      .header-inner { min-height: 92px; }
+      .brand img { width: 128px; }
+      .hero { min-height: auto; grid-template-columns: 1fr 1fr; }
+      .hero-copy { padding: 82px var(--gutter); }
+      .hero-image { min-height: 600px; }
+      .section-header { grid-template-columns: 1fr; gap: 28px; }
+      .scope-layout { grid-template-columns: .85fr 1.15fr; gap: 54px; }
+      .scope-image, .scope-image img { min-height: 620px; }
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .process-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--slate-300); }
+      .process-step:nth-child(4) { border-top: 1px solid var(--slate-300); }
+      .project-proof { grid-template-columns: 1.1fr .9fr; }
+      .project-copy { padding: 58px 44px; }
+    }
+
+    @media (max-width: 760px) {
+      .header-inner { min-height: 84px; }
+      .hero { display: flex; flex-direction: column; }
+      .hero-copy { order: 2; padding: 64px var(--gutter) 72px; }
+      .hero-image { min-height: 390px; height: 48vh; }
+      .hero-image::after { background: linear-gradient(0deg, rgba(3,35,77,.18), transparent 40%); }
+      .hero-service { margin-bottom: 24px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .proof-inner { grid-template-columns: 1fr; }
+      .proof-item { min-height: 124px; padding-inline: var(--gutter); }
+      .proof-item + .proof-item { border-left: 0; border-top: 1px solid var(--slate-200); }
+      .diagnostic-list { grid-template-columns: 1fr; }
+      .principles { grid-template-columns: 1fr; }
+      .principle { min-height: 0; padding: 34px 0 42px; }
+      .principle + .principle { border-left: 0; }
+      .principle-number { margin-bottom: 38px; }
+      .scope-layout { grid-template-columns: 1fr; }
+      .scope-image, .scope-image img { min-height: 460px; }
+      .scope-copy { order: -1; }
+      .process-grid { grid-template-columns: 1fr; }
+      .process-step { min-height: 0; padding: 30px 0 42px; }
+      .process-step + .process-step, .process-step:nth-child(3) { border-left: 0; border-top: 1px solid var(--slate-300); }
+      .process-number { margin-bottom: 45px; }
+      .project-proof { grid-template-columns: 1fr; }
+      .project-image, .project-image img { min-height: 430px; }
+      .project-copy { padding: 64px var(--gutter); }
+      .territory-layout { grid-template-columns: 1fr; gap: 32px; }
+      .territory-mark { font-size: 104px; }
+      .faq-layout { grid-template-columns: 1fr; }
+      .faq-intro { position: static; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      .brand img { width: 116px; }
+      .hero-image { min-height: 330px; }
+      .diagnostic-item { grid-template-columns: 38px 1fr; gap: 12px; }
+      .project-image, .project-image img { min-height: 340px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-brand { grid-column: auto; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .js .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="https://oxfordroofingusa.com/" aria-label="Oxford Roofing home">
+        <img src="../../public/assets/oxford-roofing-logo-cropped.png" alt="Oxford Roofing">
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="https://oxfordroofingusa.com/">Home</a>
+        <a href="https://oxfordroofingusa.com/about">About</a>
+        <a href="https://oxfordroofingusa.com/services">Services</a>
+        <a href="https://oxfordroofingusa.com/portfolio">Portfolio</a>
+        <a href="https://oxfordroofingusa.com/financing">Financing</a>
+        <a href="https://oxfordroofingusa.com/faq">FAQ</a>
+        <a href="https://oxfordroofingusa.com/contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button--navy" href="https://oxfordroofingusa.com/contact">Request an Inspection</a>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile navigation" hidden>
+      <div class="container mobile-nav-inner">
+        <a href="https://oxfordroofingusa.com/">Home</a>
+        <a href="https://oxfordroofingusa.com/about">About</a>
+        <a href="https://oxfordroofingusa.com/services">Services</a>
+        <a href="https://oxfordroofingusa.com/portfolio">Portfolio</a>
+        <a href="https://oxfordroofingusa.com/financing">Financing</a>
+        <a href="https://oxfordroofingusa.com/faq">FAQ</a>
+        <a href="https://oxfordroofingusa.com/contact">Contact</a>
+        <a class="button button--navy" href="https://oxfordroofingusa.com/contact">Request an Inspection</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="hero-copy-inner reveal">
+          <p class="eyebrow eyebrow--dark">Residential roofing · St. Louis</p>
+          <p class="hero-service">Roof Replacement</p>
+          <h1 id="hero-title">A clear path from worn roof to finished system.</h1>
+          <p class="lead">A responsible replacement begins with understanding the roof that is already there. Oxford documents the visible condition, defines the proposed work, and gives you a clear basis for the next decision.</p>
+          <div class="hero-actions">
+            <a class="button button--gold" href="https://oxfordroofingusa.com/contact">Request an Inspection</a>
+            <a class="button button--ghost" href="#proof">View the Kirkwood Project</a>
+          </div>
+        </div>
+      </div>
+      <figure class="hero-image">
+        <img src="../../public/uploads/photography-residential-tearoff-kirkwood.png" alt="Roofing crew removing the existing shingles from a Kirkwood home">
+        <figcaption class="image-caption">Kirkwood Full Tear-Off</figcaption>
+      </figure>
+    </section>
+
+    <section class="proof-band" aria-label="Oxford Roofing experience">
+      <div class="container proof-inner">
+        <div class="proof-item reveal">
+          <div class="proof-value">20+</div>
+          <div class="proof-label">Years of experience</div>
+        </div>
+        <div class="proof-item reveal">
+          <div class="proof-value">900+</div>
+          <div class="proof-label">Roofs completed</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="responsible-title">
+      <div class="container">
+        <header class="section-header reveal">
+          <div>
+            <p class="eyebrow">When to consider replacement</p>
+            <h2 id="responsible-title">When replacement may be the responsible answer.</h2>
+          </div>
+          <p class="lead">Not every roof problem calls for a complete replacement. The condition, extent, and reliability of the existing system should determine whether continued repair remains a sound option.</p>
+        </header>
+        <div class="diagnostic-list">
+          <article class="diagnostic-item reveal">
+            <div class="diagnostic-number">01</div>
+            <div><h3>Widespread material deterioration</h3><p>When wear is distributed across the roof rather than limited to one repairable area, the system may warrant a broader evaluation.</p></div>
+          </article>
+          <article class="diagnostic-item reveal">
+            <div class="diagnostic-number">02</div>
+            <div><h3>Recurring leaks in multiple areas</h3><p>Repeated water entry in different locations can indicate that isolated repairs are no longer addressing the roof as a complete system.</p></div>
+          </article>
+          <article class="diagnostic-item reveal">
+            <div class="diagnostic-number">03</div>
+            <div><h3>Conditions beneath the visible surface</h3><p>The condition of the materials below the finished roof may affect which repair or replacement options remain appropriate.</p></div>
+          </article>
+          <article class="diagnostic-item reveal">
+            <div class="diagnostic-number">04</div>
+            <div><h3>A system that cannot be repaired reliably</h3><p>Replacement may be considered when further localized work cannot reasonably restore dependable performance.</p></div>
+          </article>
+        </div>
+        <p class="diagnostic-note reveal">These conditions do not diagnose an individual roof. The appropriate recommendation depends on the documented condition of the property and the proposed written scope.</p>
+      </div>
+    </section>
+
+    <section class="section section--navy" aria-labelledby="why-title">
+      <div class="container">
+        <header class="principles-heading reveal">
+          <p class="eyebrow eyebrow--dark">Why Oxford for roof replacement</p>
+          <h2 id="why-title">A replacement project should be defined before it is built.</h2>
+        </header>
+        <div class="principles">
+          <article class="principle reveal">
+            <div class="principle-number">01</div>
+            <h3>Document the condition</h3>
+            <p>Begin with a clear record of the roof’s visible condition and the areas that inform the recommendation.</p>
+          </article>
+          <article class="principle reveal">
+            <div class="principle-number">02</div>
+            <h3>Define the complete scope</h3>
+            <p>Set out the proposed roof assembly, project sequence, and known conditions in a written scope for review.</p>
+          </article>
+          <article class="principle reveal">
+            <div class="principle-number">03</div>
+            <h3>Control the execution</h3>
+            <p>Use the approved scope as the reference point from jobsite preparation through final project review.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="scope-title">
+      <div class="container scope-layout">
+        <figure class="scope-image reveal">
+          <img src="../../public/uploads/photography-residential-tearoff-kirkwood.png" alt="Roofing crew working during removal of an existing residential roof system">
+        </figure>
+        <div class="scope-copy reveal">
+          <p class="eyebrow">What the work includes</p>
+          <h2 id="scope-title">The major parts of a professional replacement project.</h2>
+          <p class="lead">The final work is established by the documented inspection and approved written proposal. A replacement scope may address the following project stages.</p>
+          <ol class="scope-list">
+            <li><span>01</span>Property and jobsite preparation</li>
+            <li><span>02</span>Removal of the existing roof system</li>
+            <li><span>03</span>Review of the exposed roof deck</li>
+            <li><span>04</span>Installation of the approved roof assembly</li>
+            <li><span>05</span>Flashing and critical transition details</li>
+            <li><span>06</span>Cleanup and final documentation</li>
+          </ol>
+          <p class="scope-note">Specific materials, repairs, transitions, and documentation remain subject to the property’s written proposal.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="process-title">
+      <div class="container">
+        <header class="process-header reveal">
+          <p class="eyebrow">The Oxford process</p>
+          <h2 id="process-title">Four stages. One documented sequence.</h2>
+        </header>
+        <div class="process-grid">
+          <article class="process-step reveal">
+            <div class="process-number">01</div>
+            <h3>Assess</h3>
+            <p>Document the existing roof and visible conditions.</p>
+          </article>
+          <article class="process-step reveal">
+            <div class="process-number">02</div>
+            <h3>Define</h3>
+            <p>Prepare the proposed scope, materials, and project sequence.</p>
+          </article>
+          <article class="process-step reveal">
+            <div class="process-number">03</div>
+            <h3>Replace</h3>
+            <p>Complete the approved work through a controlled installation process.</p>
+          </article>
+          <article class="process-step reveal">
+            <div class="process-number">04</div>
+            <h3>Verify</h3>
+            <p>Review the completed work and applicable project documentation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-proof" id="proof" aria-labelledby="proof-title">
+      <figure class="project-image">
+        <img src="../../public/uploads/photography-residential-tearoff-kirkwood.png" alt="Roofing crew completing a residential full tear-off in Kirkwood">
+      </figure>
+      <div class="project-copy reveal">
+        <p class="eyebrow eyebrow--dark">Relevant proof of work</p>
+        <h2 id="proof-title">Kirkwood Full Tear-Off</h2>
+        <p class="project-meta">Residential · Before &amp; after</p>
+        <p>See the existing Oxford project entry and photography associated with this residential full tear-off.</p>
+        <a class="button button--ghost" href="https://oxfordroofingusa.com/portfolio/kirkwood-tear-off">View Project</a>
+      </div>
+    </section>
+
+    <section class="section territory" aria-labelledby="territory-title">
+      <div class="container territory-layout">
+        <div class="territory-mark reveal" aria-hidden="true">STL</div>
+        <div class="reveal">
+          <p class="eyebrow">St. Louis service territory</p>
+          <h2 id="territory-title">Serving St. Louis and surrounding communities.</h2>
+          <p class="lead">Roof replacement recommendations are developed around the documented condition and requirements of each property.</p>
+          <div class="territory-rule"></div>
+          <p class="territory-note">Final municipality and service-boundary list requires confirmation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <header class="faq-intro reveal">
+          <p class="eyebrow">Roof replacement FAQ</p>
+          <h2 id="faq-title">Clear questions before a scope is approved.</h2>
+          <p class="lead">The answers below establish a conservative information structure for final operational review.</p>
+        </header>
+        <div class="accordion reveal">
+          <article class="faq-item">
+            <h3>
+              <button class="faq-button" type="button" id="faq-button-1" aria-expanded="true" aria-controls="faq-panel-1">
+                <span class="faq-question">How do I know whether the roof needs repair or replacement?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-panel-1" role="region" aria-labelledby="faq-button-1">
+              <p>A repair may remain appropriate when the problem is isolated and the surrounding system can still perform reliably. Replacement may be considered when deterioration, water entry, or underlying conditions are more widespread. The appropriate next step depends on the documented roof condition.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-button" type="button" id="faq-button-2" aria-expanded="false" aria-controls="faq-panel-2">
+                <span class="faq-question">What does the roof assessment consider?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-panel-2" role="region" aria-labelledby="faq-button-2" hidden>
+              <p>The assessment considers visible roof conditions that may inform the recommendation and identifies areas requiring closer review. The final proposal should define the conditions and work included in the proposed scope.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-button" type="button" id="faq-button-3" aria-expanded="false" aria-controls="faq-panel-3">
+                <span class="faq-question">What happens after the existing roof is removed?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-panel-3" role="region" aria-labelledby="faq-button-3" hidden>
+              <p>The exposed roof deck can be reviewed for visible conditions that affect the approved roof assembly. Any condition requiring work outside the original proposal should be documented and addressed through the project’s agreed change process.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-button" type="button" id="faq-button-4" aria-expanded="false" aria-controls="faq-panel-4">
+                <span class="faq-question">How is the replacement scope established?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-panel-4" role="region" aria-labelledby="faq-button-4" hidden>
+              <p>The proposed scope is based on documented conditions, the selected roof assembly, and property-specific details. It should identify the approved work, proposed materials, and project sequence before installation begins.</p>
+            </div>
+          </article>
+          <article class="faq-item">
+            <h3>
+              <button class="faq-button" type="button" id="faq-button-5" aria-expanded="false" aria-controls="faq-panel-5">
+                <span class="faq-question">What project documentation will I receive?</span><span class="faq-icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-panel-5" role="region" aria-labelledby="faq-button-5" hidden>
+              <p>The final Oxford process should identify which inspection records, proposal documents, approved changes, and completion records are provided for a roof replacement project. Exact deliverables require operational confirmation.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-labelledby="cta-title">
+      <div class="container final-cta-inner reveal">
+        <p class="eyebrow eyebrow--dark">Begin with the condition</p>
+        <h2 id="cta-title">Start with a documented roof assessment.</h2>
+        <p class="lead">Oxford will review the roof’s condition and define the appropriate next step. An assessment does not assume that complete replacement is required.</p>
+        <a class="button button--gold" href="https://oxfordroofingusa.com/contact">Request an Inspection</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo" src="../../public/assets/oxford-roofing-logo-footer.png" alt="Oxford Roofing">
+          <p>Commercial and residential roofing for St. Louis homes, businesses, and property portfolios.</p>
+        </div>
+        <div>
+          <div class="footer-heading">Company</div>
+          <nav class="footer-links" aria-label="Company links">
+            <a href="https://oxfordroofingusa.com/about">About</a>
+            <a href="https://oxfordroofingusa.com/services">Services</a>
+            <a href="https://oxfordroofingusa.com/portfolio">Portfolio</a>
+            <a href="https://oxfordroofingusa.com/financing">Financing</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer-heading">Support</div>
+          <nav class="footer-links" aria-label="Support links">
+            <a href="https://oxfordroofingusa.com/faq">FAQ</a>
+            <a href="https://oxfordroofingusa.com/contact">Contact</a>
+            <a href="https://oxfordroofingusa.com/privacy">Privacy</a>
+            <a href="https://oxfordroofingusa.com/terms">Terms</a>
+          </nav>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Oxford Roofing. Commercial and residential.</span>
+        <span>Standalone design prototype · Not a production page</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const mobileNavigation = document.querySelector('.mobile-nav');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      mobileNavigation.hidden = isOpen;
+      mobileNavigation.classList.toggle('is-open', !isOpen);
+    });
+
+    document.querySelectorAll('.faq-button').forEach((button) => {
+      const toggleFaq = () => {
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        button.setAttribute('aria-expanded', String(!isOpen));
+        panel.hidden = isOpen;
+      };
+
+      button.addEventListener('click', toggleFaq);
+      button.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggleFaq();
+        }
+      });
+    });
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const revealItems = document.querySelectorAll('.reveal');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'));
+    } else {
+      const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            currentObserver.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -7% 0px', threshold: 0.08 });
+
+      revealItems.forEach((item) => observer.observe(item));
+    }
+  </script>
+</body>
+</html>
