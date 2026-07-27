@@ -449,20 +449,20 @@ const residentialRoofing: ApprovedServicePageData = {
     note: "Available materials, installation methods, schedules, and final deliverables remain subject to Oxford’s confirmed residential offering and the property’s written proposal.",
   },
   principles: {
-    eyebrow: "Why Oxford for residential roofing",
-    title: "The house sets the context. The scope defines the work.",
+    eyebrow: "WHY HOMEOWNERS CHOOSE OXFORD",
+    title: "THE RIGHT APPROACH STARTS WITH YOUR HOME.",
     items: [
       {
-        title: "Read the architecture",
-        body: "Begin with the roof geometry, exterior composition, and visible conditions that shape the project.",
+        title: "LOOK AT THE WHOLE ROOF",
+        body: "We start by looking at your entire roof and how it fits your home. That gives us a clear picture of what the job requires.",
       },
       {
-        title: "Define the roof system",
-        body: "Bring the approved assembly, project details, and known conditions into a written residential scope.",
+        title: "BUILD THE RIGHT PLAN",
+        body: "Once we know what your roof needs, we put together a clear plan for the materials and work involved.",
       },
       {
-        title: "Coordinate every transition",
-        body: "Treat changes in plane, roof-to-wall conditions, and other critical junctions as part of the complete system.",
+        title: "GET THE DETAILS RIGHT",
+        body: "Valleys, walls, chimneys, and changes in the roofline are where details matter most. We account for them before work begins.",
       },
     ],
   },
