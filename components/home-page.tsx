@@ -20,7 +20,7 @@ import styles from "./home-page.module.css";
 
 const homeServiceDescriptions: Record<string, string> = {
   "residential-roofing":
-    "From inspections and repairs to full replacements — Oxford handles residential roofing for St. Louis homes the right way. We document what we find, explain what it means, and build what we agree to.",
+    "From inspections and repairs to full replacements, Oxford handles residential roofing for St. Louis homes the right way. We document what we find, explain what it means, and build what we agree to.",
   "commercial-roofing":
     "TPO, EPDM, low-slope systems, and flat-roof projects for St. Louis businesses and property portfolios. Managed around your tenants and your timeline.",
   "roof-replacement":
@@ -42,7 +42,7 @@ const homeFaqItems = [
   {
     question: "How is a residential roof-replacement schedule established?",
     answer:
-      "Once a project is approved and the materials are confirmed, Oxford works with you to schedule a start date. Timing depends on crew availability, material lead times, and the scope of the project — but you'll have a confirmed schedule in writing before work begins, not a vague window.",
+      "Once a project is approved and the materials are confirmed, Oxford works with you to schedule a start date. Timing depends on crew availability, material lead times, and the scope of the project. You'll have a confirmed schedule in writing before work begins, not a vague window.",
   },
   {
     question: "Can Oxford help with an insurance claim?",
@@ -62,7 +62,7 @@ const homeFaqItems = [
   {
     question: "What does a roof inspection include?",
     answer:
-      "Oxford inspects all accessible roof surfaces — every plane, edge, penetration, transition, and adjoining component — and documents what we find with photographs and a written record. Inspections are free, with no obligation. You'll know what the roof looks like before any work is proposed.",
+      "Oxford inspects every accessible roof plane, edge, penetration, transition, and adjoining component. We document what we find with photographs and a written record. Inspections are free, with no obligation. You'll know what the roof looks like before any work is proposed.",
   },
 ];
 
@@ -93,8 +93,8 @@ export function HomePage() {
           <p>
             Oxford has been working on St. Louis roofs since before most of our
             current customers moved into their homes. Commercial, residential,
-            storm, replacement, repair — we've done it all, and we've done it
-            here.
+            storm, replacement, and repair. We've done it all, and we've done
+            it here.
           </p>
           <div className={styles.heroActions}>
             <Button href="/contact" variant="accent" size="lg">

@@ -286,7 +286,7 @@ const roofReplacement: ApprovedServicePageData = {
   decision: {
     eyebrow: "When to consider replacement",
     title: "Is It Time to Replace Your Roof?",
-    lead: "Not every roof problem is a replacement. Repairs still make sense when the damage is isolated and the rest of the roof is solid. But there are conditions where continued patching stops being practical — and a full replacement becomes the smarter long-term decision.",
+    lead: "Not every roof problem is a replacement. Repairs still make sense when the damage is isolated and the rest of the roof is solid. But there are conditions where continued patching stops being practical. At that point, a full replacement becomes the smarter long-term decision.",
     criteria: [
       {
         title: "Wear across the whole roof — not just one spot.",
@@ -294,7 +294,7 @@ const roofReplacement: ApprovedServicePageData = {
       },
       {
         title: "Leaks that keep coming back in different places.",
-        body: "When water is finding multiple entry points, the roof isn't performing as a system anymore — and no single repair will fix that.",
+        body: "When water is finding multiple entry points, the roof isn't performing as a system anymore. No single repair will fix that.",
       },
       {
         title: "Damage below the surface.",
@@ -313,11 +313,11 @@ const roofReplacement: ApprovedServicePageData = {
     items: [
       {
         title: "We start with an honest inspection.",
-        body: "Before anything else, we document what your roof looks like right now — the good and the bad — so our recommendation is backed by something real.",
+        body: "Before anything else, we document the good and the bad of what your roof looks like right now. That gives our recommendation a real foundation.",
       },
       {
         title: "You see the full plan before we begin.",
-        body: "Materials, sequence, known conditions — all in writing before a single shingle comes off. No verbal agreements, no assumptions.",
+        body: "Materials, sequence, and known conditions are all in writing before a single shingle comes off. No verbal agreements, no assumptions.",
       },
       {
         title: "We build what we said we'd build.",
@@ -330,10 +330,10 @@ const roofReplacement: ApprovedServicePageData = {
     title: "What Happens During Your Replacement",
     lead: "Every replacement follows a documented sequence. Here's what that looks like from start to finish:",
     items: [
-      "Protecting your property before work begins — landscaping, vehicles, and anything near the roofline",
+      "Protecting your property before work begins, including landscaping, vehicles, and anything near the roofline",
       "Full tear-off of the existing roof, disposed of properly",
       "Inspection of the exposed roof deck for any damage that needs to be addressed before the new system goes on",
-      "Installation of your approved roofing system — materials, layers, and all components — exactly as outlined",
+      "Installation of your approved roofing system, including every material, layer, and component exactly as outlined",
       "Flashing at chimneys, walls, valleys, and all critical transitions",
       "Full cleanup and a final walkthrough so you can see the finished work and ask any remaining questions",
     ],
@@ -351,7 +351,7 @@ const roofReplacement: ApprovedServicePageData = {
       },
       {
         title: "Propose",
-        body: "We put the full plan in writing — materials, timeline, and everything included — so you know exactly what you're approving.",
+        body: "We put the materials, timeline, and everything included in writing. You know exactly what you're approving.",
       },
       {
         title: "Build",
@@ -359,7 +359,7 @@ const roofReplacement: ApprovedServicePageData = {
       },
       {
         title: "Walk It",
-        body: "We review the finished roof with you, answer any questions, and make sure you have everything you need — including your warranty documentation.",
+        body: "We review the finished roof with you, answer any questions, and make sure you have everything you need, including your warranty documentation.",
       },
     ],
   },
@@ -380,7 +380,7 @@ const roofReplacement: ApprovedServicePageData = {
       {
         question: "How do I know if I need a repair or a full replacement?",
         answer:
-          "Repairs make sense when the damage is in one place and the rest of the roof is solid. When wear is spread across the roof, leaks are recurring in multiple spots, or the deck itself is compromised, replacement is usually the more honest answer. We'll tell you which one applies to your roof — and why.",
+          "Repairs make sense when the damage is in one place and the rest of the roof is solid. When wear is spread across the roof, leaks are recurring in multiple spots, or the deck itself is compromised, replacement is usually the more honest answer. We'll tell you which one applies to your roof and explain why.",
       },
       {
         question: "What do you actually look at during the inspection?",
@@ -395,19 +395,19 @@ const roofReplacement: ApprovedServicePageData = {
       {
         question: "How does the written proposal get put together?",
         answer:
-          "It starts with the inspection. Once we've documented your roof's condition and you've selected your materials, we put the full plan in writing — what's included, what it costs, and what the timeline looks like. Nothing starts until you've reviewed and approved it.",
+          "It starts with the inspection. Once we've documented your roof's condition and you've selected your materials, we put what's included, what it costs, and what the timeline looks like in writing. Nothing starts until you've reviewed and approved it.",
       },
       {
         question: "What paperwork do I get when the project is done?",
         answer:
-          "At minimum: the original inspection record, your signed proposal, any documented changes made during the project, and your warranty information. We want you to have a complete file on your roof — not just a receipt.",
+          "At minimum: the original inspection record, your signed proposal, any documented changes made during the project, and your warranty information. We want you to have a complete file on your roof, not just a receipt.",
       },
     ],
   },
   cta: {
     eyebrow: "Begin with the condition",
     title: "Not Sure Where to Start? That's What the Inspection Is For.",
-    body: "Oxford will come out, get on the roof, and give you an honest read on what's there. No commitment, no pressure toward replacement. Just a clear picture of what you're working with — and what your options actually are.",
+    body: "Oxford will come out, get on the roof, and give you an honest read on what's there. No commitment, no pressure toward replacement. Just a clear picture of what you're working with and what your options actually are.",
     buttonLabel: "Schedule Your Roof Inspection",
   },
 };
@@ -424,7 +424,7 @@ const residentialRoofing: ApprovedServicePageData = {
     eyebrow: "Residential roofing · St. Louis",
     label: "Residential Roofing",
     title: "A roof system that belongs to the home it protects.",
-    lead: "Every home and roof is different. We begin with a close look at your roof's condition, layout, and architectural style — then recommend a roofing system that fits the home and the work it needs.",
+    lead: "Every home and roof is different. We begin with a close look at your roof's condition, layout, and architectural style. Then we recommend a roofing system that fits the home and the work it needs.",
     image: "/uploads/hero-residential-luxury-roof.png",
     alt: "Aerial view of a finished roof on a large residential home",
     caption: "Residential roof system",
@@ -460,7 +460,7 @@ const residentialRoofing: ApprovedServicePageData = {
     items: [
       {
         title: "LOOK AT THE WHOLE ROOF",
-        body: "We look beyond the obvious issue to understand the full condition of your roof — and how it works with the rest of your home.",
+        body: "We look beyond the obvious issue to understand the full condition of your roof and how it works with the rest of your home.",
       },
       {
         title: "BUILD THE RIGHT PLAN",
@@ -468,7 +468,7 @@ const residentialRoofing: ApprovedServicePageData = {
       },
       {
         title: "GET THE DETAILS RIGHT",
-        body: "Valleys, walls, chimneys, and changes in the roofline deserve extra attention. We address those details before the project begins — not after.",
+        body: "Valleys, walls, chimneys, and changes in the roofline deserve extra attention. We address those details before the project begins, not after.",
       },
     ],
   },
@@ -494,7 +494,7 @@ const residentialRoofing: ApprovedServicePageData = {
     steps: [
       {
         title: "Free Consultation",
-        body: "Tell us what is happening with your roof. We'll answer your initial questions and schedule an inspection at a time that works for you — no pressure, just helpful information.",
+        body: "Tell us what is happening with your roof. We'll answer your initial questions and schedule an inspection at a time that works for you. No pressure, just helpful information.",
       },
       {
         title: "A Thorough, Honest Inspection",
@@ -506,7 +506,7 @@ const residentialRoofing: ApprovedServicePageData = {
       },
       {
         title: "Final Walkthrough & Warranty",
-        body: "We walk the finished roof with you to make sure everything meets our standards — and yours. We'll go over your warranty so you know your home is protected for years to come.",
+        body: "We walk the finished roof with you to make sure everything meets our standards and yours. We'll go over your warranty so you know your home is protected for years to come.",
       },
     ],
   },
@@ -554,7 +554,7 @@ const residentialRoofing: ApprovedServicePageData = {
       {
         question: "How do I know if I need a repair or a full roof replacement?",
         answer:
-          "That depends on the age of your roof, the extent of the damage, and the condition of the underlying structure. Our inspection is designed to give you an honest answer — not just the most expensive one.",
+          "That depends on the age of your roof, the extent of the damage, and the condition of the underlying structure. Our inspection is designed to give you an honest answer, not just the most expensive one.",
       },
       {
         question: "What documentation do I receive after the project is complete?",
@@ -566,7 +566,7 @@ const residentialRoofing: ApprovedServicePageData = {
   cta: {
     eyebrow: "Begin with the home",
     title: "Start with the property, the roof, and the system they require.",
-    body: "Oxford will inspect your roof, document what we find, and give you a clear recommendation for your home. No pressure — just an honest assessment from a St. Louis roofing team that knows what it's doing.",
+    body: "Oxford will inspect your roof, document what we find, and give you a clear recommendation for your home. No pressure. Just an honest assessment from a St. Louis roofing team that knows what it's doing.",
   },
 };
 
@@ -583,7 +583,7 @@ const commercialRoofing: ApprovedServicePageData = {
     label: "Commercial Roofing",
     title:
       "A commercial roof should be planned around the property beneath it.",
-    lead: "Every commercial roof has its own conditions, details, and operational considerations. We begin with the building, the visible condition of the roof, and the work it needs—then develop a clear plan for the recommended roofing system and project.",
+    lead: "Every commercial roof has its own conditions, details, and operational considerations. We begin with the building, the visible condition of the roof, and the work it needs. Then we develop a clear plan for the recommended roofing system and project.",
     image: "/uploads/photography-commercial-flat-roof-downtown-stl.png",
     alt: "Roofing crew installing a commercial flat roof in downtown St. Louis",
     caption: "Commercial flat-roof installation",
@@ -744,7 +744,7 @@ const stormDamageRestoration: ApprovedServicePageData = {
     eyebrow: "Storm damage restoration · St. Louis",
     label: "Storm Damage Restoration",
     title: "After the storm, the first question is simple: what did it do to your roof?",
-    lead: "Hail, wind, and storm debris can leave damage that isn't obvious from the ground — and some of it doesn't show up inside your home until weeks later. Oxford comes out, gets on the roof, and documents exactly what the storm left behind. That documentation protects you whether you're filing an insurance claim or just deciding what needs to happen next.",
+    lead: "Hail, wind, and storm debris can leave damage that isn't obvious from the ground. Some of it doesn't show up inside your home until weeks later. Oxford comes out, gets on the roof, and documents exactly what the storm left behind. That record protects you whether you're filing an insurance claim or just deciding what comes next.",
     image: "/uploads/chesterfield-hail-restoration-before.png",
     alt: "Residential roof before the Chesterfield hail restoration project",
     caption: "Chesterfield · Before restoration",
@@ -755,7 +755,7 @@ const stormDamageRestoration: ApprovedServicePageData = {
   decision: {
     eyebrow: "When storm damage restoration is appropriate",
     title: "Signs It's Time to Get Your Roof Looked At",
-    lead: "You don't have to be certain there's damage to call. If any of these apply after a storm, it's worth getting eyes on the roof before assuming everything is fine — or assuming the worst.",
+    lead: "You don't have to be certain there's damage to call. If any of these apply after a storm, it's worth getting eyes on the roof before assuming everything is fine or assuming the worst.",
     criteria: [
       {
         title: "There was a significant hail or wind event in your area.",
@@ -763,11 +763,11 @@ const stormDamageRestoration: ApprovedServicePageData = {
       },
       {
         title: "Something looks different.",
-        body: "Missing shingles, bent flashing, visible granule loss, damaged vents or gutters — any visible change after a storm is worth documenting.",
+        body: "Missing shingles, bent flashing, visible granule loss, and damaged vents or gutters are all worth documenting after a storm.",
       },
       {
         title: "You're seeing water intrusion that wasn't there before.",
-        body: "If a leak or water stain appeared after a storm, the storm is the likely starting point — and the roof needs to be reviewed before the connection can be confirmed.",
+        body: "If a leak or water stain appeared after a storm, the storm is the likely starting point. The roof needs to be reviewed before the connection can be confirmed.",
       },
       {
         title: "You need documentation before anything else.",
@@ -781,7 +781,7 @@ const stormDamageRestoration: ApprovedServicePageData = {
     items: [
       {
         title: "We document the roof as it is right now.",
-        body: "Before any decisions are made, we record the post-storm condition — photographs, affected areas, visible findings — so there's a clear, dated record of what the storm left behind.",
+        body: "Before any decisions are made, we record the post-storm condition with photographs, affected areas, and visible findings. That creates a clear, dated record of what the storm left behind.",
       },
       {
         title: "We define what's damaged and where.",
@@ -789,7 +789,7 @@ const stormDamageRestoration: ApprovedServicePageData = {
       },
       {
         title: "We build a written restoration plan from what we found.",
-        body: "The documented condition drives the proposal — not assumptions, not pressure, not what a contractor thinks your insurance will cover.",
+        body: "The documented condition drives the proposal. Not assumptions. Not pressure. Not what a contractor thinks your insurance will cover.",
       },
     ],
   },
@@ -798,14 +798,14 @@ const stormDamageRestoration: ApprovedServicePageData = {
     title: "What Oxford Documents and Addresses",
     lead: "Every storm restoration project is documented in the same thorough sequence. Here's what that includes:",
     items: [
-      "The roof's full visible condition after the storm — documented with photography",
+      "The roof's full visible condition after the storm, documented with photography",
       "Every roof area and component inspected, identified by location",
       "Dated condition photography for each affected area",
       "A written restoration plan tied directly to documented findings",
       "The approved restoration work, confirmed before anything begins",
       "Completion documentation when the work is done",
     ],
-    note: "Storm restoration and insurance claims assistance are separate services at Oxford. The assessment documents visible roof conditions — coverage decisions belong to your insurer.",
+    note: "Storm restoration and insurance claims assistance are separate services at Oxford. The assessment documents visible roof conditions. Coverage decisions belong to your insurer.",
     image: "/uploads/chesterfield-hail-restoration-before.png",
     alt: "Chesterfield residential roof before hail restoration",
   },
@@ -815,15 +815,15 @@ const stormDamageRestoration: ApprovedServicePageData = {
     steps: [
       {
         title: "Assess",
-        body: "We get on your roof and look at everything — starting with the areas most likely to show impact and working through the full system. You'll know what we found.",
+        body: "We get on your roof and look at everything, starting with the areas most likely to show impact and working through the full system. You'll know what we found.",
       },
       {
         title: "Document",
-        body: "We photograph and record every affected area, component by component. This is the record that follows the project — and that you can use if you're working with an insurance adjuster.",
+        body: "We photograph and record every affected area, component by component. This record follows the project and can be used if you're working with an insurance adjuster.",
       },
       {
         title: "Propose",
-        body: "We put together a written restoration plan based entirely on what we documented. Materials, affected areas, project sequence — in writing before any work is approved.",
+        body: "We put together a written restoration plan based entirely on what we documented. Materials, affected areas, and the project sequence are in writing before any work is approved.",
       },
       {
         title: "Restore",
@@ -850,22 +850,22 @@ const stormDamageRestoration: ApprovedServicePageData = {
       {
         question: "What kinds of damage does a storm typically leave behind?",
         answer:
-          "Hail impact shows up as granule loss, bruising or cracking on shingles, and dents on metal components like vents, gutters, and flashing. Wind damage often means lifted, creased, or missing shingles — especially at ridges and edges. Debris damage depends on what hit and where. Not all of it is visible from the ground, which is why a proper inspection matters.",
+          "Hail impact shows up as granule loss, bruising or cracking on shingles, and dents on metal components such as vents, gutters, and flashing. Wind damage often means lifted, creased, or missing shingles, especially at ridges and edges. Debris damage depends on what hit and where. Not all of it is visible from the ground, which is why a proper inspection matters.",
       },
       {
         question: "Will the inspection tell me what my insurance will cover?",
         answer:
-          "No — and any contractor who tells you otherwise is overpromising. Oxford documents the visible post-storm condition of your roof. What your policy covers is your insurer's call, not ours. What we can do is give you a thorough, accurate record of what we found — which is the most useful thing you can bring to that conversation.",
+          "No. Any contractor who tells you otherwise is overpromising. Oxford documents the visible post-storm condition of your roof. What your policy covers is your insurer's call, not ours. We give you a thorough, accurate record of what we found. That is the most useful thing you can bring to the conversation.",
       },
       {
         question: "How do I know if I need a repair or a full restoration?",
         answer:
-          "It depends on how widespread the damage is. Isolated impact in one or two areas may call for a targeted repair. When damage is distributed across the roof — multiple planes, ridge, flashing, penetrations — a full restoration is usually the more honest answer. Oxford will tell you which one fits after we've inspected your roof and documented what's there.",
+          "It depends on how widespread the damage is. Isolated impact in one or two areas may call for a targeted repair. When damage is distributed across multiple roof planes, the ridge, flashing, and penetrations, a full restoration is usually the more honest answer. Oxford will tell you which one fits after we've inspected your roof and documented what's there.",
       },
       {
         question: "Does Oxford help with the insurance claim?",
         answer:
-          "Oxford offers Insurance Claims Assistance as a separate service. That process involves working alongside you and your insurer — but it's distinct from the storm assessment and restoration work itself. If you're filing a claim, ask us about it when you schedule your inspection.",
+          "Oxford offers Insurance Claims Assistance as a separate service. That process involves working alongside you and your insurer, but it is distinct from the storm assessment and restoration work itself. If you're filing a claim, ask us about it when you schedule your inspection.",
       },
       {
         question: "What documentation do I receive?",
@@ -905,7 +905,7 @@ const roofRepair: ApprovedServicePageData = {
   decision: {
     eyebrow: "When roof repair may be appropriate",
     title: "When a Repair Makes Sense",
-    lead: "Repair is often the right call — and the faster, less disruptive one. Here's when it's worth exploring before anything more involved.",
+    lead: "Repair is often the right call. It can also be the faster, less disruptive option. Here's when it's worth exploring before anything more involved.",
     criteria: [
       {
         title: "The problem is in one place.",
@@ -913,7 +913,7 @@ const roofRepair: ApprovedServicePageData = {
       },
       {
         title: "It's a flashing, edge, or penetration issue.",
-        body: "Chimneys, vents, skylights, roof-to-wall connections — these are common repair candidates and don't require a full tear-off to address properly.",
+        body: "Chimneys, vents, skylights, and roof-to-wall connections are common repair candidates. They do not require a full tear-off to address properly.",
       },
       {
         title: "The rest of the roof is in good shape.",
@@ -930,12 +930,12 @@ const roofRepair: ApprovedServicePageData = {
     title: "The same discipline we bring to a full replacement. Applied to the smallest repair job.",
     items: [
       {
-        title: "We start where you're seeing the problem — and then we look around it.",
+        title: "We start where you're seeing the problem. Then we look around it.",
         body: "The reported area is the starting point, not the conclusion.",
       },
       {
         title: "We define exactly what's getting fixed.",
-        body: "The repair area, the materials, the work involved — all in writing before anything gets touched.",
+        body: "The repair area, materials, and work involved are all in writing before anything gets touched.",
       },
       {
         title: "We look at the whole picture.",
@@ -946,12 +946,12 @@ const roofRepair: ApprovedServicePageData = {
   scope: {
     eyebrow: "Roof repair details",
     title: "What Your Repair Covers",
-    lead: "Every repair is different — but the same categories get defined every time. Here's what Oxford documents and addresses for each repair project:",
+    lead: "Every repair is different, but the same categories get defined every time. Here's what Oxford documents and addresses for each repair project:",
     items: [
       "What you reported and what we find on the roof",
       "The specific area being repaired, clearly defined",
       "Any flashing, edges, or transitions connected to the affected area",
-      "Condition of the surrounding roof — to make sure the repair will hold",
+      "Condition of the surrounding roof, to make sure the repair will hold",
       "The approved repair work, in writing, before we start",
       "Documentation when the job is done",
     ],
@@ -963,15 +963,15 @@ const roofRepair: ApprovedServicePageData = {
     steps: [
       {
         title: "Inspect",
-        body: "We come out and look at the roof — starting where you're seeing the problem and working outward from there.",
+        body: "We come out and look at the roof, starting where you're seeing the problem and working outward from there.",
       },
       {
         title: "Document",
-        body: "We record what we find — the affected area, surrounding conditions, and anything that factors into the repair plan.",
+        body: "We record the affected area, surrounding conditions, and anything else that factors into the repair plan.",
       },
       {
         title: "Propose",
-        body: "We put the repair plan in writing — what's included, what materials are being used, and what the work will cost. You review it before we schedule anything.",
+        body: "We put what's included, the materials being used, and the cost of the work in writing. You review it before we schedule anything.",
       },
       {
         title: "Fix It",
@@ -986,7 +986,7 @@ const roofRepair: ApprovedServicePageData = {
       {
         question: "How do I know if I need a repair or a full replacement?",
         answer:
-          "Repair makes sense when the damage is isolated and the rest of the roof can still perform reliably around it. Replacement becomes the better answer when deterioration is widespread, leaks are recurring in multiple spots, or the underlying deck is compromised. Oxford will tell you which one applies after we've seen your roof — not before.",
+          "Repair makes sense when the damage is isolated and the rest of the roof can still perform reliably around it. Replacement becomes the better answer when deterioration is widespread, leaks are recurring in multiple spots, or the underlying deck is compromised. Oxford will tell you which one applies after we've seen your roof, not before.",
       },
       {
         question: "The leak is in one spot — does that mean the repair is in the same spot?",
@@ -1001,7 +1001,7 @@ const roofRepair: ApprovedServicePageData = {
       {
         question: "Will the repair hold? What kind of warranty is there?",
         answer:
-          "Warranty terms vary depending on the materials and the nature of the repair. Oxford will outline what's covered in your written proposal. If there's any condition that could affect the repair's performance over time, we'll tell you before we start — not after.",
+          "Warranty terms vary depending on the materials and the nature of the repair. Oxford will outline what's covered in your written proposal. If there's any condition that could affect the repair's performance over time, we'll tell you before we start, not after.",
       },
       {
         question: "What documentation do I receive after the repair is done?",
@@ -1030,7 +1030,7 @@ const insuranceClaims: ApprovedServicePageData = {
     eyebrow: "Insurance claims assistance · St. Louis",
     label: "Insurance Claims Assistance",
     title: "Filing a claim for storm damage is complicated. Having the right roofing documentation doesn't have to be.",
-    lead: "When your insurer sends an adjuster to inspect your roof, what's in Oxford's documentation file matters. We come out before that conversation happens — documenting visible conditions, producing an accurate written estimate, and making sure the roofing picture is clear and complete. What your policy covers is between you and your insurer. What your roof actually looks like after a storm is something we can document thoroughly.",
+    lead: "When your insurer sends an adjuster to inspect your roof, what's in Oxford's documentation file matters. We come out before that conversation happens to document visible conditions, produce an accurate written estimate, and make sure the roofing picture is clear and complete. What your policy covers is between you and your insurer. What your roof actually looks like after a storm is something we can document thoroughly.",
     image: "/uploads/chesterfield-hail-restoration-before.png",
     alt: "Residential roof with visible post-storm conditions in Chesterfield",
     caption: "Chesterfield · Documented storm condition",
@@ -1045,18 +1045,18 @@ const insuranceClaims: ApprovedServicePageData = {
     criteria: [
       {
         title: "A storm affected your property and you're planning to file a claim.",
-        body: "Oxford can document the roof's post-storm condition before your adjuster visit — so the roofing picture is already on record.",
+        body: "Oxford can document the roof's post-storm condition before your adjuster visit, so the roofing picture is already on record.",
       },
       {
         title: "You want an independent contractor assessment before the insurer's adjuster arrives.",
-        body: "Oxford's inspection and estimate are based on what we actually find on your roof — not on what a claim might cover.",
+        body: "Oxford's inspection and estimate are based on what we actually find on your roof, not on what a claim might cover.",
       },
       {
         title: "Your adjuster is coming and you want to be prepared.",
         body: "Having thorough condition photography, a written estimate, and a clear record of the affected areas before the adjuster visit puts you in a better position going into that conversation.",
       },
       {
-        title: "You need roofing documentation — not policy interpretation.",
+        title: "You need roofing documentation, not policy interpretation.",
         body: "Oxford's role is clear: we document the roof and define the roofing work. Coverage decisions belong to your insurer. We stay in our lane so the record we produce is credible and defensible.",
       },
     ],
@@ -1068,7 +1068,7 @@ const insuranceClaims: ApprovedServicePageData = {
     items: [
       {
         title: "We document what the storm left behind.",
-        body: "Thorough condition photography, affected areas identified by location, and a written record of everything we found on the roof — dated and tied to the specific property.",
+        body: "We provide thorough condition photography, identify affected areas by location, and create a written record tied to the specific property and date.",
       },
       {
         title: "We produce an accurate written estimate for the roofing work.",
@@ -1076,7 +1076,7 @@ const insuranceClaims: ApprovedServicePageData = {
       },
       {
         title: "We're roofing contractors, not public adjusters.",
-        body: "Coverage decisions, policy interpretation, and claim outcomes belong to you and your insurer. Oxford doesn't cross that line — which is exactly why our documentation carries weight when it counts.",
+        body: "Coverage decisions, policy interpretation, and claim outcomes belong to you and your insurer. Oxford doesn't cross that line. That's exactly why our documentation carries weight when it counts.",
       },
     ],
   },
@@ -1102,7 +1102,7 @@ const insuranceClaims: ApprovedServicePageData = {
     steps: [
       {
         title: "Inspect",
-        body: "We come out and inspect the full roof — documenting post-storm conditions with photographs and a written record of every affected area. Ideally before the adjuster visit.",
+        body: "We come out and inspect the full roof. We document post-storm conditions with photographs and a written record of every affected area, ideally before the adjuster visit.",
       },
       {
         title: "Document",
@@ -1110,7 +1110,7 @@ const insuranceClaims: ApprovedServicePageData = {
       },
       {
         title: "Estimate",
-        body: "We prepare a written estimate for the roofing work based on documented conditions. Accurate, specific, and tied to what we found — not to what we think the claim should pay.",
+        body: "We prepare a written estimate for the roofing work based on documented conditions. It is accurate, specific, and tied to what we found, not to what we think the claim should pay.",
       },
       {
         title: "Complete",
@@ -1137,12 +1137,12 @@ const insuranceClaims: ApprovedServicePageData = {
       {
         question: "Does Oxford decide what my insurance will cover?",
         answer:
-          "No — and you should be cautious of any contractor who implies they can. Coverage is your insurer's call under your policy. What Oxford controls is the accuracy and completeness of the roofing documentation. That's what we focus on.",
+          "No. You should be cautious of any contractor who implies they can. Coverage is your insurer's call under your policy. What Oxford controls is the accuracy and completeness of the roofing documentation. That's what we focus on.",
       },
       {
         question: "Is this the same as hiring a public adjuster?",
         answer:
-          "No. A public adjuster represents you in the claims process and negotiates on your behalf — that's a licensed role Oxford does not fill. Oxford's role is as your roofing contractor: documenting the damage, producing an accurate estimate, and completing the approved work. Those are different functions, and keeping them separate is important.",
+          "No. A public adjuster represents you in the claims process and negotiates on your behalf. That's a licensed role Oxford does not fill. Oxford's role is as your roofing contractor: documenting the damage, producing an accurate estimate, and completing the approved work. Those are different functions, and keeping them separate is important.",
       },
       {
         question: "What documentation does Oxford actually provide?",
@@ -1157,14 +1157,14 @@ const insuranceClaims: ApprovedServicePageData = {
       {
         question: "What's the difference between storm restoration and claims assistance?",
         answer:
-          "Storm Damage Restoration is the roofing service — the inspection, approved repair or replacement work, and finished project. Insurance Claims Assistance is the documentation that supports your conversation with the insurer while that work is being considered. Coverage decisions remain with your insurer.",
+          "Storm Damage Restoration is the roofing service: the inspection, approved repair or replacement work, and finished project. Insurance Claims Assistance is the documentation that supports your conversation with the insurer while that work is being considered. Coverage decisions remain with your insurer.",
       },
     ],
   },
   cta: {
     eyebrow: "Begin with the roofing record",
     title: "Get the Roofing Documentation Right Before the Adjuster Arrives.",
-    body: "The most useful thing you can do before your insurer sends someone out is have a thorough, independent roofing record already in hand. Oxford will come out, document the condition, and put together a written estimate — so you're walking into that conversation prepared.",
+    body: "The most useful thing you can do before your insurer sends someone out is have a thorough, independent roofing record already in hand. Oxford will come out, document the condition, and put together a written estimate. You'll walk into that conversation prepared.",
     buttonLabel: "Schedule Your Storm Assessment",
   },
 };

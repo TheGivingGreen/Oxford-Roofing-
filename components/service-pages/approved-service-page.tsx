@@ -31,12 +31,16 @@ function Eyebrow({
 function Hero({ data }: { data: ApprovedServicePageData }) {
   const proofId = `${data.slug}-proof`;
   const heroClass = `${styles.hero} ${styles[`hero_${data.hero.variant}`]}`;
+  const heroEyebrow = data.hero.eyebrow.replace(
+    /·\s*St\. Louis$/i,
+    "· Greater St. Louis Region",
+  );
 
   const copy = (
     <div className={styles.heroCopy}>
       <div className={styles.heroCopyInner}>
         <Eyebrow dark={data.hero.variant !== "light-split"}>
-          {data.hero.eyebrow}
+          {heroEyebrow}
         </Eyebrow>
         <p className={styles.serviceLabel}>{data.hero.label}</p>
         <h1 id={`${data.slug}-title`}>{data.hero.title}</h1>
