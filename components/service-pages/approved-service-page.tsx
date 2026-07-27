@@ -46,11 +46,11 @@ function Hero({ data }: { data: ApprovedServicePageData }) {
             className={`${styles.button} ${styles.buttonGold}`}
             href="/contact"
           >
-            Request an Inspection
+            {data.hero.ctaLabel ?? "Request an Inspection"}
           </Link>
           <Link
             className={`${styles.button} ${styles.buttonGhost}`}
-            href={`#${proofId}`}
+            href={data.hero.proofHref ?? `#${proofId}`}
           >
             {data.hero.proofLabel}
           </Link>
@@ -122,7 +122,9 @@ function DecisionSection({ data }: { data: ApprovedServicePageData }) {
             </article>
           ))}
         </div>
-        <p className={styles.sectionNote}>{data.decision.note}</p>
+        {data.decision.note ? (
+          <p className={styles.sectionNote}>{data.decision.note}</p>
+        ) : null}
       </div>
     </section>
   );
@@ -172,11 +174,18 @@ function ScopeSection({ data }: { data: ApprovedServicePageData }) {
         </span>
       </span>
     </div>
-  ) : (
-    <figure className={styles.scopeMedia}>
-      <img src={assetPath(data.scope.image ?? "")} alt={data.scope.alt ?? ""} />
+  ) : data.scope.image ? (
+    <figure
+      className={`${styles.scopeMedia} ${data.scope.caption ? styles.scopeMediaCaptioned : ""}`}
+    >
+      <img src={assetPath(data.scope.image)} alt={data.scope.alt ?? ""} />
+      {data.scope.caption ? (
+        <figcaption className={styles.scopeCaption}>
+          {data.scope.caption}
+        </figcaption>
+      ) : null}
     </figure>
-  );
+  ) : null;
 
   return (
     <section
@@ -184,7 +193,7 @@ function ScopeSection({ data }: { data: ApprovedServicePageData }) {
       aria-labelledby={`${data.slug}-scope-title`}
     >
       <div
-        className={`${styles.container} ${styles.scopeLayout} ${data.scope.reverse ? styles.scopeLayoutReverse : ""}`}
+        className={`${styles.container} ${styles.scopeLayout} ${data.scope.reverse ? styles.scopeLayoutReverse : ""} ${media ? "" : styles.scopeLayoutTextOnly}`}
       >
         {media}
         <div className={styles.scopeCopy}>
@@ -199,7 +208,9 @@ function ScopeSection({ data }: { data: ApprovedServicePageData }) {
               </li>
             ))}
           </ol>
-          <p className={styles.scopeNote}>{data.scope.note}</p>
+          {data.scope.note ? (
+            <p className={styles.scopeNote}>{data.scope.note}</p>
+          ) : null}
         </div>
       </div>
     </section>
@@ -216,6 +227,9 @@ function ProcessSection({ data }: { data: ApprovedServicePageData }) {
         <header className={styles.processHeader}>
           <Eyebrow>{data.process.eyebrow}</Eyebrow>
           <h2 id={`${data.slug}-process-title`}>{data.process.title}</h2>
+          {data.process.lead ? (
+            <p className={styles.lead}>{data.process.lead}</p>
+          ) : null}
         </header>
         <div
           className={`${styles.processGrid} ${data.process.compact ? styles.processGridCompact : ""}`}
@@ -236,6 +250,10 @@ function ProcessSection({ data }: { data: ApprovedServicePageData }) {
 function ProjectProof({ data }: { data: ApprovedServicePageData }) {
   const proof = data.proof;
   const sectionId = `${data.slug}-proof`;
+
+  if (!proof) {
+    return null;
+  }
 
   if (proof.kind === "single") {
     return (
@@ -328,7 +346,7 @@ function ProjectProof({ data }: { data: ApprovedServicePageData }) {
             <Eyebrow dark>{proof.eyebrow}</Eyebrow>
             <h2 id={`${data.slug}-proof-title`}>{proof.title}</h2>
           </div>
-          <p className={styles.lead}>{proof.body}</p>
+          {proof.body ? <p className={styles.lead}>{proof.body}</p> : null}
         </header>
         <div className={styles.projectGrid}>
           {proof.projects.map((project) => (
@@ -364,8 +382,8 @@ function TerritorySection({ data }: { data: ApprovedServicePageData }) {
             {data.hero.label} across the greater St. Louis region.
           </h2>
           <p className={styles.lead}>
-            Oxford’s approved territory includes the following Missouri and
-            Illinois communities.
+            {data.territoryLead ??
+              "Oxford’s approved territory includes the following Missouri and Illinois communities."}
           </p>
         </header>
         {serviceTerritory.map((state) => (
@@ -426,7 +444,7 @@ function FaqSection({ data }: { data: ApprovedServicePageData }) {
         <header className={styles.faqIntro}>
           <Eyebrow>{data.faq.eyebrow}</Eyebrow>
           <h2 id={`${data.slug}-faq-title`}>{data.faq.title}</h2>
-          <p className={styles.lead}>{data.faq.lead}</p>
+          {data.faq.lead ? <p className={styles.lead}>{data.faq.lead}</p> : null}
         </header>
         <ServiceAccordion items={data.faq.items} slug={data.slug} />
       </div>
@@ -448,7 +466,7 @@ function FinalCta({ data }: { data: ApprovedServicePageData }) {
           className={`${styles.button} ${styles.buttonGold}`}
           href="/contact"
         >
-          Request an Inspection
+          {data.cta.buttonLabel ?? "Request an Inspection"}
         </Link>
       </div>
     </section>

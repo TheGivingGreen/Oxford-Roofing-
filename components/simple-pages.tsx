@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, Input, PhotoBlock, Section, Select, ServiceCard } from "@/components/ui";
-import { faqItems, projects, services } from "@/lib/data";
+import { faqSections, projects, services } from "@/lib/data";
 import { assetPath } from "@/lib/paths";
 
 type PageHeroProps = {
@@ -78,17 +78,50 @@ export function AboutPage() {
           <div>
             <Eyebrow>Company</Eyebrow>
             <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Twenty years in the field changes how you work.</h2>
-            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford Roofing serves homeowners, building owners, and property managers who want quality work, clear communication, and a roofing company that stands behind the finished project.</p>
-            <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">Our approach is straightforward: inspect the roof, explain what we find, complete the work properly, leave the property clean, and stand behind the result.</p>
+            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford was built around a few specific beliefs about how roofing work should be done. Inspection comes before recommendation. The plan is written down before the crew arrives. The people doing the work are Oxford’s people, not whoever was available that week. A finished roof should be something both the property owner and the contractor are genuinely proud of.</p>
+            <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">More than twenty years in roofing has reinforced those beliefs. Oxford serves homeowners, building owners, and property managers who want quality work, clear communication, and a roofing company that stands behind the finished project.</p>
           </div>
           <PhotoBlock src="/uploads/photography-commercial-flat-roof-downtown-stl.png" alt="Roofing crew and materials on a commercial flat roof" className="min-h-[420px] rounded-lg" objectPosition="center" />
         </div>
       </Section>
       <Section tone="alt">
-        <div className="grid gap-6 md:grid-cols-3">
-          {["No subcontracted crews", "A clear written scope before work begins", "Your warranty registered promptly"].map((item) => <Card key={item} elevated><div className="font-sans text-lg font-semibold text-[var(--text-heading)]">{item}</div></Card>)}
+        <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+          <PhotoBlock src="/uploads/photography-residential-tearoff-kirkwood.png" alt="Oxford roofing crew completing a residential tear-off in Kirkwood" className="min-h-[440px] rounded-lg" objectPosition="center 45%" />
+          <div>
+            <Eyebrow>Our Crew</Eyebrow>
+            <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">The Same Crew, Every Time</h2>
+            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford does not use subcontracted crews. Every residential, commercial, storm, repair, and replacement project stays with Oxford’s own team.</p>
+            <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">Keeping the work inside one accountable company gives property owners a clear line of responsibility from the written plan through the completed roof. The crew is ours. The work is ours. We stand behind the result.</p>
+          </div>
         </div>
       </Section>
+      <Section>
+        <div className="mx-auto max-w-[900px] text-center">
+          <Eyebrow>The Oxford Approach</Eyebrow>
+          <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Straightforward from inspection through the finished project.</h2>
+          <p className="m-0 mx-auto max-w-narrow font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford’s approach has not changed. We inspect the roof before recommending anything. We explain what we find in plain language. We complete the work with our own crew using quality materials. We leave the property clean, and we stand behind the finished project.</p>
+          <div className="mt-12 grid gap-6 text-left md:grid-cols-3">
+            {["No subcontracted crews", "A written plan in place before work begins", "Your warranty registered promptly"].map((item) => <Card key={item} elevated><div className="font-sans text-lg font-semibold text-[var(--text-heading)]">{item}</div></Card>)}
+          </div>
+        </div>
+      </Section>
+      <Section tone="alt">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+          <div>
+            <Eyebrow>St. Louis Roofing</Eyebrow>
+            <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Experience across the properties and roof systems of St. Louis.</h2>
+            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford works across residential and commercial properties throughout the greater St. Louis region. Our verified portfolio includes slate restoration in Ladue, TPO roofing in Clayton, standing seam metal in Webster Groves, hail restoration in Chesterfield, EPDM roofing in Maplewood, and a full tear-off in Kirkwood.</p>
+            <p className="m-0 mb-8 font-sans text-base leading-[1.7] text-[var(--text-body)]">That range matters. Every property brings different architecture, roof geometry, materials, and operational needs. We start by understanding the building in front of us.</p>
+            <Button href="/portfolio" variant="secondary">View Our Work</Button>
+          </div>
+          <PhotoBlock src="/uploads/ladue-synthetic-slate-restoration.png" alt="Completed synthetic slate roof restoration in Ladue" className="min-h-[440px] rounded-lg" objectPosition="center" />
+        </div>
+      </Section>
+      <Cta
+        title="If You’re Comparing Roofing Companies, Here’s What to Look For."
+        body="Ask who will complete the work. Ask to see the written proposal before anything is signed. Ask what the warranty covers and how long the company has worked in roofing. Oxford’s answers are straightforward: our crew, a written proposal, a warranty we can explain, and more than twenty years in the field."
+        buttonLabel="Schedule Your Inspection"
+      />
     </main>
   );
 }
@@ -162,7 +195,15 @@ export function FAQPage() {
     <main>
       <PageHero eyebrow="FAQ" title="Clear answers before a crew steps on your roof." imageSrc="/uploads/webster-groves-standing-seam-metal.png" imageAlt="Aerial view of a standing-seam metal roof" objectPosition="center 55%" />
       <Section tone="alt">
-        <div className="mx-auto max-w-narrow"><Accordion items={faqItems} /></div>
+        <div className="mx-auto max-w-narrow space-y-14">
+          {faqSections.map((section, index) => (
+            <section key={section.title} aria-labelledby={`faq-section-${index}`}>
+              <Eyebrow>FAQ</Eyebrow>
+              <h2 id={`faq-section-${index}`} className="m-0 mb-7 font-display text-[clamp(26px,3.2vw,36px)] font-semibold text-[var(--text-heading)]">{section.title}</h2>
+              <Accordion items={section.items} idPrefix={`faq-${index}`} />
+            </section>
+          ))}
+        </div>
       </Section>
     </main>
   );
@@ -224,12 +265,12 @@ export function ThankYouPage() {
   );
 }
 
-function Cta({ title, body }: { title: string; body: string }) {
+function Cta({ title, body, buttonLabel = "Request an Inspection" }: { title: string; body: string; buttonLabel?: string }) {
   return (
     <section className="bg-navy-900 px-6 py-[100px] text-center text-white md:px-10">
       <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.6vw,40px)] font-semibold">{title}</h2>
       <p className="m-0 mb-8 font-sans text-base leading-[1.6] text-white/75">{body}</p>
-      <Button href="/contact" variant="accent" size="lg">Request an Inspection</Button>
+      <Button href="/contact" variant="accent" size="lg">{buttonLabel}</Button>
     </section>
   );
 }

@@ -20,13 +20,13 @@ import styles from "./home-page.module.css";
 
 const homeServiceDescriptions: Record<string, string> = {
   "residential-roofing":
-    "Residential roof systems shaped by the home, its geometry, and the approved project scope.",
+    "From inspections and repairs to full replacements — Oxford handles residential roofing for St. Louis homes the right way. We document what we find, explain what it means, and build what we agree to.",
   "commercial-roofing":
-    "Low-slope and flat-roof planning grounded in the building context and written scope.",
+    "TPO, EPDM, low-slope systems, and flat-roof projects for St. Louis businesses and property portfolios. Managed around your tenants and your timeline.",
   "roof-replacement":
-    "A documented path from the existing roof condition to an approved replacement system.",
+    "A complete, documented path from your existing roof's condition to an approved new system. Nothing gets built until you understand exactly what you're approving.",
   "roof-repair":
-    "A clearly bounded review of localized roof conditions and proposed repair work.",
+    "When the problem is contained, a well-defined repair is the right answer. Oxford identifies the affected area, puts the plan in writing, and fixes what needs fixing.",
 };
 
 const homeWhyDescriptions = [
@@ -42,27 +42,27 @@ const homeFaqItems = [
   {
     question: "How is a residential roof-replacement schedule established?",
     answer:
-      "The schedule depends on the property, roof configuration, approved scope, material availability, and other project conditions. Oxford’s exact timing practices require confirmation and should be stated in the written proposal.",
+      "Once a project is approved and the materials are confirmed, Oxford works with you to schedule a start date. Timing depends on crew availability, material lead times, and the scope of the project — but you'll have a confirmed schedule in writing before work begins, not a vague window.",
   },
   {
-    question: "What does Insurance Claims Assistance mean?",
+    question: "Can Oxford help with an insurance claim?",
     answer:
-      "Oxford’s defensible role is limited to roofing-contractor activities it confirms, such as documenting visible roof conditions and defining proposed roofing work. Coverage, policy interpretation, negotiation, and claim decisions remain outside that contractor role.",
+      "Oxford documents the roof's post-storm condition, produces an accurate written estimate, and can meet your adjuster on site when needed. Coverage decisions belong to your insurer, but thorough contractor documentation gives you a clear record to bring to that conversation. See our Insurance Claims Assistance page for more.",
   },
   {
-    question: "What warranty applies to roofing work?",
+    question: "What warranty comes with a new roof?",
     answer:
-      "No warranty term is stated here. Any applicable workmanship, product, or manufacturer terms must be confirmed in Oxford’s written proposal and final project documents.",
+      "Workmanship is covered for a minimum of 10 years. Manufacturer warranties run up to 25 years depending on the material and system installed.",
   },
   {
-    question: "Does Oxford work on commercial low-slope roofs?",
+    question: "Does Oxford handle commercial roofing?",
     answer:
-      "Oxford’s verified portfolio includes a TPO membrane project at Clayton Office Park and an EPDM membrane project at Maplewood Retail Center. Additional systems and availability require confirmation.",
+      "Yes. Oxford works with commercial property owners and managers across the St. Louis metro on TPO, EPDM, and low-slope roofing systems. The Clayton Office Park and Maplewood Retail Center projects in our portfolio are both verified commercial work. See our Commercial Roofing page for the full picture.",
   },
   {
     question: "What does a roof inspection include?",
     answer:
-      "Oxford’s inspection access, methods, photographs, report format, fees, and deliverables require confirmation. The agreed scope should identify the property context and visible roof areas included in the review.",
+      "Oxford inspects all accessible roof surfaces — every plane, edge, penetration, transition, and adjoining component — and documents what we find with photographs and a written record. Inspections are free, with no obligation. You'll know what the roof looks like before any work is proposed.",
   },
 ];
 
@@ -91,8 +91,10 @@ export function HomePage() {
           </div>
           <h1 id="home-title">Built to outlast the weather it stops.</h1>
           <p>
-            More than 20 years of roofing experience across St. Louis-area homes
-            and businesses, with more than 900 roofs completed.
+            Oxford has been working on St. Louis roofs since before most of our
+            current customers moved into their homes. Commercial, residential,
+            storm, replacement, repair — we've done it all, and we've done it
+            here.
           </p>
           <div className={styles.heroActions}>
             <Button href="/contact" variant="accent" size="lg">
@@ -126,9 +128,8 @@ export function HomePage() {
             <Eyebrow>WHY OXFORD ROOFING</Eyebrow>
             <h2>Roofing built on trust.</h2>
             <p>
-              With more than 20 years of roofing experience, we know every
-              property is different. We inspect the roof, explain what we find,
-              and clearly outline the work before it begins.
+              Every property is different. Oxford inspects the roof, explains
+              what we find, and outlines the work clearly before it begins.
             </p>
             <div className={styles.whyList}>
               {[
@@ -360,7 +361,12 @@ export function HomePage() {
         <div>
           <Eyebrow onDark>Book Now</Eyebrow>
           <h2 id="home-cta-title">
-            Concerned about your roof? Let’s take a closer look.
+            <span className="block md:relative md:left-1/2 md:w-max md:-translate-x-1/2 md:whitespace-nowrap">
+              Concerned about your roof?
+            </span>
+            <span className="block md:relative md:left-1/2 md:w-max md:-translate-x-1/2 md:whitespace-nowrap">
+              Let us take a closer look.
+            </span>
           </h2>
           <p>
             Whether you have a leak, storm damage, an aging roof, or simply need

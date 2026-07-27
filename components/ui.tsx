@@ -213,7 +213,7 @@ export function Footer() {
   );
 }
 
-export function Accordion({ items, idPrefix = "accordion" }: { items: { question: string; answer: string }[]; idPrefix?: string }) {
+export function Accordion({ items, idPrefix = "accordion" }: { items: { question: string; answer: string; link?: { href: string; label: string } }[]; idPrefix?: string }) {
   const [openIndex, setOpenIndex] = useState(0);
   return (
     <div className="border-t border-[var(--border-subtle)]">
@@ -228,7 +228,10 @@ export function Accordion({ items, idPrefix = "accordion" }: { items: { question
               {item.question}
               <span aria-hidden="true" className="text-xl text-[var(--text-gold)]">{isOpen ? "-" : "+"}</span>
             </button>
-            <p id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="m-0 pb-6 font-sans text-sm leading-[1.7] text-[var(--text-body)]">{item.answer}</p>
+            <div id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="pb-6 font-sans text-sm leading-[1.7] text-[var(--text-body)]">
+              <p className="m-0">{item.answer}</p>
+              {item.link ? <Link href={item.link.href} className="mt-3 inline-flex font-semibold text-[var(--text-gold)] underline decoration-current/35 underline-offset-4 transition-colors hover:text-gold-600">{item.link.label}</Link> : null}
+            </div>
           </div>
         );
       })}
