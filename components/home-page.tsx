@@ -30,11 +30,13 @@ const homeServiceDescriptions: Record<string, string> = {
 };
 
 const homeWhyDescriptions = [
-  "A written scope gives the project a clear reference point from condition review through completion.",
-  "More than 20 years of experience and more than 900 completed roofs inform Oxford’s roofing perspective.",
-  "Recommendations should follow the documented roof condition and the work approved for the property.",
-  "Roof surfaces, edges, flashing details, penetrations, and transitions are considered as parts of one system.",
+  "We show up, communicate clearly, and do what we say we will do.",
+  "With more than 20 years in roofing, we know what to look for and how to solve it.",
+  "We explain what your roof needs, what it doesn’t, and what everything will cost.",
+  "We use quality materials and proven installation methods to build roofs that last.",
 ];
+
+const homeWhyTitles = ["Reliability", "Experience", "Honesty", "Craft"];
 
 const homeFaqItems = [
   {
@@ -118,11 +120,52 @@ export function HomePage() {
         </div>
       </section>
 
+      <Section tone="alt" className={styles.whySection}>
+        <div className={styles.whyLayout}>
+          <div className={styles.whyCopy}>
+            <Eyebrow>WHY OXFORD ROOFING</Eyebrow>
+            <h2>Roofing built on trust.</h2>
+            <p>
+              With more than 20 years of roofing experience, we know every
+              property is different. We inspect the roof, explain what we find,
+              and clearly outline the work before it begins.
+            </p>
+            <div className={styles.whyList}>
+              {[
+                "A clear record of your roof’s condition",
+                "A written plan everyone understands",
+                "Recommendations that fit your home or business",
+              ].map((item) => (
+                <div key={item}>
+                  <span className="oxr-check">✓</span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.whyGrid}>
+            {whyCards.map((card, index) => (
+              <Card className={styles.whyCard} key={card.title} elevated>
+                <IconTile>{card.icon}</IconTile>
+                <h3>{homeWhyTitles[index]}</h3>
+                <p>{homeWhyDescriptions[index]}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       <Section className={styles.servicesSection}>
         <div className={styles.sectionHeadingRow}>
           <div>
             <Eyebrow>Services</Eyebrow>
-            <h2>Every roof, one standard of craft.</h2>
+            <h2>Complete roofing services for St. Louis.</h2>
+            <p>
+              From repairs and storm damage to full roof replacements, Oxford
+              Roofing serves homes and businesses across the St. Louis area.
+              We’ll help you understand what your roof needs and find the right
+              solution for your property.
+            </p>
           </div>
           <Button href="/services" variant="secondary">
             All Services
@@ -147,41 +190,6 @@ export function HomePage() {
         </div>
       </Section>
 
-      <Section tone="alt" className={styles.whySection}>
-        <div className={styles.whyLayout}>
-          <div className={styles.whyCopy}>
-            <Eyebrow>Why Oxford Roofing</Eyebrow>
-            <h2>Roofing you can rely on, every single time.</h2>
-            <p>
-              More than 20 years of roofing experience informs a deliberate
-              approach: understand the property, document the visible condition,
-              and define the proposed work before it begins.
-            </p>
-            <div className={styles.whyList}>
-              {[
-                "Documented conditions before work is defined",
-                "A written scope as the project reference point",
-                "Residential and commercial roof context considered",
-              ].map((item) => (
-                <div key={item}>
-                  <span className="oxr-check">✓</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className={styles.whyGrid}>
-            {whyCards.map((card, index) => (
-              <Card className={styles.whyCard} key={card.title} elevated>
-                <IconTile>{card.icon}</IconTile>
-                <h3>{card.title}</h3>
-                <p>{homeWhyDescriptions[index]}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
       <Section className={styles.processSection}>
         <header className={styles.centeredHeading}>
           <Eyebrow>Our Process</Eyebrow>
@@ -190,20 +198,20 @@ export function HomePage() {
         <div className={styles.processGrid}>
           {[
             {
-              title: "Inspect & assess",
-              body: "Review the property context and visible roof conditions included in the confirmed assessment scope.",
+              title: "Free Consultation",
+              body: "Tell us what’s happening with your roof. We’ll answer your initial questions and schedule an inspection at a convenient time.",
             },
             {
-              title: "Propose & plan",
-              body: "Define the proposed work, project-specific details, and applicable sequence in writing.",
+              title: "Detailed Roof Inspection",
+              body: "We inspect your roof, document what we find, explain its condition clearly, and walk you through your options.",
             },
             {
-              title: "Install",
-              body: "Use the accepted written scope as the reference point for the approved roofing work.",
+              title: "Professional Project Execution",
+              body: "Once approved, our skilled crew handles permits and completes your project efficiently with quality materials.",
             },
             {
-              title: "Review",
-              body: "Review the completed work and the project information Oxford confirms as applicable.",
+              title: "Final Walkthrough & Warranty",
+              body: "We review the completed work with you, answer any remaining questions, and explain your warranty.",
             },
           ].map((step, index) => (
             <article className={styles.processStep} key={step.title}>
@@ -218,10 +226,12 @@ export function HomePage() {
       <section className={styles.serviceSplit}>
         <div className={styles.splitCopyDark}>
           <Eyebrow onDark>Commercial</Eyebrow>
-          <h2>Roofs that do not interrupt business.</h2>
+          <h2>Roofs that keep your business moving.</h2>
           <p>
-            Commercial low-slope and flat-roof planning based on the roof asset,
-            building context, and approved project scope.
+            Oxford Roofing protects commercial properties with durable, energy
+            efficient roofing systems. From TPO installation to comprehensive
+            roof repair, we provide reliable service, transparent pricing, and
+            expert craftsmanship while minimizing disruption to your business.
           </p>
           <Button href="/services/commercial-roofing" variant="ghost">
             Commercial Roofing
@@ -241,10 +251,12 @@ export function HomePage() {
         />
         <div className={styles.splitCopyLight}>
           <Eyebrow>Residential</Eyebrow>
-          <h2>Roofs that raise a home&apos;s standard.</h2>
+          <h2>Roofs that protect what matters most.</h2>
           <p>
-            Residential roofing shaped by the home, roof geometry, visible
-            condition, and the system approved for that property.
+            Oxford Roofing provides St. Louis homeowners with durable, high
+            quality roofing systems. From storm damage and roof repairs to
+            complete replacements, we provide honest guidance, quality
+            materials, and expert craftsmanship from start to finish.
           </p>
           <Button href="/services/residential-roofing" variant="secondary">
             Residential Roofing
@@ -346,14 +358,19 @@ export function HomePage() {
 
       <section className={styles.finalCta} aria-labelledby="home-cta-title">
         <div>
-          <Eyebrow onDark>Begin with the roof</Eyebrow>
-          <h2 id="home-cta-title">Protect what you have built.</h2>
+          <Eyebrow onDark>Book Now</Eyebrow>
+          <h2 id="home-cta-title">
+            Concerned about your roof? Let’s take a closer look.
+          </h2>
           <p>
-            Request a property-specific review and a clearly defined next
-            roofing step.
+            Whether you have a leak, storm damage, an aging roof, or simply need
+            a professional opinion, Oxford Roofing will inspect your roof,
+            explain what we find, and help you understand your options. Get the
+            clear answers and peace of mind you need to move forward with
+            confidence.
           </p>
           <Button href="/contact" variant="accent" size="lg">
-            Request an Inspection
+            Request a Free Consultation
           </Button>
         </div>
       </section>

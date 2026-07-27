@@ -78,15 +78,15 @@ export function AboutPage() {
           <div>
             <Eyebrow>Company</Eyebrow>
             <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Twenty years in the field changes how you work.</h2>
-            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford Roofing serves homeowners, building owners, and property managers who want a roof installed correctly, documented clearly, and warranted without confusion.</p>
-            <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">The work is direct: inspect the roof, explain the finding, build the system, clean the site, and stand behind the result.</p>
+            <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford Roofing serves homeowners, building owners, and property managers who want quality work, clear communication, and a roofing company that stands behind the finished project.</p>
+            <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">Our approach is straightforward: inspect the roof, explain what we find, complete the work properly, leave the property clean, and stand behind the result.</p>
           </div>
           <PhotoBlock src="/uploads/photography-commercial-flat-roof-downtown-stl.png" alt="Roofing crew and materials on a commercial flat roof" className="min-h-[420px] rounded-lg" objectPosition="center" />
         </div>
       </Section>
       <Section tone="alt">
         <div className="grid gap-6 md:grid-cols-3">
-          {["No subcontracted crews", "Written scopes before work begins", "Warranty terms registered promptly"].map((item) => <Card key={item} elevated><div className="font-sans text-lg font-semibold text-[var(--text-heading)]">{item}</div></Card>)}
+          {["No subcontracted crews", "A clear written scope before work begins", "Your warranty registered promptly"].map((item) => <Card key={item} elevated><div className="font-sans text-lg font-semibold text-[var(--text-heading)]">{item}</div></Card>)}
         </div>
       </Section>
     </main>
