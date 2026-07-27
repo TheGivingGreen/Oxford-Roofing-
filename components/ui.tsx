@@ -205,7 +205,7 @@ export function Footer() {
         </div>
         <div>
           <div className="mb-4 font-sans text-xs font-semibold uppercase tracking-[0.18em] text-gold-400">Contact</div>
-          <div className="font-sans text-sm leading-[1.8] text-white/72">St. Louis, Missouri<br />(314) 555-0142<br />inspections@oxfordroofing.com</div>
+          <div className="font-sans text-sm leading-[1.8] text-white/72">St. Louis, Missouri<br />(314) 555-0142<br />inspections@OxfordRoofingUSA.com</div>
         </div>
       </div>
       <div className="mx-auto mt-12 max-w-container border-t border-white/15 pt-6 font-sans text-xs text-white/55">© 2026 Oxford Roofing. Commercial and residential.</div>

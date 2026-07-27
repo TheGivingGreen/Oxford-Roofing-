@@ -109,7 +109,7 @@ export function HomePage() {
             "20+ years of experience",
             "900+ roofs completed",
             "Commercial and residential roofing",
-            "Approved Missouri and Illinois territory",
+            "Licensed in Missouri and Illinois.",
           ].map((item) => (
             <div className={styles.trustItem} key={item}>
               {item}

@@ -16,7 +16,7 @@ export const services = [
   { slug: "roof-replacement", title: "Roof Replacement", description: "Full tear-off and replacement with manufacturer-backed warranties.", short: "Full tear-off and replacement with manufacturer-backed warranties.", icon: <WrenchIcon /> },
   { slug: "roof-repair", title: "Roof Repair", description: "Targeted repairs for leaks, flashing, and isolated damage.", short: "Targeted repairs for leaks, flashing, and isolated damage.", icon: <RepairIcon /> },
   { slug: "storm-damage-restoration", title: "Storm Damage Restoration", description: "Rapid assessment and repair after hail or wind, plus direct help with your insurance claim.", short: "Rapid response after hail or wind, insurance-ready documentation.", icon: <StormIcon /> },
-  { slug: "insurance-claims", title: "Insurance Claims Assistance", description: "We document damage and work directly with your adjuster to keep the claim accurate.", short: "We work directly with your adjuster to keep the claim accurate.", icon: <DocumentIcon /> },
+  { slug: "insurance-claims", title: "Insurance Claims Assistance", description: "We document damage and work directly with your adjuster to keep the claim accurate.", short: "We inspect your roof, photograph any visible damage, and provide a written estimate you can share with your insurance company.", icon: <DocumentIcon /> },
   { slug: "roof-inspections", title: "Roof Inspections", description: "A documented, photograph-backed assessment of your roof's condition, no pressure, no upsell.", short: "A documented condition assessment, no pressure, no upsell.", icon: <SearchIcon /> },
   { slug: "preventative-maintenance", title: "Preventative Maintenance", description: "Scheduled upkeep plans that extend your roof's service life.", short: "Scheduled upkeep plans that extend your roof's service life.", icon: <CalendarIcon /> }
 ];
@@ -38,7 +38,7 @@ export const projects = [
 ];
 
 export const faqItems = [
-  { question: "How long does a residential roof replacement take?", answer: "Most residential tear-offs and replacements are completed in one to three days, weather permitting. Larger or steeper roofs may take longer. Your estimate will include a firm timeline." },
+  { question: "How long does a residential roof replacement take?", answer: "Every roof is different. The size, pitch, materials, and weather can all affect the schedule. We’ll review the expected timeline with you before work begins." },
   { question: "Do you help with insurance claims?", answer: "Yes. We document storm damage with photographs, meet your adjuster on-site if needed, and work directly with your insurer to keep the claim accurate and moving." },
   { question: "What warranty comes with a new roof?", answer: "Workmanship is covered for a minimum of 10 years. Manufacturer warranties run up to 25 years depending on the material and system installed." },
   { question: "Do you work on commercial low-slope roofs?", answer: "Yes. TPO, EPDM, and modified bitumen systems, scheduled around your business hours to minimize disruption to tenants or operations." },

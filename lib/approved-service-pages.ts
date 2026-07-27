@@ -418,7 +418,7 @@ const residentialRoofing: ApprovedServicePageData = {
     eyebrow: "Residential roofing · St. Louis",
     label: "Residential Roofing",
     title: "A roof system that belongs to the home it protects.",
-    lead: "Residential roofing begins with the home itself—its architecture, roof geometry, visible condition, and approved project requirements. The proposed system should bring those factors into one clear scope.",
+    lead: "Residential roofing begins with the home itself: its architecture, roof geometry, visible condition, and approved project requirements. The proposed system should bring those factors into one clear scope.",
     image: "/uploads/hero-residential-luxury-roof.png",
     alt: "Aerial view of a finished roof on a large residential home",
     caption: "Residential roof system",
@@ -427,7 +427,7 @@ const residentialRoofing: ApprovedServicePageData = {
   decision: {
     eyebrow: "When residential roofing is appropriate",
     title: "When the home and roof need to be considered together.",
-    lead: "A residential roofing scope should respond to the property in front of it. These are decision points for evaluating the work—not a diagnosis of an individual home.",
+    lead: "A residential roofing scope should respond to the property in front of it. These are decision points for evaluating the work, not a diagnosis of an individual home.",
     criteria: [
       {
         title: "A complete roof system is being evaluated",
@@ -587,7 +587,7 @@ const commercialRoofing: ApprovedServicePageData = {
   decision: {
     eyebrow: "When commercial roofing is appropriate",
     title: "When the roof must be defined as part of the building.",
-    lead: "Commercial roofing decisions should reflect the roof asset, rooftop conditions, and the work the property has approved—not a generic system applied without context.",
+    lead: "Commercial roofing decisions should reflect the roof asset, rooftop conditions, and the work the property has approved, not a generic system applied without context.",
     criteria: [
       {
         title: "A low-slope or flat-roof project is being evaluated",
@@ -740,7 +740,7 @@ const stormDamageRestoration: ApprovedServicePageData = {
     eyebrow: "Storm damage restoration · St. Louis",
     label: "Storm Damage Restoration",
     title: "Document the storm condition before deciding what comes next.",
-    lead: "A storm-related roofing decision should begin with the visible condition of the roof, the areas affected, and a written scope based on what is documented—not assumptions about cause, coverage, or outcome.",
+    lead: "A storm-related roofing decision should begin with the visible condition of the roof, the areas affected, and a written scope based on what is documented, not assumptions about cause, coverage, or outcome.",
     image: "/uploads/chesterfield-hail-restoration-before.png",
     alt: "Residential roof before the Chesterfield hail restoration project",
     caption: "Chesterfield · Before restoration",
@@ -1076,7 +1076,7 @@ const insuranceClaims: ApprovedServicePageData = {
         body: "Policy interpretation, claim advocacy, coverage negotiation, and approval authority are not represented as Oxford services here.",
       },
     ],
-    note: "Oxford’s exact documentation package, communication practices, insurer or adjuster contact, and administrative boundaries require business and legal confirmation.",
+    note: "",
   },
   principles: {
     eyebrow: "Oxford’s documentation principles",
@@ -1099,7 +1099,7 @@ const insuranceClaims: ApprovedServicePageData = {
   scope: {
     eyebrow: "What contractor assistance may consider",
     title: "Visible roof conditions and confirmed roofing documents.",
-    lead: "The actual assistance Oxford provides must be confirmed. A contractor-focused scope may need the following categories to be defined without implying public-adjuster services.",
+    lead: "A contractor-focused scope may need the following categories to be defined without implying public-adjuster services.",
     items: [
       "Visible roof conditions",
       "Roof areas and components reviewed",
@@ -1110,11 +1110,10 @@ const insuranceClaims: ApprovedServicePageData = {
     ],
     note: "No coverage interpretation, claim negotiation, adjuster authority, public-adjuster service, insurer representation, or insurance outcome is included or implied.",
     placeholder: {
-      kicker: "Photography needed",
-      title: "Contractor documentation in context",
-      note: "Documentary image needed: an Oxford roofing professional organizing visible roof-condition photographs or contractor records without insurer branding.",
-      ariaLabel:
-        "Photography placeholder for contractor roof-condition documentation",
+      kicker: "",
+      title: "",
+      note: "",
+      ariaLabel: "",
     },
   },
   process: {
@@ -1146,7 +1145,7 @@ const insuranceClaims: ApprovedServicePageData = {
     title: "No Oxford portfolio project is identified as an insurance claim.",
     body: "The Chesterfield photograph is used only as verified storm-condition context. It is not presented as evidence of insurance involvement, claim approval, coverage, or an outcome.",
     kicker: "Verification boundary",
-    note: "Publish claims-assistance proof only after Oxford confirms the contractor activity, permissions, documentation, and legally appropriate wording.",
+    note: "",
   },
   faq: {
     eyebrow: "Insurance claims assistance FAQ",
@@ -1183,7 +1182,7 @@ const insuranceClaims: ApprovedServicePageData = {
   },
   cta: {
     eyebrow: "Begin with the contractor record",
-    title: "Start with the roof condition—not a promised claim result.",
+    title: "Start with the roof condition, not a promised claim result.",
     body: "Oxford can review visible roof conditions and explain the proposed contractor scope it confirms for the property. No coverage, approval, negotiation, or insurance outcome is promised.",
   },
 };

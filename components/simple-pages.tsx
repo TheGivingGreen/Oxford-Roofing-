@@ -77,7 +77,7 @@ export function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
             <Eyebrow>Company</Eyebrow>
-            <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Four decades in the field changes how you work.</h2>
+            <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Twenty years in the field changes how you work.</h2>
             <p className="m-0 mb-6 font-sans text-base leading-[1.7] text-[var(--text-body)]">Oxford Roofing serves homeowners, building owners, and property managers who want a roof installed correctly, documented clearly, and warranted without confusion.</p>
             <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">The work is direct: inspect the roof, explain the finding, build the system, clean the site, and stand behind the result.</p>
           </div>
@@ -178,7 +178,7 @@ export function ContactPage() {
             <Eyebrow>Start Here</Eyebrow>
             <h2 className="m-0 mb-6 font-display text-[clamp(28px,3.4vw,38px)] font-semibold text-[var(--text-heading)]">Tell us what is happening with the roof.</h2>
             <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">Most estimates are delivered within 48 hours after inspection. For urgent storm damage, call directly.</p>
-            <div className="mt-8 font-sans text-sm leading-[1.8] text-[var(--text-body)]">St. Louis, Missouri<br />(314) 555-0142<br />inspections@oxfordroofing.com</div>
+            <div className="mt-8 font-sans text-sm leading-[1.8] text-[var(--text-body)]">St. Louis, Missouri<br />(314) 555-0142<br />inspections@OxfordRoofingUSA.com</div>
           </div>
           <Card elevated padding="lg">
             <form className="grid gap-5">
