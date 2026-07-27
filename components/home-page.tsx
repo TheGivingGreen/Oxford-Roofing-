@@ -151,7 +151,7 @@ export function HomePage() {
         <div className={styles.whyLayout}>
           <div className={styles.whyCopy}>
             <Eyebrow>Why Oxford Roofing</Eyebrow>
-            <h2>Roofing you can rely on, every shingle time.</h2>
+            <h2>Roofing you can rely on, every single time.</h2>
             <p>
               More than 20 years of roofing experience informs a deliberate
               approach: understand the property, document the visible condition,
