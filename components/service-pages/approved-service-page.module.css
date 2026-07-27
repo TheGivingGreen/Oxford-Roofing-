@@ -338,6 +338,7 @@
 .sectionNavy,
 .projectSection,
 .singleProof,
+.proofPlaceholder,
 .finalCta {
   background: var(--service-navy);
   color: var(--service-white);
@@ -407,6 +408,7 @@
 .projectSection h2,
 .projectSection h3,
 .singleProof h2,
+.proofPlaceholder h2,
 .finalCta h2 {
   color: var(--service-white);
 }
@@ -787,6 +789,37 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.proofPlaceholder {
+  padding-block: var(--service-section);
+}
+
+.proofPlaceholderInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.58fr);
+  gap: clamp(48px, 9vw, 132px);
+  align-items: end;
+}
+
+.proofPlaceholder .lead {
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.proofPlaceholderNote {
+  padding: 32px;
+  border-top: 1px solid var(--service-gold-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.proofPlaceholderNote .placeholderKicker {
+  color: var(--service-gold-light);
+}
+
+.proofPlaceholderNote > p:last-child {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 14px;
+}
+
 .territorySection {
   padding-block: var(--service-section);
   background: var(--service-white);
@@ -1112,6 +1145,7 @@
   .projectGrid,
   .singleProof,
   .comparisonLayout,
+  .proofPlaceholderInner,
   .countyGrid,
   .faqLayout {
     grid-template-columns: 1fr;

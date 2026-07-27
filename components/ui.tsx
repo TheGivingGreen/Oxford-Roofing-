@@ -213,19 +213,25 @@ export function Footer() {
   );
 }
 
-export function Accordion({ items }: { items: { question: string; answer: string }[] }) {
+export function Accordion({ items, idPrefix = "accordion" }: { items: { question: string; answer: string }[]; idPrefix?: string }) {
   const [openIndex, setOpenIndex] = useState(0);
   return (
     <div className="border-t border-[var(--border-subtle)]">
-      {items.map((item, index) => (
-        <div key={item.question} className="border-b border-[var(--border-subtle)]">
-          <button className="flex w-full items-center justify-between gap-6 py-5 text-left font-sans text-base font-semibold text-[var(--text-heading)]" onClick={() => setOpenIndex(openIndex === index ? -1 : index)}>
-            {item.question}
-            <span className="text-xl text-[var(--text-gold)]">{openIndex === index ? "-" : "+"}</span>
-          </button>
-          {openIndex === index ? <p className="m-0 pb-6 font-sans text-sm leading-[1.7] text-[var(--text-body)]">{item.answer}</p> : null}
-        </div>
-      ))}
+      {items.map((item, index) => {
+        const buttonId = `${idPrefix}-button-${index}`;
+        const panelId = `${idPrefix}-panel-${index}`;
+        const isOpen = openIndex === index;
+
+        return (
+          <div key={item.question} className="border-b border-[var(--border-subtle)]">
+            <button type="button" id={buttonId} aria-expanded={isOpen} aria-controls={panelId} className="flex w-full items-center justify-between gap-6 py-5 text-left font-sans text-base font-semibold text-[var(--text-heading)]" onClick={() => setOpenIndex(isOpen ? -1 : index)}>
+              {item.question}
+              <span aria-hidden="true" className="text-xl text-[var(--text-gold)]">{isOpen ? "-" : "+"}</span>
+            </button>
+            <p id={panelId} role="region" aria-labelledby={buttonId} hidden={!isOpen} className="m-0 pb-6 font-sans text-sm leading-[1.7] text-[var(--text-body)]">{item.answer}</p>
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -96,6 +96,14 @@ export type ApprovedServicePageData = {
         beforeAlt: string;
         afterAlt: string;
         href: string;
+      }
+    | {
+        kind: "placeholder";
+        eyebrow: string;
+        title: string;
+        body: string;
+        kicker: string;
+        note: string;
       };
   faq: {
     eyebrow: string;
@@ -875,9 +883,624 @@ const stormDamageRestoration: ApprovedServicePageData = {
   },
 };
 
+const roofRepair: ApprovedServicePageData = {
+  slug: "roof-repair",
+  metadata: {
+    title: "Roof Repair | Oxford Roofing",
+    description:
+      "A documented approach to visible, localized roof conditions and a clearly bounded proposed repair scope for St. Louis-area properties.",
+  },
+  hero: {
+    variant: "light-split",
+    eyebrow: "Roof repair · St. Louis",
+    label: "Roof Repair",
+    title:
+      "Resolve the affected area without losing sight of the roof around it.",
+    lead: "A repair decision should begin with the visible condition, the surrounding roof system, and a written boundary for the proposed work. The right scope depends on what can be documented at the property.",
+    image: "/uploads/hero-residential-luxury-roof.png",
+    alt: "Aerial view of a finished residential roof used as general roof context",
+    caption: "Residential roof context",
+    proofLabel: "Review the Repair Framework",
+  },
+  decision: {
+    eyebrow: "When roof repair may be appropriate",
+    title: "When the visible condition appears limited enough to define.",
+    lead: "A localized condition can justify a repair evaluation. It does not establish that repair is sufficient until the affected area and surrounding roof context have been reviewed.",
+    criteria: [
+      {
+        title: "The concern appears limited to one roof area",
+        body: "A visible condition at a defined location can be evaluated without assuming that the complete roof requires replacement.",
+      },
+      {
+        title: "A transition or penetration requires review",
+        body: "Roof-to-wall conditions, penetrations, edges, and flashing details can be considered as part of the affected area.",
+      },
+      {
+        title: "The surrounding roof condition matters",
+        body: "The proposed repair should account for the visible condition of the adjoining roof rather than treating one detail in isolation.",
+      },
+      {
+        title: "A written repair boundary is needed",
+        body: "The property owner needs a proposed scope that identifies the area and work being considered.",
+      },
+    ],
+    note: "Oxford’s repair criteria, diagnostic methods, available repair systems, scheduling practices, and documentation deliverables require operational confirmation.",
+  },
+  principles: {
+    eyebrow: "Oxford’s roof-repair principles",
+    title:
+      "Locate the condition. Define the boundary. Respect the surrounding system.",
+    items: [
+      {
+        title: "Locate the concern",
+        body: "Begin with the reported area and the visible roof conditions that may inform the repair decision.",
+      },
+      {
+        title: "Define the repair boundary",
+        body: "Identify the proposed work and the roof area included in the written repair scope.",
+      },
+      {
+        title: "Review the context",
+        body: "Consider how the affected area connects to adjoining materials, transitions, and the surrounding roof.",
+      },
+    ],
+  },
+  scope: {
+    eyebrow: "What the repair scope considers",
+    title: "The affected area, adjoining details, and the proposed work.",
+    lead: "The final repair scope depends on the documented visible condition and written proposal. A repair evaluation may require the following categories to be defined.",
+    items: [
+      "Reported concern and visible roof condition",
+      "Affected roof area",
+      "Adjoining flashing, edges, or transitions",
+      "Visible surrounding roof context",
+      "Proposed repair work",
+      "Applicable project records",
+    ],
+    note: "Exact repair methods, materials, limitations, and records remain subject to Oxford’s confirmed offering and the property’s written proposal.",
+    placeholder: {
+      kicker: "Photography needed",
+      title: "Service-specific repair documentation",
+      note: "Documentary image needed: a clearly bounded, safely accessed roof-repair condition with no visible third-party branding.",
+      ariaLabel:
+        "Photography placeholder for a documented roof-repair condition",
+    },
+  },
+  process: {
+    eyebrow: "The roof-repair process",
+    title: "Four stages from reported concern to approved repair work.",
+    steps: [
+      {
+        title: "Review",
+        body: "Begin with the property context, reported concern, and visible roof condition.",
+      },
+      {
+        title: "Document",
+        body: "Organize the affected area and adjoining visible conditions for review.",
+      },
+      {
+        title: "Define",
+        body: "Prepare a proposed repair boundary and written scope for the property.",
+      },
+      {
+        title: "Complete and review",
+        body: "Complete the accepted repair work and review the area and applicable records.",
+      },
+    ],
+  },
+  proof: {
+    kind: "placeholder",
+    eyebrow: "Service-specific proof",
+    title: "Verified roof-repair project photography is still needed.",
+    body: "Oxford’s current portfolio does not identify a project specifically as Roof Repair. An unrelated replacement or restoration project is not being presented as repair proof.",
+    kicker: "Photography gap",
+    note: "Add a verified Oxford repair project only after its location, scope, and photography are confirmed for publication.",
+  },
+  faq: {
+    eyebrow: "Roof repair FAQ",
+    title: "Questions to define before a repair scope is approved.",
+    lead: "These answers describe a conservative repair framework. Oxford’s exact methods and deliverables remain subject to operational confirmation.",
+    items: [
+      {
+        question: "How is repair compared with roof replacement?",
+        answer:
+          "Repair may be considered when the visible condition can be addressed within a reliable, clearly defined area. Replacement may require consideration when conditions are more widespread. The recommendation depends on the documented roof condition.",
+      },
+      {
+        question:
+          "Can the reported leak location differ from the roof condition?",
+        answer:
+          "The location where water is observed may not, by itself, establish the roof condition or proposed work. The visible roof and property context should be reviewed before a repair scope is defined.",
+      },
+      {
+        question: "What should a repair proposal identify?",
+        answer:
+          "A proposed repair scope should identify the affected area, the work being considered, relevant adjoining details, and any stated limitations. The written proposal determines the actual work.",
+      },
+      {
+        question: "Does a repair guarantee the condition will not recur?",
+        answer:
+          "No performance or recurrence guarantee is stated here. Any applicable terms, limitations, or warranty language must be confirmed in Oxford’s written proposal.",
+      },
+      {
+        question: "What repair records are provided?",
+        answer:
+          "Oxford’s exact condition photographs, repair notes, completion records, and other deliverables require operational confirmation and should be stated in the project documents.",
+      },
+    ],
+  },
+  cta: {
+    eyebrow: "Begin with the affected area",
+    title: "Start with the visible condition and the roof around it.",
+    body: "Oxford can review the reported concern and visible roof context before a proposed repair scope is defined. A repair recommendation is not assumed in advance.",
+  },
+};
+
+const insuranceClaims: ApprovedServicePageData = {
+  slug: "insurance-claims",
+  metadata: {
+    title: "Insurance Claims Assistance | Oxford Roofing",
+    description:
+      "Contractor-focused roof condition documentation and proposed roofing scope support, kept separate from insurance coverage and claim decisions.",
+  },
+  hero: {
+    variant: "light-split",
+    eyebrow: "Insurance claims assistance · St. Louis",
+    label: "Insurance Claims Assistance",
+    title: "Keep the roofing record separate from the coverage decision.",
+    lead: "Oxford’s defensible role is as a roofing contractor: documenting visible roof conditions and defining proposed roofing work. Coverage, policy interpretation, claim approval, and insurer decisions remain outside that contractor role.",
+    image: "/uploads/chesterfield-hail-restoration-before.png",
+    alt: "Residential roof with visible post-storm conditions in Chesterfield",
+    caption: "Documented storm-condition context",
+    proofLabel: "Review the Contractor Boundary",
+  },
+  decision: {
+    eyebrow: "When contractor documentation may be relevant",
+    title: "When the roof condition and proposed work need a clear record.",
+    lead: "Roofing documentation can support an owner’s understanding of the contractor scope. It does not decide coverage, interpret a policy, or represent an insurance outcome.",
+    criteria: [
+      {
+        title: "A reported event is followed by a changed roof condition",
+        body: "Visible conditions can be organized without certifying cause or predicting a coverage decision.",
+      },
+      {
+        title: "The owner needs a contractor view of the roof",
+        body: "The roofing record can distinguish visible observations from the proposed work Oxford is prepared to quote.",
+      },
+      {
+        title: "Roofing documents require a clear boundary",
+        body: "Condition photographs, estimates, and project records should be described according to what Oxford actually provides.",
+      },
+      {
+        title: "The contractor role must remain distinct",
+        body: "Policy interpretation, claim advocacy, coverage negotiation, and approval authority are not represented as Oxford services here.",
+      },
+    ],
+    note: "Oxford’s exact documentation package, communication practices, insurer or adjuster contact, and administrative boundaries require business and legal confirmation.",
+  },
+  principles: {
+    eyebrow: "Oxford’s documentation principles",
+    title: "Document the roof. Define the work. Preserve the boundary.",
+    items: [
+      {
+        title: "Record visible conditions",
+        body: "Organize the roof conditions Oxford can observe without making a coverage or policy determination.",
+      },
+      {
+        title: "Define contractor work",
+        body: "Describe the proposed roofing scope and project information Oxford confirms for the property.",
+      },
+      {
+        title: "Separate insurance decisions",
+        body: "Keep insurer, adjuster, policy, coverage, and claim-outcome decisions outside Oxford’s contractor role.",
+      },
+    ],
+  },
+  scope: {
+    eyebrow: "What contractor assistance may consider",
+    title: "Visible roof conditions and confirmed roofing documents.",
+    lead: "The actual assistance Oxford provides must be confirmed. A contractor-focused scope may need the following categories to be defined without implying public-adjuster services.",
+    items: [
+      "Visible roof conditions",
+      "Roof areas and components reviewed",
+      "Condition photography Oxford confirms it supplies",
+      "Proposed roofing work",
+      "Written estimate or proposal information",
+      "Applicable project records",
+    ],
+    note: "No coverage interpretation, claim negotiation, adjuster authority, public-adjuster service, insurer representation, or insurance outcome is included or implied.",
+    placeholder: {
+      kicker: "Photography needed",
+      title: "Contractor documentation in context",
+      note: "Documentary image needed: an Oxford roofing professional organizing visible roof-condition photographs or contractor records without insurer branding.",
+      ariaLabel:
+        "Photography placeholder for contractor roof-condition documentation",
+    },
+  },
+  process: {
+    eyebrow: "The contractor-documentation process",
+    title: "Four stages with a clear boundary around Oxford’s role.",
+    compact: true,
+    steps: [
+      {
+        title: "Review the roof context",
+        body: "Begin with the property and visible roof conditions Oxford is asked to review.",
+      },
+      {
+        title: "Organize contractor findings",
+        body: "Document the observations and roof areas Oxford confirms are part of its review.",
+      },
+      {
+        title: "Define proposed roofing work",
+        body: "Prepare the contractor scope, estimate, or project information Oxford confirms it provides.",
+      },
+      {
+        title: "Maintain role boundaries",
+        body: "Leave policy interpretation, coverage, negotiation, and claim decisions to the owner and insurer.",
+      },
+    ],
+  },
+  proof: {
+    kind: "placeholder",
+    eyebrow: "Service-specific proof",
+    title: "No Oxford portfolio project is identified as an insurance claim.",
+    body: "The Chesterfield photograph is used only as verified storm-condition context. It is not presented as evidence of insurance involvement, claim approval, coverage, or an outcome.",
+    kicker: "Verification boundary",
+    note: "Publish claims-assistance proof only after Oxford confirms the contractor activity, permissions, documentation, and legally appropriate wording.",
+  },
+  faq: {
+    eyebrow: "Insurance claims assistance FAQ",
+    title:
+      "Questions that keep contractor work separate from coverage decisions.",
+    lead: "These answers define a conservative boundary. Oxford’s exact assistance and communication practices require business and legal confirmation.",
+    items: [
+      {
+        question: "Does Oxford decide whether roof damage is covered?",
+        answer:
+          "No. Coverage decisions belong to the insurer under the applicable policy. Oxford can describe visible roof conditions and proposed contractor work but does not control coverage or claim approval.",
+      },
+      {
+        question: "Does Oxford act as a public adjuster?",
+        answer:
+          "No public-adjuster service, policy interpretation, coverage negotiation, or representation of the property owner is stated or implied on this page.",
+      },
+      {
+        question: "What roofing documentation may be available?",
+        answer:
+          "Potential contractor records can include condition photographs, a written proposal, and applicable project information. Oxford’s exact deliverables require confirmation and should be identified in writing.",
+      },
+      {
+        question: "Does Oxford communicate with an insurer or adjuster?",
+        answer:
+          "Oxford’s exact communication practices and limits require confirmation. This page does not promise direct insurer coordination, adjuster meetings, claim advocacy, or authority over any insurance decision.",
+      },
+      {
+        question: "Is claims assistance the same as storm restoration?",
+        answer:
+          "No. Storm Damage Restoration addresses visible post-storm roof conditions and proposed roofing work. Insurance Claims Assistance is limited here to contractor documentation boundaries and does not determine coverage or outcomes.",
+      },
+    ],
+  },
+  cta: {
+    eyebrow: "Begin with the contractor record",
+    title: "Start with the roof condition—not a promised claim result.",
+    body: "Oxford can review visible roof conditions and explain the proposed contractor scope it confirms for the property. No coverage, approval, negotiation, or insurance outcome is promised.",
+  },
+};
+
+const roofInspections: ApprovedServicePageData = {
+  slug: "roof-inspections",
+  metadata: {
+    title: "Roof Inspections | Oxford Roofing",
+    description:
+      "A conservative framework for reviewing visible roof conditions and defining the appropriate next roofing question for St. Louis-area properties.",
+  },
+  hero: {
+    variant: "navy-split",
+    eyebrow: "Roof inspections · St. Louis",
+    label: "Roof Inspections",
+    title:
+      "A useful roof inspection should turn visible conditions into a clear next question.",
+    lead: "An inspection begins with the property, accessible roof context, and visible conditions that can be organized for review. The result should distinguish observation from any proposed roofing work.",
+    image: "/uploads/hero-residential-luxury-roof.png",
+    alt: "Aerial view showing the complete roof geometry of a residential property",
+    caption: "Residential roof context",
+    proofLabel: "Review the Inspection Framework",
+  },
+  decision: {
+    eyebrow: "When a roof inspection may be appropriate",
+    title: "When the property owner needs a documented view of the roof.",
+    lead: "An inspection can organize visible conditions and identify questions requiring a closer decision. It does not guarantee access to hidden conditions or predetermine repair or replacement.",
+    criteria: [
+      {
+        title: "A visible roof condition has changed",
+        body: "Wear, water entry, or another reported change can create a reason to review the roof context.",
+      },
+      {
+        title: "Roofing work is being considered",
+        body: "A documented view can help separate the observed condition from the work proposed afterward.",
+      },
+      {
+        title: "Multiple roof areas require organization",
+        body: "Planes, edges, transitions, penetrations, and adjoining components can be considered by visible area.",
+      },
+      {
+        title: "The next roofing decision is unclear",
+        body: "The owner needs a structured record before repair, replacement, monitoring, or another step is considered.",
+      },
+    ],
+    note: "Oxford’s inspection access methods, diagnostic boundaries, report format, photographs, fees, scheduling, and final deliverables require operational confirmation.",
+  },
+  principles: {
+    eyebrow: "Oxford’s inspection principles",
+    title:
+      "Observe the roof. Organize the conditions. Define the next question.",
+    items: [
+      {
+        title: "Review the context",
+        body: "Begin with the property, roof geometry, reported concerns, and visible conditions available for review.",
+      },
+      {
+        title: "Organize observations",
+        body: "Group visible conditions by roof area, component, transition, or other relevant context.",
+      },
+      {
+        title: "Separate the recommendation",
+        body: "Keep observed conditions distinct from any proposed repair, replacement, or monitoring scope.",
+      },
+    ],
+  },
+  scope: {
+    eyebrow: "What an inspection may consider",
+    title: "Accessible roof context and visible conditions.",
+    lead: "The actual inspection scope must be confirmed for the property. A documented review may require the following categories to be defined.",
+    items: [
+      "Property context and reported concerns",
+      "Accessible visible roof surfaces",
+      "Edges, penetrations, and transitions",
+      "Visible adjoining components",
+      "Observed conditions organized by area",
+      "Confirmed inspection records",
+    ],
+    note: "Access limitations, concealed conditions, testing, photographs, recommendations, and the format of any inspection record require confirmation.",
+    placeholder: {
+      kicker: "Photography needed",
+      title: "Oxford inspection documentation",
+      note: "Documentary image needed: a safely equipped Oxford professional recording visible roof conditions in a natural Midwest property context.",
+      ariaLabel: "Photography placeholder for a professional roof inspection",
+    },
+  },
+  process: {
+    eyebrow: "The roof-inspection process",
+    title: "Four stages from property context to the next roofing question.",
+    steps: [
+      {
+        title: "Establish context",
+        body: "Review the property, roof configuration, and reported reason for the inspection.",
+      },
+      {
+        title: "Observe",
+        body: "Review accessible visible roof conditions within the confirmed inspection scope.",
+      },
+      {
+        title: "Organize",
+        body: "Arrange visible observations by roof area, component, and relevant transition.",
+      },
+      {
+        title: "Define the next question",
+        body: "Separate the inspection record from any later proposed roofing work.",
+      },
+    ],
+  },
+  proof: {
+    kind: "placeholder",
+    eyebrow: "Service-specific proof",
+    title: "Verified Oxford inspection photography is still needed.",
+    body: "A finished roof photograph can show property context, but it does not verify Oxford’s inspection method, report, or deliverables. No unrelated project is being relabeled as an inspection.",
+    kicker: "Photography gap",
+    note: "Add a verified inspection example only after Oxford confirms the service scope, access method, records, and publication permissions.",
+  },
+  faq: {
+    eyebrow: "Roof inspection FAQ",
+    title: "Questions to define before an inspection is scheduled.",
+    lead: "These answers describe a conservative inspection framework. Oxford’s exact offering, access, fees, timing, and records require operational confirmation.",
+    items: [
+      {
+        question: "What does a roof inspection include?",
+        answer:
+          "The inspection scope should identify the property context, accessible visible roof areas, reported concerns, and the records Oxford confirms it provides. Exact methods and deliverables require confirmation.",
+      },
+      {
+        question: "Can an inspection identify concealed conditions?",
+        answer:
+          "A visible inspection does not guarantee identification of concealed or inaccessible conditions. Any testing, opening, or additional evaluation must be separately confirmed in writing.",
+      },
+      {
+        question: "Does an inspection mean the roof needs replacement?",
+        answer:
+          "No. An inspection should organize visible conditions before any repair, replacement, monitoring, or other recommendation is considered.",
+      },
+      {
+        question: "Will photographs or a written report be provided?",
+        answer:
+          "Oxford’s exact photography, report format, findings, recommendations, and other inspection records require operational confirmation and should be stated before the inspection.",
+      },
+      {
+        question: "How often should a roof be inspected?",
+        answer:
+          "No universal interval is stated here. Property conditions, reported changes, roof context, and Oxford’s confirmed inspection offering should inform the timing.",
+      },
+    ],
+  },
+  cta: {
+    eyebrow: "Begin with the roof context",
+    title:
+      "Start with the visible condition and a clearly defined inspection scope.",
+    body: "Oxford can confirm the inspection service it offers for the property before any roofing recommendation is assumed.",
+  },
+};
+
+const preventativeMaintenance: ApprovedServicePageData = {
+  slug: "preventative-maintenance",
+  metadata: {
+    title: "Preventative Maintenance | Oxford Roofing",
+    description:
+      "A conservative framework for observing roof conditions over time and defining approved maintenance-related work for St. Louis-area properties.",
+  },
+  hero: {
+    variant: "commercial-panel",
+    eyebrow: "Preventative maintenance · St. Louis",
+    label: "Preventative Maintenance",
+    title:
+      "Planned roof care begins with the conditions that can actually be observed.",
+    lead: "A maintenance approach should begin with a documented roof context, visible conditions, and a clear boundary around any proposed work. No schedule, program, or service interval is assumed in advance.",
+    image: "/uploads/clayton-office-park-tpo-reroof.png",
+    alt: "Aerial view of a completed commercial TPO roof used as roof-asset context",
+    caption: "Commercial roof-asset context",
+    proofLabel: "Review the Maintenance Framework",
+  },
+  decision: {
+    eyebrow: "When preventative maintenance may be appropriate",
+    title: "When the owner wants to observe roof conditions over time.",
+    lead: "A maintenance framework can help organize visible change and proposed work. It does not guarantee roof performance, eliminate future repair, or establish a universal service interval.",
+    criteria: [
+      {
+        title: "A roof condition baseline is needed",
+        body: "The owner wants a documented reference point for visible roof surfaces, details, and known conditions.",
+      },
+      {
+        title: "Visible conditions may need periodic review",
+        body: "Changes at surfaces, edges, penetrations, transitions, or drainage areas can be organized over time.",
+      },
+      {
+        title: "Maintenance-related work needs a boundary",
+        body: "Observed conditions should remain separate from any repair or maintenance work later proposed.",
+      },
+      {
+        title: "The owner needs an organized roof record",
+        body: "Confirmed observations and approved work can be documented without promising a particular outcome.",
+      },
+    ],
+    note: "Oxford’s maintenance program availability, roof types served, inspection intervals, included activities, pricing, scheduling, and records require operational confirmation.",
+  },
+  principles: {
+    eyebrow: "Oxford’s maintenance principles",
+    title:
+      "Establish the baseline. Track visible change. Define approved work.",
+    items: [
+      {
+        title: "Establish the roof context",
+        body: "Begin with the roof asset, accessible visible conditions, and known property requirements.",
+      },
+      {
+        title: "Track relevant change",
+        body: "Organize visible conditions by roof area, detail, transition, or other confirmed maintenance context.",
+      },
+      {
+        title: "Separate proposed work",
+        body: "Define any repair or maintenance activity through a written scope rather than assuming it is included.",
+      },
+    ],
+  },
+  scope: {
+    eyebrow: "What a maintenance scope may consider",
+    title: "The roof baseline, visible change, and approved work.",
+    lead: "The actual maintenance offering must be confirmed. A property-specific framework may require the following categories to be defined.",
+    items: [
+      "Roof asset and property context",
+      "Accessible visible roof surfaces",
+      "Edges, penetrations, and transitions",
+      "Visible drainage-area conditions",
+      "Documented changes since a prior review",
+      "Separately approved roofing work",
+    ],
+    note: "No specific cleaning, repair, sealing, coating, drainage, schedule, inspection interval, or reporting deliverable is promised without Oxford’s written confirmation.",
+    placeholder: {
+      kicker: "Photography needed",
+      title: "Verified maintenance activity",
+      note: "Documentary image needed: an Oxford professional reviewing a commercial or residential roof asset during a confirmed maintenance visit.",
+      ariaLabel:
+        "Photography placeholder for verified preventative maintenance activity",
+    },
+  },
+  process: {
+    eyebrow: "The maintenance framework",
+    title: "Four stages from roof baseline to the next confirmed review.",
+    compact: true,
+    steps: [
+      {
+        title: "Establish the baseline",
+        body: "Organize the roof asset, property context, and accessible visible conditions.",
+      },
+      {
+        title: "Review visible change",
+        body: "Compare confirmed observations by roof area, detail, or relevant transition.",
+      },
+      {
+        title: "Define approved work",
+        body: "Separate any proposed roofing activity into its own written scope.",
+      },
+      {
+        title: "Record the next checkpoint",
+        body: "Document the information and future review Oxford confirms for the property.",
+      },
+    ],
+  },
+  proof: {
+    kind: "placeholder",
+    eyebrow: "Service-specific proof",
+    title: "Verified Oxford maintenance photography is still needed.",
+    body: "Clayton Office Park is shown only as a verified commercial TPO roof asset. The portfolio does not identify it as a maintenance project or confirm an Oxford maintenance program.",
+    kicker: "Verification boundary",
+    note: "Add maintenance proof only after the property, activities, interval, records, and publication permissions are confirmed.",
+  },
+  faq: {
+    eyebrow: "Preventative maintenance FAQ",
+    title: "Questions to define before a maintenance program is assumed.",
+    lead: "These answers describe a conservative framework. Oxford’s actual maintenance offering and operating details require confirmation.",
+    items: [
+      {
+        question: "What is included in preventative maintenance?",
+        answer:
+          "Oxford’s exact maintenance activities, roof types, intervals, and records require confirmation. The written scope should distinguish condition review from any separately approved roofing work.",
+      },
+      {
+        question: "Which residential or commercial roofs are eligible?",
+        answer:
+          "No universal eligibility is stated here. Oxford must confirm the roof types, systems, property conditions, and locations included in its maintenance offering.",
+      },
+      {
+        question: "How often should maintenance occur?",
+        answer:
+          "No fixed interval is promised. The property, roof asset, visible conditions, and Oxford’s confirmed program should determine any future review schedule.",
+      },
+      {
+        question: "Does maintenance prevent every leak or repair?",
+        answer:
+          "No. A maintenance framework cannot guarantee future roof performance or eliminate every repair. Any applicable terms must be stated in Oxford’s written documents.",
+      },
+      {
+        question: "Are repairs included in a maintenance visit?",
+        answer:
+          "No repair is assumed to be included. Any proposed repair or other roofing work should be documented and approved through a separate written scope unless Oxford confirms otherwise.",
+      },
+    ],
+  },
+  cta: {
+    eyebrow: "Begin with the roof baseline",
+    title:
+      "Start by confirming the roof context and Oxford’s available maintenance scope.",
+    body: "Oxford can confirm whether it offers an appropriate maintenance service for the property before any interval, activity, or outcome is assumed.",
+  },
+};
+
 export const approvedServicePages: Record<string, ApprovedServicePageData> = {
   [roofReplacement.slug]: roofReplacement,
   [residentialRoofing.slug]: residentialRoofing,
   [commercialRoofing.slug]: commercialRoofing,
   [stormDamageRestoration.slug]: stormDamageRestoration,
+  [roofRepair.slug]: roofRepair,
+  [insuranceClaims.slug]: insuranceClaims,
+  [roofInspections.slug]: roofInspections,
+  [preventativeMaintenance.slug]: preventativeMaintenance,
 };

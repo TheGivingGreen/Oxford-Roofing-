@@ -294,6 +294,28 @@ function ProjectProof({ data }: { data: ApprovedServicePageData }) {
     );
   }
 
+  if (proof.kind === "placeholder") {
+    return (
+      <section
+        className={styles.proofPlaceholder}
+        id={sectionId}
+        aria-labelledby={`${data.slug}-proof-title`}
+      >
+        <div className={`${styles.container} ${styles.proofPlaceholderInner}`}>
+          <div>
+            <Eyebrow dark>{proof.eyebrow}</Eyebrow>
+            <h2 id={`${data.slug}-proof-title`}>{proof.title}</h2>
+            <p className={styles.lead}>{proof.body}</p>
+          </div>
+          <aside className={styles.proofPlaceholderNote}>
+            <p className={styles.placeholderKicker}>{proof.kicker}</p>
+            <p>{proof.note}</p>
+          </aside>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       className={styles.projectSection}
