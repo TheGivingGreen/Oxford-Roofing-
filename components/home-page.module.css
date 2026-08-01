@@ -128,6 +128,12 @@
 }
 
 .heroForm {
+  --home-navy: #03234d;
+  --home-navy-800: #042d62;
+  --home-gold: #c09657;
+  --home-slate-200: #dee2e7;
+  --home-slate-500: #737e8c;
+  --home-slate-700: #424952;
   position: relative;
   width: 100%;
   max-width: 480px;
@@ -164,8 +170,10 @@
 .heroForm h2 {
   margin: 0;
   color: var(--home-navy);
+  font-family: var(--font-serif-display);
   font-size: clamp(25px, 2.1vw, 32px);
   font-weight: 600;
+  letter-spacing: 0.005em;
   line-height: 1.14;
 }
 

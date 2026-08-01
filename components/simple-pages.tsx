@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, IconTile, Input, PhotoBlock, Section, Select } from "@/components/ui";
+import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, IconTile, PhotoBlock, Section } from "@/components/ui";
+import { InspectionForm } from "@/components/inspection-form";
 import { faqSections, projects, services } from "@/lib/data";
 import { assetPath } from "@/lib/paths";
 import styles from "./simple-pages.module.css";
@@ -240,15 +241,7 @@ export function ContactPage() {
             <p className="m-0 font-sans text-base leading-[1.7] text-[var(--text-body)]">Most estimates are delivered within 48 hours after inspection. For urgent storm damage, call directly.</p>
             <div className="mt-8 font-sans text-sm leading-[1.8] text-[var(--text-body)]">St. Louis, Missouri<br />(314) 555-0142<br />inspections@OxfordRoofingUSA.com</div>
           </div>
-          <Card elevated padding="lg">
-            <form className="grid gap-5">
-              <div className="grid gap-5 md:grid-cols-2"><Input label="First name" /><Input label="Last name" /></div>
-              <div className="grid gap-5 md:grid-cols-2"><Input label="Email" type="email" /><Input label="Phone" type="tel" /></div>
-              <Select label="Project type" options={["Residential roofing", "Commercial roofing", "Storm damage", "Inspection", "Not sure"]} />
-              <label className="block"><span className="mb-2 block font-sans text-sm font-semibold text-[var(--text-heading)]">Project notes</span><textarea className="min-h-32 w-full rounded-md border border-[var(--border-default)] bg-white p-4 font-sans text-sm text-[var(--text-heading)] focus:border-gold-500 focus:outline-none" /></label>
-              <Button type="submit" variant="primary" size="lg">Submit Request</Button>
-            </form>
-          </Card>
+          <InspectionForm />
         </div>
       </Section>
     </main>
