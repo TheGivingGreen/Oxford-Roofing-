@@ -66,10 +66,10 @@
   position: relative;
   z-index: 1;
   display: grid;
-  width: min(100%, 1280px);
-  grid-template-columns: minmax(0, 1.35fr) minmax(370px, 0.75fr);
+  width: min(100%, 1320px);
+  grid-template-columns: minmax(0, 1fr) minmax(440px, 480px);
   align-items: center;
-  gap: clamp(48px, 6vw, 88px);
+  gap: clamp(40px, 4vw, 64px);
   margin-inline: auto;
   padding: clamp(56px, 7vw, 96px) clamp(24px, 5vw, 64px);
   color: #ffffff;
@@ -99,7 +99,7 @@
 }
 
 .hero h1 {
-  max-width: 720px;
+  max-width: 590px;
   margin: 0;
   color: #ffffff;
   font-family: var(--font-serif-display);
@@ -126,7 +126,7 @@
 .heroForm {
   position: relative;
   width: 100%;
-  max-width: 440px;
+  max-width: 480px;
   justify-self: end;
   padding: 34px;
   overflow: hidden;
