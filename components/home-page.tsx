@@ -10,7 +10,6 @@ import {
   IconTile,
   PhotoBlock,
   Section,
-  ServiceCard,
   StatCard,
   TestimonialCard,
 } from "@/components/ui";
@@ -179,13 +178,20 @@ export function HomePage() {
               key={service.slug}
               href={`/services/${service.slug}`}
             >
-              <ServiceCard
-                icon={service.icon}
-                title={service.title}
-                description={
-                  homeServiceDescriptions[service.slug] ?? service.description
-                }
-              />
+              <article className={styles.serviceNavCard}>
+                <div className={styles.serviceCardBody}>
+                  <IconTile>{service.icon}</IconTile>
+                  <h3>{service.title}</h3>
+                  <p>
+                    {homeServiceDescriptions[service.slug] ??
+                      service.description}
+                  </p>
+                </div>
+                <div className={styles.serviceCardAction} aria-hidden="true">
+                  <span>View Service</span>
+                  <span className={styles.serviceCardArrow}>→</span>
+                </div>
+              </article>
             </Link>
           ))}
         </div>
