@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, Input, PhotoBlock, Section, Select, ServiceCard } from "@/components/ui";
+import { Accordion, BeforeAfterComparison, Button, Card, Eyebrow, IconTile, Input, PhotoBlock, Section, Select } from "@/components/ui";
 import { faqSections, projects, services } from "@/lib/data";
 import { assetPath } from "@/lib/paths";
+import styles from "./simple-pages.module.css";
 
 type PageHeroProps = {
   eyebrow: string;
@@ -30,8 +31,26 @@ export function ServicesPage() {
     <main>
       <PageHero eyebrow="Services" title="Eight services. One standard of craft." imageSrc="/uploads/hero-residential-luxury-roof.png" imageAlt="Aerial view of a residential roof" objectPosition="center 58%" />
       <Section>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {services.map((service) => <Link key={service.slug} href={`/services/${service.slug}`}><ServiceCard icon={service.icon} title={service.title} description={service.short} /></Link>)}
+        <div className={styles.servicesGrid}>
+          {services.map((service) => (
+            <Link
+              className={styles.serviceLink}
+              key={service.slug}
+              href={`/services/${service.slug}`}
+            >
+              <article className={styles.serviceNavCard}>
+                <div className={styles.serviceCardBody}>
+                  <IconTile>{service.icon}</IconTile>
+                  <h2>{service.title}</h2>
+                  <p>{service.short}</p>
+                </div>
+                <div className={styles.serviceCardAction} aria-hidden="true">
+                  <span>View Service</span>
+                  <span className={styles.serviceCardArrow}>→</span>
+                </div>
+              </article>
+            </Link>
+          ))}
         </div>
       </Section>
       <Cta title="Not sure which service you need?" body="Start with a free inspection. We will tell you exactly what your roof needs." />
